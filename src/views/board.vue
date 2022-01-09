@@ -13,7 +13,7 @@
   <tbody>
     <tr v-for="data in data.content" :key="data.content">
       <th scope="row">{{data.noticeIdx}}</th>
-      <td><a v-on:click="view(data),counter(data)">{{data.title}}</a></td>
+      <td><a v-on:click="view(data)">{{data.title}}</a></td>
       <th scope="row">{{data.registDate}}</th>
 
       <th scope="row">{{data.views}}</th>
@@ -45,10 +45,7 @@ export default {
                 title: data.title}
       })
     },
-    counter(data){
-      return data.view ++
-      
-    },
+  
     create(){
       console.log('hi')
       this.$router.push({

@@ -29,6 +29,12 @@ const routes = [
     path:'/create',
     name: 'create',
     component:() => import("@/views/create.vue")
+  },
+  {
+    path:'/update',
+    name: 'update',
+    component:() => import("@/views/update.vue"),
+    props:true
   }
 ]
 
