@@ -50,11 +50,11 @@ export default {
       let content = this.content;
       let writer = this.writer;
       console.log(title, content, writer);
-      if (title == '') {
+     /*  if (title == '') {
         console.log("modalSuccess");
         this.showModal = !this.showModal;
       
-      } else {
+      } else { */
       /*   const event = new Date();
         console.log(event.toDateString()); */
 
@@ -72,7 +72,7 @@ export default {
           console.log("success");
           console.log(response);
         });
-      }
+     /*  } */
     },
   },
   components: {

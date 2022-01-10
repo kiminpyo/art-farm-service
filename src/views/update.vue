@@ -1,10 +1,10 @@
  <template>
   <div>
         <form action="" @submit="updateitem" id="modal-template"> 
-      v-model은 data에 return값으로 반환 가능 
-      <input v-model="writerre" placeholder="글쓴이" />
-      <input v-model="titlere" placeholder="제목" />
-      <input v-model="contentre" placeholder="내용" />
+      <!--v-model은 data에 return값으로 반환 가능  -->
+      <input v-model="writer" placeholder="글쓴이" />
+      <input v-model="title" placeholder="제목" />
+      <input v-model="content" placeholder="내용" />
       <button type="submit">수정하기</button>
     </form> 
    
@@ -22,9 +22,9 @@ export default {
            return{
                
                noticeIdx,
-               titlere: '',
-               contentre: '',
-               writerre: ''
+               title: '',
+               content: '',
+               writer: ''
            }
         },
      
@@ -45,18 +45,19 @@ export default {
         
             })
         }, */
-        async updateitem(e){
+        updateitem(e){
          e.preventDefault();
-         console.log(this.titlere)
-            axios({
-                url: "http://localhost:8080/api/notice?noticeIdx=" +this.$route.query.noticeIdx,
-                mothod: 'put',
+         console.log(this.title);
+          let title = this.title;
+          let content = this.content;
+          console.log(content)
+                      axios({
+                url: "http://localhost:8080/api/notice?noticeIdx=" + this.$route.query.noticeIdx,
+                method:'put',
                 data:{
-                    title: this.titlere,
-                    content: this.contentre,
-                    writer: this.writerre,
-                    registDate: new Date(), //백에서 처리해야될 부분
-                    views: "",
+                    title: title,
+                    content: content
+                   
                 },
             })
             .then(function(response){
