@@ -3,7 +3,7 @@
       <div class="col-sm-2"></div>
       <!--sidebar-->
       <div class="side-bar col-sm-2">
-        <div class="container">
+        <div class="container1">
           <div class="row height d-flex justify-content-center align-items-center" style="margin-bottom:20px;">
               <div class="col-md-10">
                   <div class="search d-flex justify-content-center align-items-center">
@@ -78,7 +78,9 @@
       <div class="card-view col-sm-6">
         <div class="card-wrapper container">
           <div class="card">
-            <div class="card-image" style="height:320px; background-color:white; border:1px solid black;"></div>
+            <div class="card-image" style="height:320px; background-color:white; border:1px solid black;">
+              <img src="@/assets/logo.png" alt="">
+            </div>
             <div class="card-balnk" style="height:20px;"></div>
             <div class="card-txt" style="height:60px;">
               <div class="title" style="height:20px; background-color:white; border:1px solid black;"></div>
@@ -125,7 +127,7 @@ export default {
 }
 </script>
 
-<style>
+<style sceoped>
 .side-bar{
   padding:20px 20px 20px 40px;
   background:#cdcdcd;
@@ -139,7 +141,7 @@ export default {
   background:#cdcdcd;
   
 }
-.card-view .container div{
+.card-view .container1 div{
   height:100%;
 }
 .card-wrapper{
