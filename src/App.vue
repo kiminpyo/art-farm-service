@@ -1,13 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">게시판</router-link> |
-      <router-link to="/about">전시글</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    
+     
+
+ 
+
+      
+      
+     
+  
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
+<script>
 
-</style>
+export default {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+};
+</script>
