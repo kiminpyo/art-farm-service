@@ -1,30 +1,31 @@
 <template>
   <div class="hello">
-    <table class="table col-md-12">
- 
-    <tr class="col-md-6"> 
-      <th scope="col" class="col-md-1">게시글 번호</th> 
-      <th scope="col"  class="col-md-1">제목</th>
-      <th scope="col" class="col-md-2">작성일</th>
-      <th scope="col" class="col-md-2">조회수</th>     
-    </tr>
-  <tbody>
+    <table class="table mx-auto" outlined max-width="80%" >
+        <colgroup class="col-md-12">
+					<col class="col-md-2" />
+					<col class="col-md-6" />
+					<col class="col-md-2" />
+					<col class="col-md-2" />
+				</colgroup>
 
-    <tr v-for="data in data.content" :key="data.noticeIdx">
-      <th scope="row">{{data.noticeIdx}}</th>
-      <td><a v-on:click="view(data)">{{data.title}}</a></td>
-      <th scope="row">{{data.registDate}}</th>
-      <th scope="row">{{data.views}}</th>   
-    </tr>
-   
-    
-
-  
-    
-  </tbody>
-</table>
-  <v-button v-on:click="create()">create</v-button>
- <div class="">
+        <tr class="col-md-6"> 
+          <th scope="col">게시글 번호</th> 
+          <th scope="col"  >제목</th>
+          <th scope="col" >작성일</th>
+          <th scope="col" >조회수</th>     
+        </tr>
+      
+      
+        <tr v-for="data in data.content" :key="data.noticeIdx">
+          <th scope="row">{{data.noticeIdx}}</th>
+          <td><a v-on:click="view(data)">{{data.title}}</a></td>
+          <th scope="row">{{data.registDate}}</th>
+          <th scope="row">{{data.views}}</th>   
+        </tr>
+      
+    </table>
+    <v-button v-on:click="create()">create</v-button>
+    <div class="">
       <v-pagination 
         v-model="data.currentPage"
         :length="data.totalPages"

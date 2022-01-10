@@ -1,29 +1,75 @@
+
 <template>
   <div>
     <v-form action="" @submit="checkform" id="modal-template">
-      <v-container fluid>
-        <v-row>
-          <v-text-field
-            label="제목"
-            v-model="title"
-            name="title"
-          >
-          </v-text-field>
-        </v-row>
-        <v-row>
-          <v-textarea
-            autocomplete="내용을 입력하세요"
-            label="내용"
-            v-model="content"
-            name="content"
-          >
-          </v-textarea>
-        </v-row>
-        <v-row>
-          <v-col cols="12" align="center">
-            <v-btn color ="info" type="submit" elevation="2">작성</v-btn> 
-          </v-col>
-        </v-row>
+      <v-container  class="spacing-playground pa-6" fluid grid-list-sm>
+        <v-card elevation="10" outlined max-width="800px" class="mx-auto">
+            <v-row class="pa-md-4"></v-row>
+
+            <v-card-title class="justify-content-center">
+              <span class="title mr-2 justify-center">글작성하기</span>
+            </v-card-title>
+            <v-row justify="center">
+              <v-col cols="8">
+                <v-text-field
+                  label="제목"
+                  v-model="title"
+                  name="title"
+                >
+                </v-text-field>
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="8">
+                <v-text-field
+                  label="글쓴이"
+                  v-model="writer"
+                  name="writer"
+                  >
+                </v-text-field>
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="8">
+                <v-textarea
+                  autocomplete="내용을 입력하세요"
+                  label="내용"
+                  v-model="content"
+                  name="content"
+                >
+                </v-textarea>
+              </v-col>
+            </v-row>
+            <v-row
+              align="center"
+              justify="space-around"
+            >
+              <v-col align="center">
+                <v-btn
+                  tile
+                  color="secondary"
+                  type=""
+                >
+                  <v-icon left>
+                    mdi-format-list-bulleted
+                  </v-icon>
+                  목록보기
+                </v-btn>
+
+                <v-btn
+                  tile
+                  color="primary"
+                  type="submit"
+                >
+                  <v-icon left>
+                    mdi-pencil
+                  </v-icon>
+                  작성하기
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row class="pa-md-4"></v-row>
+        </v-card>
       </v-container>
     </v-form>
     
@@ -45,6 +91,8 @@
 <script>
 import axios from "axios";
 import Modal from "../common/Modal.vue";
+
+
 export default {
   name: "create",
   data() {
@@ -111,4 +159,9 @@ button{
     color:white;
     
 }
+.title{
+  color:#43b984;
+  font-weight:600;
+}
+
 </style>
