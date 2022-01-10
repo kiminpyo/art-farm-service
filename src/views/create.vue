@@ -40,6 +40,7 @@
 <!--v-model은 data에 return값으로 반환 가능-->
 <!--slot은 현재 컴포넌트에서 재사용을 할 수 있다 modal에서 header만 끌어온것-->
 
+
 <script>
 import axios from "axios";
 import Modal from "../common/Modal.vue";
