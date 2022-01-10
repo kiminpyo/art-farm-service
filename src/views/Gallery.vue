@@ -66,6 +66,7 @@
               Default checkbox
             </label>
           </div>
+          
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check4" checked>
             <label class="form-check-label" for="check4">
@@ -151,6 +152,6 @@ export default {
   grid-auto-rows:minmax(400px, auto);
 }
 .card{
-  background-color: aqua;
+  background-color: white;
 }
 </style>

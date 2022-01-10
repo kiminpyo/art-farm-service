@@ -3,122 +3,26 @@
      <div class="container1">
        <h1>gallery</h1>
 		<div id="carousel">
-			<figure><img src="@/assets/constellations-g95da062c7_1920.jpg" style="width:100%;" alt=""></figure>
+			<figure><img src="@/assets/constellations-g95da062c7_1920.jpg" style="width:100%;" alt="" v-on:click="detail"></figure>
 			<figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
       <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt="" style="width:100%;"></figure>
       <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
+      <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" style="width:100%;"></figure>
+      <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
+      <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
+      <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt="" style="width:100%;"></figure>
       
 		</div>
 	</div>
-  <div class="card-wrap">
-    <div class="card">
-    <div class="image">
-      <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-    </div>
-    <div class="details">
-      <div class="center">
-        <h1>Someone famous<br>
-          <span>team leader</span>
-        </h1>
-        <p>Lorem ipsum is simple dummy text on the printing and typesetting industry.</p>
-        <ul>
-          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-   <div class="card">
-    <div class="image">
-      <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-    </div>
-    <div class="details">
-      <div class="center">
-        <h1>Someone famous<br><span>team leader</span></h1>
-        <p>Lorem ipsum is simple dummy text on the printing and typesetting industry.</p>
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-   <div class="card">
-    <div class="image">
-      <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-    </div>
-    <div class="details">
-      <div class="center">
-        <h1>Someone famous<br><span>team leader</span></h1>
-        <p>Lorem ipsum is simple dummy text on the printing and typesetting industry.</p>
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        
-        </ul>
-      </div>
-    </div>
+  <div>
+    <ul class="img-wrap" >
+      <li><img src="https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g" alt=""></li>
+      <li><img src="https://media4.giphy.com/media/l41YeHIAtnC6iTYPe/200w.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200w.webp&ct=g" alt=""></li>
+      <li><img src="https://media4.giphy.com/media/3oGRFmcBmcSjkEmuac/200.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200.webp&ct=g" alt=""></li>
+    </ul>
   </div>
   
-  </div>
-   <div class="card-wrap">
-    <div class="card">
-    <div class="image">
-      <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-    </div>
-    <div class="details">
-      <div class="center">
-        <h1>Someone famous<br>
-          <span>team leader</span>
-        </h1>
-        <p>Lorem ipsum is simple dummy text on the printing and typesetting industry.</p>
-        <ul>
-          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-   <div class="card">
-    <div class="image">
-      <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-    </div>
-    <div class="details">
-      <div class="center">
-        <h1>Someone famous<br><span>team leader</span></h1>
-        <p>Lorem ipsum is simple dummy text on the printing and typesetting industry.</p>
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-   <div class="card">
-    <div class="image">
-      <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
-    </div>
-    <div class="details">
-      <div class="center">
-        <h1>Someone famous<br><span>team leader</span></h1>
-        <p>Lorem ipsum is simple dummy text on the printing and typesetting industry.</p>
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  </div>
-   
+ 
   
   </div>
     
@@ -136,12 +40,22 @@
 
 export default {
   
-  
+  methods:{
+    detail(){
+        
+      console.log('hi')
+      this.$router.push({
+        name:"artdetail"
+      })
    
+  }
+   
+  }
 }
 </script>
 
 <style scroped>
+
  .container{
    
    display: flex;
@@ -165,6 +79,7 @@ code {
   color: #e4cb58;
   font: inherit;
 }
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
 @import url(https://fonts.googleapis.com/css?family=Anaheim);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 @import url(https://fonts.googleapis.com/css?family=Fauna+One);
@@ -189,8 +104,7 @@ code {
   transition: all 0.35s ease;
 }
 .snip1482 img {
- 
-  
+  overflow: hidden;
   right: 0%;
   top: 50%;
   opacity: 1;
@@ -200,7 +114,7 @@ code {
 }
 .snip1482 figcaption {
 
-  width: 50%;
+  width: 100%;
   top: 50%;
   left: 0;
   -webkit-transform: translateY(-50%);
@@ -304,91 +218,28 @@ h1{
 	}
 }
 /*third */
-.card-wrap{
-  display: flex;
-  margin-left:10%
-}
-.card {
-   margin-top: 10%;
+
+.img-wrap{
+  margin-top:20%;
+  width:100%;
+  display:flex;
+  justify-content: space-evenly;
   
-    width: 30%;
-    height: 33%;
-   
 }
-.card .image {
-    width: 100%;
-    height: 70%;
-    overflow: hidden;
+.img-wrap li{
+  width:20%;
+ 
 }
-.card .image img {
-    width: 100%;
-    transition: .5s;
+.img-wrap li img{
+  width: 100%;
+ border-radius:30px;
+  height:200px;
+  opacity: 0.5;
 }
-.card:hover .image img {
-    opacity: .5;
-    transform: translateX(30%);/*100%*/
+.img-wrap li img:hover{
+  opacity: 1;
 }
-.card .details {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%;/*100%*/
-    height: 100%;
-    background: #ffc107;
-    transition: .5s;
-    transform-origin: left;
-    transform: perspective(2000px) rotateY(-90deg);
-}
-.card:hover .details {
-    transform: perspective(2000px) rotateY(0deg);
-}
-.card .details .center {
-    padding: 20px;
-    text-align: center;
-    background: #fff;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.card .details .center h1 {
-    margin: 0;
-    padding: 0;
-    color: #ff3636;
-    line-height: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
-}
-.card .details .center h1 span {
-    font-size: 14px;
-    color: #262626;
-}
-.card .details .center p {
-    margin: 10px 0;
-    padding: 0;
-    color: #262626;
-}
-.card .details .center ul {
-    margin: 10px auto 0;
-    padding: 0;
-    display: table;
-}
-.card .details .center ul li {
-    list-style: none;
-    margin: 0 5px;
-    float: left;
-}
-.card .details .center ul li a {
-    display: block;
-    background: #262626;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    transform: .5s;
-}
-.card .details .center ul li a:hover {
-    background: #ff3636;
-}
+
+
 
 </style>
