@@ -23,7 +23,7 @@
     
   </tbody>
 </table>
-  <v-button v-on:click="create()">create</v-button>
+  <button v-on:click="create()">create</button>
  <div class="">
       <v-pagination 
         v-model="data.currentPage"

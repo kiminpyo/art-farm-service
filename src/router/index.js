@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import board from '../views/board.vue'
+import home from '../views/home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+ {
+  path: '/home',
+  name: 'Home',
+  component: home
+ },
   {
-    path: '/',
+    path: '/board',
     name: 'board',
-    component: board
+    component:() => import("@/views/board.vue"),
   },
   {
     path: '/about',
