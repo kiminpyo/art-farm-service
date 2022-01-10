@@ -2,10 +2,15 @@
   <div>
     <form action="" @submit="checkform" id="modal-template">
       <!--v-model은 data에 return값으로 반환 가능-->
-      <input v-model="writer" placeholder="글쓴이" />
-      <input v-model="title" placeholder="제목" />
-      <input v-model="content" placeholder="내용" />
-      <button type="submit">작성</button>
+    
+    <label for="title">제목
+    <input v-model="title"  name="title"/>
+    </label>
+    <label for="content">내용
+    <textarea name="content" cols="30" rows="10" v-model="content" placeholder="내용"></textarea>
+    </label>
+    <button type="submit">작성</button> 
+     
     </form>
     <Modal v-if="showModal" @close="showModal = false">
       <!--slot은 현재 컴포넌트에서 재사용을 할 수 있다 modal에서 header만 끌어온것-->
@@ -81,4 +86,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+button{
+    background-color:black;
+    color:white;
+    
+}
+</style>

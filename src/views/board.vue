@@ -1,42 +1,37 @@
 <template>
   <div class="hello">
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">게시글 번호</th> 
-      <th scope="col">제목</th>
-      <th scope="col">작성일</th>
-      <th scope="col">조회수</th>
-     
+    <table class="table col-md-12">
+ 
+    <tr class="col-md-6"> 
+      <th scope="col" class="col-md-1">게시글 번호</th> 
+      <th scope="col"  class="col-md-1">제목</th>
+      <th scope="col" class="col-md-2">작성일</th>
+      <th scope="col" class="col-md-2">조회수</th>     
     </tr>
-  </thead>
   <tbody>
+
     <tr v-for="data in data.content" :key="data.noticeIdx">
       <th scope="row">{{data.noticeIdx}}</th>
       <td><a v-on:click="view(data)">{{data.title}}</a></td>
       <th scope="row">{{data.registDate}}</th>
-
-      <th scope="row">{{data.views}}</th>
-     
+      <th scope="row">{{data.views}}</th>   
     </tr>
    
-     
-      <v-pagination
-        v-model="data.currentPage"
-        :length="data.totalPages"
-        @input="handlePageChange"
-      ></v-pagination>
-		
-   
-
-
-
-     
     
-    <button v-on:click="create()">create</button>
+
+  
     
   </tbody>
 </table>
+  <v-button v-on:click="create()">create</v-button>
+ <div class="">
+      <v-pagination 
+        v-model="data.currentPage"
+        :length="data.totalPages"
+        @input="handlePageChange"
+      ></v-pagination>    
+    </div>
+      
   </div>
 </template>
 
@@ -180,5 +175,8 @@ a {
     align-content: stretch;
     padding: 10px;
     justify-content: center;
+}
+.table {
+  text-align: center;
 }
 </style>
