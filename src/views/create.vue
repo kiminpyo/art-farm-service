@@ -1,19 +1,34 @@
 <template>
   <div>
-    <form action="" @submit="checkform" id="modal-template">
-      <!--v-model은 data에 return값으로 반환 가능-->
+    <v-form action="" @submit="checkform" id="modal-template">
+      <v-container fluid>
+        <v-row>
+          <v-text-field
+            label="제목"
+            v-model="title"
+            name="title"
+          >
+          </v-text-field>
+        </v-row>
+        <v-row>
+          <v-textarea
+            autocomplete="내용을 입력하세요"
+            label="내용"
+            v-model="content"
+            name="content"
+          >
+          </v-textarea>
+        </v-row>
+        <v-row>
+          <v-col cols="12" align="center">
+            <v-btn color ="info" type="submit" elevation="2">작성</v-btn> 
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-form>
     
-    <label for="title">제목
-    <input v-model="title"  name="title"/>
-    </label>
-    <label for="content">내용
-    <textarea name="content" cols="30" rows="10" v-model="content" placeholder="내용"></textarea>
-    </label>
-    <button type="submit">작성</button> 
-     
-    </form>
     <Modal v-if="showModal" @close="showModal = false">
-      <!--slot은 현재 컴포넌트에서 재사용을 할 수 있다 modal에서 header만 끌어온것-->
+      
       <h3 slot="header">경고!</h3>
       <h3 slot="body">뭔가를 입력하세요</h3>
       <h3 slot="footer">
@@ -22,6 +37,10 @@
     </Modal>
   </div>
 </template>
+<!--v-model은 data에 return값으로 반환 가능-->
+<!--slot은 현재 컴포넌트에서 재사용을 할 수 있다 modal에서 header만 끌어온것-->
+
+
 
 <script>
 import axios from "axios";
