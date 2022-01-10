@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const routes = [
  {
-  path: '/home',
+  path: '/',
   name: 'Home',
   component: home
  },
@@ -16,12 +16,12 @@ const routes = [
     component:() => import("@/views/board.vue"),
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/Gallery',
+    name: 'Gallery',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Gallery.vue')
   },
   {
     path: '/detail',
@@ -40,7 +40,14 @@ const routes = [
     name: 'update',
     component:() => import("@/views/update.vue"),
     props:true
-  }
+  },
+  {
+    path: '/artdetail',
+    name: 'artdetail',
+    component:() => import("@/views/artdetail.vue"),
+    props:true, //메인에 데이터 뿌린 후 props로 상세정보로 넘길 것
+    
+  },
 ]
 
 const router = new VueRouter({

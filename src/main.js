@@ -9,6 +9,7 @@ import vuetify from './plugins/vuetify'
 
 
 
+
 library.add(faUserSecret)
 Vue.component('font-awesome-icon',FontAwesomeIcon)
 Vue.config.productionTip = false

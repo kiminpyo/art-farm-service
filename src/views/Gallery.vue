@@ -151,6 +151,6 @@ export default {
   grid-auto-rows:minmax(400px, auto);
 }
 .card{
-  background-color: aqua;
+  background-color: white;
 }
 </style>
