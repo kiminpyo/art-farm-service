@@ -25,8 +25,8 @@ export default {
 </script>
 <style scoped>
 *{
-   background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');
-        background-repeat : no-repeat;
+  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');
+  background-repeat : no-repeat;
   background-size:cover;
   color:white;
   opacity: 1;
@@ -43,7 +43,7 @@ h1{
 }
 #nav{
   text-align: center;
-  
+  justify-content: center;
   
 }
 </style>

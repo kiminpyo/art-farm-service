@@ -1,42 +1,44 @@
 <template>
-  <div class="hello">
-    <table class="table col-md-12">
- 
-    <tr class="col-md-6"> 
-      <th scope="col" class="col-md-1">게시글 번호</th> 
-      <th scope="col"  class="col-md-1">제목</th>
-      <th scope="col" class="col-md-2">작성일</th>
-      <th scope="col" class="col-md-2">조회수</th>     
-    </tr>
-  <tbody>
-
-    <tr v-for="data in data.content" :key="data.noticeIdx">
-      <th scope="row">{{data.noticeIdx}}</th>
-      <td><a v-on:click="view(data)">{{data.title}}</a></td>
-      <th scope="row">{{data.registDate}}</th>
-      <th scope="row">{{data.views}}</th>   
-    </tr>
-   
-    
-
-  
-    
-  </tbody>
-</table>
-  <button v-on:click="create()">create</button>
- <div class="">
-      <v-pagination 
-        v-model="data.currentPage"
-        :length="data.totalPages"
-        @input="handlePageChange"
-      ></v-pagination>    
-    </div>
-      
-  </div>
+  <v-container class="flex-column col-md-12">
+    <v-row>
+      <table class="table">
+        <thead>
+          <tr> 
+            <th scope="col" style="width:20%;">게시글 번호</th> 
+            <th scope="col" style="width:40%;">제목</th>
+            <th scope="col" style="width:20%;">작성일</th>
+            <th scope="col" style="width:20%;">조회수</th>     
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="data in data.content" :key="data.noticeIdx">
+            <th scope="row">{{data.noticeIdx}}</th>
+            <td><a v-on:click="view(data)">{{data.title}}</a></td>
+            <th scope="row">{{data.registDate}}</th>
+            <th scope="row">{{data.views}}</th>   
+          </tr>
+        </tbody>
+      </table>
+    </v-row>
+    <v-row>
+      <v-col align="center">
+        <v-btn v-on:click="create()">작성하기</v-btn>
+      </v-col>
+    </v-row>
+    <v-row>
+      <div class="">
+          <v-pagination 
+            v-model="data.currentPage"
+            :length="data.totalPages"
+            @input="handlePageChange"
+          ></v-pagination>    
+      </div>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
- import $ from 'jquery' 
+import $ from 'jquery' 
 import axios from 'axios'
 export default {
   
@@ -96,7 +98,7 @@ export default {
         .then((response) => {
             this.data = response.data;  
             console.log(this.data)
-            console.log( this.data.totalPages)
+            console.log(this.data.totalPages)
             console.log(this.data.totalElements)
             console.log(this.data.size)
             console.log(this.data.numberOfElements)
@@ -178,5 +180,7 @@ a {
 }
 .table {
   text-align: center;
+  color:white;
 }
+
 </style>
