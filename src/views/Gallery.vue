@@ -7,10 +7,11 @@
           <div class="row height d-flex justify-content-center align-items-center" style="margin-bottom:20px;">
               <div class="col-md-10">
                   <div class="search d-flex justify-content-center align-items-center">
-                    <button class="btn btn-secondary" style="border-radius:20%;">
+                   
+                    <input type="text" class="form-control" placeholder="Have a question? Ask Now">
+                     <button class="btn btn-secondary" style="border-radius:20%;">
                       <i class="bi bi-search"></i>
                     </button>
-                    <input type="text" class="form-control" placeholder="Have a question? Ask Now">
                   </div>
               </div>
               <div class="col-md-2"></div>
@@ -66,7 +67,7 @@
               Default checkbox
             </label>
           </div>
-          
+
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check4" checked>
             <label class="form-check-label" for="check4">
@@ -92,7 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card" v-on:click="click">
 
           </div>
           <div class="card">
@@ -124,14 +125,20 @@
 
 <script>
 export default {
-
+  methods: {
+    click(){
+      this.$router.push({
+        name: "artdetail"
+      })
+    }
+    }
 }
 </script>
 
-<style sceoped>
+<style scoped>
 .side-bar{
   padding:20px 20px 20px 40px;
-  background:#cdcdcd;
+  background:white
   
 }
 .side-bar hr{

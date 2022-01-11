@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from '../views/home.vue'
-
+ 
 Vue.use(VueRouter)
 
 const routes = [
@@ -47,7 +47,24 @@ const routes = [
     component:() => import("@/views/artdetail.vue"),
     props:true, //메인에 데이터 뿌린 후 props로 상세정보로 넘길 것
     
-  },
+  }, 
+  {
+    path: '/artcreate',
+    name: 'artcreate',
+    component:() => import("@/views/artcreate.vue"),
+    props:true, //메인에 데이터 뿌린 후 props로 상세정보로 넘길 것
+    
+  }, 
+  {
+    path: '/test',
+    name: 'test',
+    component:() => import("@/views/test.vue"),
+    props:true, //메인에 데이터 뿌린 후 props로 상세정보로 넘길 것
+    
+  }, 
+  
+
+ 
 ]
 
 const router = new VueRouter({

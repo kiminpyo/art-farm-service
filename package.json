@@ -2,6 +2,9 @@
   "name": "boardlist",
   "version": "0.1.0",
   "private": true,
+  "tags": [
+    "swiper"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -14,8 +17,12 @@
     "bootstrap": "^5.1.3",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
     "jquery": "^3.6.0",
+    "swiper": "^5.4.5",
     "vue": "^2.6.14",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-axios-cors": "^1.0.1",
     "vue-gifplayer": "^1.0.2",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",
@@ -23,6 +30,7 @@
     "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
+    "@types/swiper": "^6.0.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
