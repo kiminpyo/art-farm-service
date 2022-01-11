@@ -66,7 +66,7 @@
               Default checkbox
             </label>
           </div>
-          
+
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check4" checked>
             <label class="form-check-label" for="check4">
@@ -92,7 +92,7 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card" v-on:click="click">
 
           </div>
           <div class="card">
@@ -124,7 +124,13 @@
 
 <script>
 export default {
-
+  methods: {
+    click(){
+      this.$router.push({
+        name: "artdetail"
+      })
+    }
+    }
 }
 </script>
 
