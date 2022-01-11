@@ -25,10 +25,10 @@ export default {
 </script>
 <style scoped>
 *{
-   background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');
+    background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg'); 
         background-repeat : no-repeat;
   background-size:cover;
-  color:white;
+  color:black;
   opacity: 1;
 }
 

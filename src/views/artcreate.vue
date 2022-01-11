@@ -198,13 +198,18 @@ export default {
         senddata(){
                console.log(this.title)
                console.log(this.dates)
+               console.log(JSON.stringify(this.dates))
+                 
          axios({
-             url: ('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice'),
+             url: ('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com/api/notice'),
              method: 'post',
              data: 
                 {
                     title: this.title,
-                    content: this.content
+                    content: this.content,
+                    registDate: "2022-12-10"// JSON.stringify(this.dates)
+                 
+                    
                     
                 }
              

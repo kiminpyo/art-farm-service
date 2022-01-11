@@ -7,11 +7,15 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import vuetify from './plugins/vuetify'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-	import 'swiper/css/swiper.css'
-	Vue.use(VueAwesomeSwiper);
+import 'swiper/css/swiper.css'
 
 
 
+// install Swiper modules
+
+
+
+Vue.use(VueAwesomeSwiper);
 
 library.add(faUserSecret)
 Vue.component('font-awesome-icon',FontAwesomeIcon)

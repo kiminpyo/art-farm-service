@@ -7,10 +7,11 @@
           <div class="row height d-flex justify-content-center align-items-center" style="margin-bottom:20px;">
               <div class="col-md-10">
                   <div class="search d-flex justify-content-center align-items-center">
-                    <button class="btn btn-secondary" style="border-radius:20%;">
+                   
+                    <input type="text" class="form-control" placeholder="Have a question? Ask Now">
+                     <button class="btn btn-secondary" style="border-radius:20%;">
                       <i class="bi bi-search"></i>
                     </button>
-                    <input type="text" class="form-control" placeholder="Have a question? Ask Now">
                   </div>
               </div>
               <div class="col-md-2"></div>
@@ -134,10 +135,10 @@ export default {
 }
 </script>
 
-<style sceoped>
+<style scoped>
 .side-bar{
   padding:20px 20px 20px 40px;
-  background:#cdcdcd;
+  background:white
   
 }
 .side-bar hr{
