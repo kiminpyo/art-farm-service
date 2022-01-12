@@ -1,54 +1,43 @@
 <template>
-  <div>
+  <div class="body">
     <v-app v-if="!isLoaded">
-    <splash-component></splash-component>
-  </v-app>
-     <div class="container1">
-       <h1>gallery</h1>
-		<div id="carousel">
-			<figure><img src="@/assets/constellations-g95da062c7_1920.jpg" style="width:100%;" alt="" v-on:click="detail"></figure>
-			<figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
-      <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt="" style="width:100%;"></figure>
-      
-		</div>
-	</div>
-  <div>
-    <ul class="img-wrap" >
-      <li><img src="https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g" alt=""></li>
-      <li><img src="https://media4.giphy.com/media/l41YeHIAtnC6iTYPe/200w.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200w.webp&ct=g" alt=""></li>
-      <li><img src="https://media4.giphy.com/media/3oGRFmcBmcSjkEmuac/200.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200.webp&ct=g" alt=""></li>
-    </ul>
-  </div>
-  
- 
+      <splash-component></splash-component>
+    </v-app>
+    <div class="container1">
+      <h1>gallery</h1>
+      <div id="carousel">
+        <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" style="width:100%;" alt="" v-on:click="detail"></figure>
+        <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
+        <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt="" style="width:100%;"></figure>
+        <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt="" style="width:100%;"></figure>
+        <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" style="width:100%;"></figure>
+        <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
+        <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
+        <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt="" style="width:100%;"></figure>
+        
+      </div>
+    </div>
+    <div>
+      <ul class="img-wrap" >
+        <li><img src="https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g" alt=""></li>
+        <li><img src="https://media4.giphy.com/media/l41YeHIAtnC6iTYPe/200w.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200w.webp&ct=g" alt=""></li>
+        <li><img src="https://media4.giphy.com/media/3oGRFmcBmcSjkEmuac/200.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200.webp&ct=g" alt=""></li>
+      </ul>
+    </div>
   
   </div>
-    
- 
-  
- 
-  
-
-  
-  
-  
 </template>
 
 <script>
     import SplashComponent from '@/views/splash.vue'
 export default {
-   components: {
+    components: {
         SplashComponent
       },
-       data: () => ({
+        data: () => ({
         isLoaded: false
       }),
-       created() {
+        created() {
         this.splashing()
       },
   
@@ -64,24 +53,19 @@ export default {
       this.$router.push({
         name:"artdetail"
       })
-   
+  
   }
-   
+  
   }
 }
 </script>
 
 <style scroped>
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
-@import url(https://fonts.googleapis.com/css?family=Anaheim);
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
-@import url(https://fonts.googleapis.com/css?family=Fauna+One);
+@import url("https://fonts.googleapis.com/css?family=Anaheim");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Fauna+One");
 
- .container{
-   
-   display: flex;
-  
-   }
 
 button {
   background: none;
@@ -94,7 +78,7 @@ button {
 
 h1 { 
   font-weight: 400;
-   }
+  }
 
 code { 
   color: #e4cb58;
@@ -171,7 +155,7 @@ h1{
 }
 .img-wrap li{
   width:20%;
- 
+  list-style:none;
 }
 .img-wrap li img{
   width: 100%;
