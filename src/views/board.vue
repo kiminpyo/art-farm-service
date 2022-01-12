@@ -1,5 +1,5 @@
 <template>
-  <v-container class="flex-column col-md-12">
+  <v-container class="flex-column col-md-12 boardwraop">
     <v-row>
       <table class="table">
         <thead>
@@ -182,4 +182,5 @@ a {
   text-align: center;
   color:white;
 }
+
 </style>

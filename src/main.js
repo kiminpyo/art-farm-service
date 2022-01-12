@@ -8,13 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import vuetify from './plugins/vuetify'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
-
+import VueSplash from 'vue-splash';
 
 
 // install Swiper modules
 
 
-
+Vue.use(VueSplash);
 Vue.use(VueAwesomeSwiper);
 
 library.add(faUserSecret)
