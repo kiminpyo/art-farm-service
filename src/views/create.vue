@@ -1,32 +1,50 @@
 <template>
-  <div>
-    <v-form action="" @submit="checkform" id="modal-template">
-      <v-container fluid>
-        <v-row>
-          <v-text-field
-            label="제목"
-            v-model="title"
-            name="title"
-          >
-          </v-text-field>
-        </v-row>
-        <v-row>
-          <v-textarea
-            autocomplete="내용을 입력하세요"
-            label="내용"
-            v-model="content"
-            name="content"
-          >
-          </v-textarea>
-        </v-row>
-        <v-row>
-          <v-col cols="12" align="center">
-            <v-btn color ="info" type="submit" elevation="2">작성</v-btn> 
+ <div>
+    <v-form  ref="form"
+    style="width:60%; margin:0 auto;"
+    v-model="valid"
+    lazy-validation
+    >
+      <v-card>
+        
+        <v-row no-gutters>
+          <v-col id="tit">
+            제목
           </v-col>
         </v-row>
-      </v-container>
+        <v-row>
+          <v-col id="cont">
+            <v-text-field class="title" hint="제목을 입력해주세요." name="title" v-model="title" :counter="50" required maxlength="50">
+            </v-text-field>
+          </v-col>
+        </v-row>
+        <v-row no-gutters>
+          <v-col id="tit">
+            내용
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col id="cont">
+            <v-textarea class="context" hint="내용을 입력해주세요." name="context"  v-model="context" :counter="1000" required maxlength="1000">
+            </v-textarea>
+          </v-col>
+        </v-row>
+        <span></span>
+        <v-row>
+          <v-col cols="12" align="center">
+            <v-btn id="back" large outlined type="" elevation="2">
+              목록보기
+            </v-btn>
+            
+            <v-btn id="reg" large outlined type="submit" elevation="2">
+              등록하기
+            </v-btn>
+          </v-col>
+        </v-row>
+        
+      </v-card>
     </v-form>
-    
+
     <Modal v-if="showModal" @close="showModal = false">
       
       <h3 slot="header">경고!</h3>
@@ -108,5 +126,34 @@ button{
     background-color:black;
     color:white;
     
+}
+.title{
+  background-color:white;
+}
+.context{
+  background-color:white;
+}
+div{
+  padding:20px;
+}
+#tit{
+  padding:10px 40px;
+  font-size:1.5rem;
+  font-weight:400;
+}
+#cont{
+  padding:10px 20px;
+}
+#back{
+  color:white;
+  background-color:#cdcdcd;
+  font-size:1rem;
+  font-weight:400;
+}
+#reg{
+  color:white;
+  background-color:#1867c0;
+  font-size:1rem;
+  font-weight:400;
 }
 </style>
