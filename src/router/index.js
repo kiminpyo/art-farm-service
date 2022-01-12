@@ -62,8 +62,7 @@ const routes = [
     props:true, //메인에 데이터 뿌린 후 props로 상세정보로 넘길 것
     
   }, 
-  
-
+ 
  
 ]
 

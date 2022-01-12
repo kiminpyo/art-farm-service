@@ -1,5 +1,8 @@
 <template>
   <div>
+    <v-app v-if="!isLoaded">
+    <splash-component></splash-component>
+  </v-app>
      <div class="container1">
        <h1>gallery</h1>
 		<div id="carousel">
@@ -37,10 +40,24 @@
 </template>
 
 <script>
-
+    import SplashComponent from '@/views/splash.vue'
 export default {
+   components: {
+        SplashComponent
+      },
+       data: () => ({
+        isLoaded: false
+      }),
+       created() {
+        this.splashing()
+      },
   
   methods:{
+    splashing() {
+          setTimeout(() => {
+            this.isLoaded = true
+          }, 2500)
+        },
     detail(){
         
       console.log('hi')
@@ -55,11 +72,15 @@ export default {
 </script>
 
 <style scroped>
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
+@import url(https://fonts.googleapis.com/css?family=Anaheim);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(https://fonts.googleapis.com/css?family=Fauna+One);
 
  .container{
    
    display: flex;
-   margin-top:10%;
+  
    }
 
 button {
@@ -79,85 +100,7 @@ code {
   color: #e4cb58;
   font: inherit;
 }
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
-@import url(https://fonts.googleapis.com/css?family=Anaheim);
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
-@import url(https://fonts.googleapis.com/css?family=Fauna+One);
-.snip1482 {
-  font-family: 'Fauna One', Arial, sans-serif;
-  position: relative;
-  margin: 10px 20px;
-  min-width: 230px;
-  max-width: 295px;
-  min-height: 220px;
-  width: 100%;
-  color: #ffffff;
-  text-align: right;
-  line-height: 1.4em;
-  background-color: #1a1a1a;
-  font-size: 16px;
-}
-.snip1482 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
-}
-.snip1482 img {
-  overflow: hidden;
-  right: 0%;
-  top: 50%;
-  opacity: 1;
-  width: 100%;
-  -webkit-transform: translate(0%, -50%);
-  transform: translate(0%, -50%);
-}
-.snip1482 figcaption {
 
-  width: 100%;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding: 20px 0 20px 20px;
-}
-.snip1482 h2,
-.snip1482 p {
-  margin: 0;
-  width: 100%;
-  -webkit-transform: translateX(20px);
-  transform: translateX(20px);
-  opacity: 0;
-}
-.snip1482 h2 {
-  font-family: 'Playfair Display', Arial, sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-.snip1482 p {
-  font-size: 0.8em;
-}
-.snip1482 a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-.snip1482:hover img,
-.snip1482.hover img {
-  width: 55%;
-  right: -10%;
-}
-.snip1482:hover figcaption h2,
-.snip1482.hover figcaption h2,
-.snip1482:hover figcaption p,
-.snip1482.hover figcaption p {
-  -webkit-transform: translateX(0px);
-  transform: translateX(0px);
-  opacity: 1;
-}
 /* 2nd section */
 
 h1{
@@ -170,13 +113,15 @@ h1{
 	text-shadow: 0 1px white, 0 2px black;
 }
 .container1{
-	margin: 4% auto;
+  margin:auto;
 	width: 400px;
 	height: 140px;
 	position: relative;
 	perspective: 1000px;
 }
+
 #carousel{
+  margin-top:250px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -207,8 +152,6 @@ h1{
 #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
 #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
 
-
-
 @keyframes rotation{
 	from{
 		transform: rotateY(0deg);
@@ -220,7 +163,7 @@ h1{
 /*third */
 
 .img-wrap{
-  margin-top:20%;
+  margin-top:600px;
   width:100%;
   display:flex;
   justify-content: space-evenly;
@@ -232,8 +175,8 @@ h1{
 }
 .img-wrap li img{
   width: 100%;
- border-radius:30px;
-  height:200px;
+  border-radius:70px;
+  height:300px;
   opacity: 0.5;
 }
 .img-wrap li img:hover{
