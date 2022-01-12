@@ -1,126 +1,169 @@
 <template>
-  <div class="col-sm-12 d-flex">
-      <div class="col-sm-2"></div>
-      <!--sidebar-->
-      <div class="side-bar col-sm-2">
-        <div class="container1">
-          <div class="row height d-flex justify-content-center align-items-center" style="margin-bottom:20px;">
-              <div class="col-md-10">
-                  <div class="search d-flex justify-content-center align-items-center">
-                   
-                    <input type="text" class="form-control" placeholder="Have a question? Ask Now">
-                     <button class="btn btn-secondary" style="border-radius:20%;">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </div>
-              </div>
-              <div class="col-md-2"></div>
-          </div>
-          <div>
-            <h5>전시</h5>
-          </div>
-          <hr style="width:80%">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Default radio
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Default checked radio
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-            <label class="form-check-label" for="flexRadioDefault3">
-              Default radio
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
-            <label class="form-check-label" for="flexRadioDefault4">
-              Default checked radio
-            </label>
-          </div>
-          <hr style="width:80%">
-          <div>
-            <h5>카테고리</h5>
-          </div>
-          <hr style="width:80%">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check1">
-            <label class="form-check-label" for="check1">
-              Default checkbox
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check2" checked>
-            <label class="form-check-label" for="check2">
-              Checked checkbox
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check3">
-            <label class="form-check-label" for="check3">
-              Default checkbox
-            </label>
-          </div>
 
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check4" checked>
-            <label class="form-check-label" for="check4">
-              Checked checkbox
-            </label>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card-view col-sm-6">
-        <div class="card-wrapper container">
-          <div class="card">
-            <div class="card-image" style="height:320px; background-color:white; border:1px solid black;">
-              <img src="@/assets/logo.png" alt="">
-            </div>
-            <div class="card-balnk" style="height:20px;"></div>
-            <div class="card-txt" style="height:60px;">
-              <div class="title" style="height:20px; background-color:white; border:1px solid black;"></div>
-              <div class="sub-title" style="height:20px; background-color:white; border:1px solid black;"></div>
-              <div class="info d-flex col-sm-12">
-                <div class="place col-sm-3" style="height:20px; background-color:white; border:1px solid black;"></div>
-                <div class="date col-sm-9" style="height:20px; background-color:white; border:1px solid black;"></div>
+
+    
+
+
+    
+  <div class="gallery-wrap row" style="width:70%">
+  <div class="sidebar com-md-4">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px; height:100%">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">카테고리</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+          미술관
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+          사진전
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          개인전
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+          사진
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          기사
+        </a>
+      </li>
+    </ul>
+    <hr>
+   
+  </div>
+  </div>
+  <div class="album com-md-8">
+    <div class="album-container">
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+          
               </div>
             </div>
           </div>
-          <div class="card" v-on:click="click">
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
-          </div>
-          <div class="card">
-
-          </div>
-          <div class="card">
-
-          </div>
-          <div class="card">
-
-          </div>
-          <div class="card">
-
-          </div>
-          <div class="card">
-
-          </div>
-          <div class="card">
-
-          </div>
-          <div class="card">
-
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+             
+              </div>
+            </div>
           </div>
         </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+           
+              </div>
+            </div>
+          </div>
+        </div> 
       </div>
-      <div class="col-sm-2"></div>
+      <div class="row">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+           
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
     </div>
+  </div>
+  
+  </div>
+
+
+
+      
+
+
+
 </template>
 
 <script>
@@ -136,29 +179,8 @@ export default {
 </script>
 
 <style scoped>
-.side-bar{
-  padding:20px 20px 20px 40px;
-  background:white
-  
-}
-.side-bar hr{
-  margin: 20px 0;
-}
-.card-view{
-  padding:20px 40px 20px 20px;
-  background:#cdcdcd;
-  
-}
-.card-view .container1 div{
-  height:100%;
-}
-.card-wrapper{
-  display:grid;
-  grid-template-columns: repeat(3,9fr);
-  grid-gap:40px;
-  grid-auto-rows:minmax(400px, auto);
-}
-.card{
-  background-color: white;
+.gallery-wrap{
+display:flex;
+margin-left:15%
 }
 </style>
