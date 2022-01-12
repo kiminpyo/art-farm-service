@@ -17,6 +17,12 @@
             <th scope="row">{{data.registDate}}</th>
             <th scope="row">{{data.views}}</th>   
           </tr>
+          <tr>
+            <th>1</th>
+            <th>안녕하세요</th>
+            <th>2021-01-03</th>
+            <th>123</th>
+          </tr>
         </tbody>
       </table>
     </v-row>
@@ -180,6 +186,5 @@ a {
 }
 .table {
   text-align: center;
-  color:white;
 }
 </style>
