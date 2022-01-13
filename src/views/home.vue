@@ -29,8 +29,8 @@
 </template>
 
 <script>
-    import SplashComponent from '@/views/splash.vue'
-export default {
+import SplashComponent from '@/views/splash.vue'
+  export default {
     components: {
         SplashComponent
       },
@@ -65,7 +65,6 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Anaheim");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Fauna+One");
-
 
 button {
   background: none;
@@ -166,7 +165,5 @@ h1{
 .img-wrap li img:hover{
   opacity: 1;
 }
-
-
 
 </style>

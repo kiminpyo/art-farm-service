@@ -16,36 +16,6 @@
           <td scope="row">{{data.registDate}}</td>
           <td scope="row">{{data.views}}</td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>안녕하세요</td>
-          <td>2022-01-03</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>안녕하세요</td>
-          <td>2022-01-03</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>안녕하세요</td>
-          <td>2022-01-03</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>안녕하세요</td>
-          <td>2022-01-03</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>안녕하세요</td>
-          <td>2022-01-03</td>
-          <td>123</td>
-        </tr>
       </tbody>
     </table>
     <v-row>
@@ -211,6 +181,7 @@ a {
     justify-content: center;
 }
 .table {
+  width:100%;
   text-align: center;
   color:white;
 }

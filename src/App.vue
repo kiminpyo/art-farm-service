@@ -1,12 +1,8 @@
 <template>
-
-
     <v-card class="overflow-hidden">
     <v-app-bar
       absolute
-      color="#6A76AB"
       dark
-      prominent
       src="https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg"
       fade-img-on-scroll
       scroll-target="#scrolling-techniques-3"
@@ -20,27 +16,9 @@
 
       <template>
         <router-link to="/">
-          <v-app-bar-title id="art">
-            <h1>ART FARM</h1>
-          </v-app-bar-title>
+            <h1 class="justify-center">ART FARM</h1>
         </router-link>
-
-        <v-spacer></v-spacer>
-
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
       </template>
-
-      
 
       <template v-slot:extension>
         <v-tabs id="tabs"
@@ -125,8 +103,8 @@
 }
 .body{
   background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');
-  background-repeat: repeat-y;
-  margin-top:200px;
+  background-repeat: repeat;
+  margin-top:80px;
   height:1600px;
 }
 a{
@@ -153,8 +131,7 @@ h1{
 #art{
   text-overflow:clip;
   overflow:visible;
+  
 }
-v-toolbar__content{
-  height:64px;
-}
+
 </style>
