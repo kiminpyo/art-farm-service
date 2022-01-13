@@ -62,9 +62,11 @@ import SplashComponent from '@/views/splash.vue'
 
 <style scroped>
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
+
 @import url("https://fonts.googleapis.com/css?family=Anaheim");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Fauna+One");
+
 
 button {
   background: none;

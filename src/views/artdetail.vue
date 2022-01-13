@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="artdetail">
   <v-app id="inspire">
     <v-carousel v-model="model">
       <v-carousel-item
@@ -25,14 +25,7 @@
     </v-carousel>
   </v-app>
   <!--스플래쉬 파트-->
-    <vue-splash
-    :show="true"
-    :logo="logo"
-    title="Artfarm"
-    color="#F29661"
-    :size="500"
-    :fixed="true"
-  />
+ 
 </div>
 		
 
@@ -47,7 +40,6 @@
 
 <script>
 
-import YourLogo from "@/assets/wall-g7bf2bd61d_1920.jpg";
 
 
 
@@ -63,17 +55,7 @@ import YourLogo from "@/assets/wall-g7bf2bd61d_1920.jpg";
       'orange',
     ],
   }),
-    computed: {
-    logo() {
-      return YourLogo;
-    }
-  },
-  created() {
-  setTimeout(() => {
-      
-    }, 1000);
-  }
-
+  
 }
   
 
@@ -82,7 +64,9 @@ import YourLogo from "@/assets/wall-g7bf2bd61d_1920.jpg";
 </script>
 
 <style lang="scss" scoped>
-
+.artdetail{
+  background: none;
+}
 
 
 

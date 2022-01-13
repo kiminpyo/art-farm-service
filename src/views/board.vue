@@ -1,4 +1,5 @@
 <template>
+
   <v-container>
     <table class="table">
       <thead>
@@ -18,6 +19,7 @@
         </tr>
       </tbody>
     </table>
+
     <v-row>
       <v-col></v-col>
       <v-col></v-col>
@@ -68,7 +70,7 @@ export default {
       this.page = pageNo;
       console.log(this.page)
     axios({
-        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/noticelist?page=" + (pageNo-1),
+        url: "http://localhost:8080/api/noticelist?page=" + (pageNo-1),
         type : "get",
       })
     .then((response) =>{
@@ -98,7 +100,7 @@ export default {
     getItem(){
       const page = 0;
 
-        axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/noticelist?page=" + page)
+        axios.get("http://localhost:8080/api/noticelist?page=" + page)
         .then((response) => {
             this.data = response.data;  
             console.log(this.data)
