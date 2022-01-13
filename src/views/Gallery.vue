@@ -15,14 +15,14 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link text-white" >
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+        <a href="#" class="nav-link text-white" @click="selectcate" >
+          <svg class="bi me-2" width="16" height="16" ></svg>
           미술관
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+          <svg class="bi me-2" width="16" height="16"  @click="selectcate"><use xlink:href="#speedometer2"/></svg>
           사진전
         </a>
       </li>
@@ -56,12 +56,13 @@
           <div class="card shadow-sm">
            <img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">
             <div class="card-body">
-            <p class="card-text">{{data.title}} </p>
+            <p class="card-text">{{data.title}}</p>
             <p class="card-text">{{data.place}}</p>
+             <p class="card-text">{{data.author}}</p>
      
            <div class="d-flex justify-content-between align-items-center">
              <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary" @click="artdetail">View</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" @click="artdetail(data)">View</button>
            </div>
            </div>
           </div>
@@ -97,10 +98,8 @@ export default {
   
   data(){
     return{
-      data:[
-
-
-      ]   ,
+      data:[],
+      
        page: 1
     }
   },
@@ -111,11 +110,17 @@ export default {
         })
       },
       
-      artdetail(){
+      artdetail(data){
+        console.log(data)
         this.$router.push({
-          name: "artdetail"
+          name: "artdetail",
+            query :{
+              artdata: data.discription
+            }
         })
+    console.log(this.artdata)
       },
+      
       getItem(){
         const page = 0;
 
@@ -150,7 +155,8 @@ export default {
       })
        .then((response) =>{
         this.data = response.data;
-        console.log(this.data.content[0].exhibitionIdx)
+        console.log(this.data.content)
+        console.log(this.data)
   
     /*     var list= '';
         for(let i = 0; i < this.data.numberOfElements; i++){
@@ -177,6 +183,9 @@ export default {
            $(".album-container").append(list); */
     })
     },
+    selectcate(){
+      console.log("hi")
+    }
     
   },
     created(){

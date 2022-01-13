@@ -27,17 +27,17 @@
           grow
           centered
         >
-          <v-tab>
-               <router-link to="/">HOME</router-link>
+          <v-tab to="/">
+            HOME
           </v-tab>
-          <v-tab>
-            <router-link to="/board">게시판</router-link>
+          <v-tab to="/board">
+            게시판
           </v-tab>
-          <v-tab>
-            <router-link to="/Gallery">전시글</router-link>
+          <v-tab to="/Gallery">
+           전시글
           </v-tab>
-           <v-tab>
-            <router-link to="/cal">전시일정</router-link>
+           <v-tab to="/cal">
+           전시일정
           </v-tab>
         </v-tabs>
       </template>

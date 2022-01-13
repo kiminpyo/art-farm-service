@@ -5,8 +5,9 @@
 <tr>{{$route.query.id}}</tr>
 <tr>{{$route.query.title}}</tr>
 <tr>{{$route.query.body}}</tr>
-<button v-on:click="update()">수정하기</button>
-
+<button 
+v-on:click="update()">수정하기</button>
+ 
 
   </div>
 </template>

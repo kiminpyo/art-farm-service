@@ -1,7 +1,10 @@
 <template>
   <div class="artdetail">
+  
   <v-app id="inspire">
-    <v-carousel v-model="model">
+    <v-carousel 
+    style="width:50%; border-radius:70%; margin-left:25%; margin-top:140px;"
+    v-model="model">
       <v-carousel-item
         v-for="(color, i) in colors"
         :key="color"
@@ -23,9 +26,35 @@
         </v-sheet>
       </v-carousel-item>
     </v-carousel>
+     <v-card
+      class="mx-auto"
+      max-width="344"
+    >
+      <v-card-text>
+        <div>Word of the Day</div>
+        <p class="text-h4 text--primary">
+          el·ee·mos·y·nar·y
+        </p>
+        <p>adjective</p>
+        <div class="text--primary">
+          relating to or dependent on charity; charitable.<br>
+          "an eleemosynary educational institution."
+        </div>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn
+          text
+          color="teal accent-4"
+        
+        >
+          Learn More
+        </v-btn>
+      </v-card-actions>
+     </v-card>
   </v-app>
-  <!--스플래쉬 파트-->
- 
+  
+
+
 </div>
 		
 
@@ -44,19 +73,31 @@
 
 
 	export default {
- 
-	data: () => ({
-    model: 0,
+  props:['artdetail'],
+	data(){
+    const data = this.$route.query.artdata
+    return{
+  model: 0,
     colors: [
-      'primary',
+      '',
       'secondary',
       'yellow darken-2',
       'red',
       'orange',
     ],
-  }),
-  
+    data : data
+  }
+  },
+  created(){
+    console.log(this.data)
+  }
 }
+  
+    
+    
+    
+   
+
   
 
 
@@ -68,8 +109,14 @@
   background: none;
 }
 
-
-
+.v-app{
+  margin:0;
+  padding:0 ;
+}
+.artdetail{
+ margin:0;
+ padding:0; 
+}
 
 
 </style>
