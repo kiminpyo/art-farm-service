@@ -10,7 +10,6 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import VueSplash from 'vue-splash';
 
-
 // install Swiper modules
 
 

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="flex-column col-md-12 boardwraop">
+  <v-container class="flex-column col-md-12 boardwrap">
     <v-row>
       <table class="table">
         <thead>
@@ -63,7 +63,7 @@ export default {
       this.page = pageNo;
       console.log(this.page)
     axios({
-        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/noticelist?page=" + (pageNo-1),
+        url: "http://localhost:8080/api/noticelist?page=" + (pageNo-1),
         type : "get",
        
       })
@@ -94,7 +94,7 @@ export default {
     getItem(){
       const page = 0;
 
-        axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/noticelist?page=" + page)
+        axios.get("http://localhost:8080/api/noticelist?page=" + page)
         .then((response) => {
             this.data = response.data;  
             console.log(this.data)
