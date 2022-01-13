@@ -1,9 +1,10 @@
 <template>
-  <div class="body">
+  <div>
     <v-app v-if="!isLoaded">
       <splash-component></splash-component>
     </v-app>
-    <div class="container1">
+    <div v-else>
+      <div class="container1">
       <h1>gallery</h1>
       <div id="carousel">
         <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" style="width:100%;" alt="" v-on:click="detail"></figure>
@@ -24,8 +25,12 @@
         <li><img src="https://media4.giphy.com/media/3oGRFmcBmcSjkEmuac/200.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200.webp&ct=g" alt=""></li>
       </ul>
     </div>
+     </div>
+    
+     </div>
   
-  </div>
+    
+  
 </template>
 
 <script>
@@ -60,12 +65,13 @@ import SplashComponent from '@/views/splash.vue'
 }
 </script>
 
-<style scroped>
+<style scoped>
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
 
 @import url("https://fonts.googleapis.com/css?family=Anaheim");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Fauna+One");
+
 
 
 button {
