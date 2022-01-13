@@ -1,42 +1,26 @@
 <template>
-
-
     <v-card class="overflow-hidden">
     <v-app-bar
-      fixed
-      color="#6A76AB"
+      absolute
       dark
-      shrink-on-scroll
-      prominent
       src="https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg"
-     
       fade-img-on-scroll
       scroll-target="#scrolling-techniques-3"
     >
       <template v-slot:img="{ props }">
         <v-img
-         v-bind="props"
+
+          v-bind="props"
+
           gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
         ></v-img>
       </template>
 
-      
-
-       <router-link to="/"><v-app-bar-title id="art"><h1>ART FARM</h1></v-app-bar-title></router-link>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      <template>
+        <router-link to="/">
+            <h1 class="justify-center">ART FARM</h1>
+        </router-link>
+      </template>
 
       <template v-slot:extension>
         <v-tabs id="tabs"
@@ -120,20 +104,16 @@
 </script>
 <style scoped>
 *{
-     
-    background-repeat : no-repeat;
-  background-size:cover;
-  color:black;
-  opacity: 1;
-  
+  list-style: none;
 }
 .body{
- 
-   height:2000px;
-   margin-top:10%;
+
+  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');
+  background-repeat: repeat;
+  margin-top:80px;
+  height:1600px;
+
 }
-
-
 a{
   text-decoration:none;
   color:white;
@@ -158,5 +138,7 @@ h1{
 #art{
   text-overflow:clip;
   overflow:visible;
+  
 }
+
 </style>
