@@ -27,7 +27,7 @@
         <router-link class="button" to="/" ><v-icon style="font-size:15px; margin-right:10px;">mdi-arrow-left</v-icon>돌아가기</router-link>
       </v-col>  
       <v-col>
-        <router-link class="button" to="/create"><v-icon style="font-size:15px; margin-right:10px;">mdi-grease-pencil</v-icon>작성하기</router-link>
+        <router-link class="button" to="/create">작성하기</router-link>
       </v-col>
       <v-col></v-col>
       <v-col></v-col>

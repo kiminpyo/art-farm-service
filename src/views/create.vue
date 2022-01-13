@@ -2,8 +2,8 @@
  <div>
     <v-form  ref="form"
     style="width:60%; margin:0 auto;"
-    v-model="valid"
     lazy-validation
+    @submit="checkform" 
     >
       <v-card>
         
@@ -25,7 +25,7 @@
         </v-row>
         <v-row>
           <v-col id="cont">
-            <v-textarea class="context" hint="내용을 입력해주세요." name="context"  v-model="context" :counter="1000" required maxlength="1000">
+            <v-textarea class="context" hint="내용을 입력해주세요." name="context"   :counter="1000" required maxlength="1000">
             </v-textarea>
           </v-col>
         </v-row>

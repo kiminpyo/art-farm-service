@@ -201,7 +201,7 @@ export default {
                console.log(JSON.stringify(this.dates))
                  
          axios({
-             url: ('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice'),
+             url: ('http://localhost:8080/api/notice'),
              method: 'post',
              data: 
                 {
