@@ -49,9 +49,10 @@
    
   </div>
   </div>
-  <div class="album com-md-10 row ">
-    <div class="album-container" v-for="data in data.content" :key="data.exhibitionIdx">
-          <div class="col-md-3">
+  <div class="col-md-10">
+    <div class="album-wrap col-md-12 row">
+    <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx">
+
           <div class="card shadow-sm">
            <img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">
             <div class="card-body">
@@ -65,14 +66,15 @@
            </div>
           </div>
             </div>
-         </div>
+         
     </div>
-     <div >
+     <div class="page">
           <v-pagination 
             v-model="data.currentPage"
             :length="data.totalPages"
             @input="handlePageChange"
           ></v-pagination>    
+      </div>
       </div>
   </div>
   
