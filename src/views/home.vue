@@ -77,11 +77,6 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 @import url(https://fonts.googleapis.com/css?family=Fauna+One);
 
- .container{
-   
-   display: flex;
-  
-   }
 
 button {
   background: none;
