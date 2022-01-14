@@ -8,6 +8,8 @@
     color="#F29661"
     :size="300"
     :fixed="true"
+    :width="2000"
+    :height="5000"
   />
 </template>
 
