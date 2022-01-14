@@ -37,10 +37,10 @@
             게시판
           </v-tab>
           <v-tab to="/Gallery">
-           전시글
+            전시글
           </v-tab>
-           <v-tab to="/cal">
-           전시일정
+          <v-tab to="/cal">
+            전시일정
           </v-tab>
         </v-tabs>
       </template>
@@ -53,7 +53,9 @@
       <v-container ></v-container>
     </v-sheet>
     <router-view class="body"></router-view>
- 
+
+    <foot-component></foot-component>
+
   </v-card>
 
   
@@ -84,6 +86,21 @@
   
 </template>
 <script>
+import footComponent from '@/views/foot.vue'
+export default{
+  components: {
+    footComponent
+    }
+  
+}
+
+/*import footer from './components/footer.vue'
+export default{
+  name:'App',
+  components: {
+    'footer':footer
+  }
+}*/
  /*     import SplashComponent from '@/views/splash.vue'
 
   export default {
