@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <v-container>
       <v-card elevation="10" outluined width="100%" class="mx-auto">
         <v-card-text>
@@ -55,6 +56,7 @@
       </v-card>
     </v-container>
   </div> 
+
 </template>
 
 <script>

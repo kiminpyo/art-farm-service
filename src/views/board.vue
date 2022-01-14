@@ -1,5 +1,5 @@
 <template>
-
+<div>
   <v-container>
     <table class="table">
       <thead>
@@ -23,11 +23,12 @@
     <v-row>
       <v-col></v-col>
       <v-col></v-col>
+     
       <v-col>
-        <router-link class="button" to="/" ><v-icon style="font-size:15px; margin-right:10px;">mdi-arrow-left</v-icon>돌아가기</router-link>
-      </v-col>  
-      <v-col>
-        <router-link class="button" to="/create">작성하기</router-link>
+        <router-link 
+        class="button" 
+        to="/create"
+        >작성하기</router-link>
       </v-col>
       <v-col></v-col>
       <v-col></v-col>
@@ -42,6 +43,7 @@
       </div>
     </v-row>
   </v-container>
+  </div>
 </template>
 
 <script>
@@ -191,7 +193,6 @@ table tbody tr{
   height:25px;
 }
 /* button 스타일링 */
-
 a {
 	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
@@ -221,4 +222,5 @@ a.button:hover {
 	color: rgba(255, 255, 255, 0.85);
 	box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
 }
+
 </style>
