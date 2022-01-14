@@ -67,7 +67,8 @@ export default {
         name:"detail",
         query :{body: data.content,
                 id: data.noticeIdx,
-                title: data.title}
+                title: data.title,
+                views: data.views}
       })
     },
     handlePageChange(pageNo) {
@@ -197,6 +198,7 @@ li {
 }
 a {
   color: #42b983;
+
 }
 .pagination-wrapper{
 	display:flex;
@@ -222,7 +224,7 @@ a {
 	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-	display: block;
+
 	margin: 0 auto;
 	max-width: 100px;
   height:40px;

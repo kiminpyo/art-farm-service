@@ -42,7 +42,7 @@
           
           <v-row>
             <v-col>
-              <button v-on:click="update()" class="button">
+              <button v-on:click="update" class="button">
                 <v-icon style="font-size:15px; margin-right:10px;">mdi-tooltip-edit</v-icon>수정하기
               </button>
             </v-col>
@@ -51,6 +51,7 @@
                 <v-icon style="font-size:15px; margin-right:10px;">mdi-find-replace</v-icon>돌아가기
               </router-link>
             </v-col> 
+            
           </v-row>
         </v-card-text>
       </v-card>
@@ -60,18 +61,23 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
-    data() {
+     data() {
         const noticeIdx = this.$route.query.id;
         const title = this.$route.query.title;
         const body = this.$route.query.body;
+        let views = this.$route.query.views;
+  
+
         return{
         noticeIdx : noticeIdx,
         title : title,
-        body: body
+        body: body,
+        views : views
         }
-    },
+    }, 
+
     props:['detail'],
     
   
@@ -87,15 +93,31 @@ export default {
       })
     console.log(this.noticeIdx)
     },
+    
+    
+  },
+  mounted(){
+    console.log(this.$route.query.views)
+    
+         axios({
+          url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice?noticeIdx="+this.$route.query.id,
+          method: "get",
+          
+        }).then(function (response) {
+          console.log("success");
+          console.log(response);
+          console.log(response.data.views)
+          
+        }); 
   }
-
 }
+  
+   
+    
+
 </script>
 
 <style>
-tr{
-  background-color: white;
-}
 
 
 a.button {

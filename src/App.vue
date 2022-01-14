@@ -1,4 +1,5 @@
 <template>
+
     <v-card class="overflow-hidden">
     <v-app-bar
       absolute
@@ -18,8 +19,10 @@
 
       <template>
         <router-link to="/">
-            <h1 class="justify-center">ART FARM</h1>
-        </router-link>
+        <div class="logo">   
+          <h1 class="justify-center">ART FARM</h1>
+            <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"></div>
+          </router-link>
       </template>
 
       <template v-slot:extension>
@@ -50,8 +53,9 @@
       <v-container ></v-container>
     </v-sheet>
     <router-view class="body"></router-view>
+ 
   </v-card>
-  
+
   
   
  <!--  
@@ -104,16 +108,20 @@
 </script>
 <style scoped>
 *{
+ 
   list-style: none;
 }
 .body{
-
-  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');
+    background-color:black;
+ /*  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg'); */
   background-repeat: repeat;
   margin-top:80px;
   height:3000px;
-
 }
+.logo{
+      display: flex;
+}
+
 a{
   text-decoration:none;
   color:white;
