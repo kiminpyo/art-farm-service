@@ -20,6 +20,17 @@
         </v-row>
         <v-row no-gutters>
           <v-col id="tit">
+            글쓴이
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col id="cont">
+            <v-text-field class="writer" hint="글쓴이를 입력해주세요." name="writer" :counter="20" required maxlength="20">
+            </v-text-field>
+          </v-col>
+        </v-row>
+        <v-row no-gutters>
+          <v-col id="tit">
             내용
           </v-col>
         </v-row>
