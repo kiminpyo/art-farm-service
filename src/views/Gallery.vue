@@ -69,7 +69,7 @@
             </div>
          
     </div>
-     <div class="page">
+          <div class="page">
           <v-pagination 
             v-model="data.currentPage"
             :length="data.totalPages"
@@ -124,7 +124,7 @@ export default {
       getItem(){
         const page = 0;
 
-          axios.get("http://localhost:8080/api/exhibitionlist?page=" + page)
+          axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + page)
           .then((response) => {
               this.data = response.data;  
      /*          console.log(this.data)
@@ -149,7 +149,7 @@ export default {
       this.page = pageNo;
       console.log(this.page)
     axios({
-        url: "http://localhost:8080/api/exhibitionlist?page=" + (pageNo-1),
+        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + (pageNo-1),
         type : "get",
        
       })
