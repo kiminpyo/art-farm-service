@@ -100,14 +100,14 @@ export default {
         console.log(event.toDateString()); */
 
         axios({
-          url: "http://localhost:8080/api/notice/",
+          url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice/",
           method: "post",
           data: {
             title: title,
             content: content,
             writer: writer,
-            registDate: new Date(), //백에서 처리해야될 부분
-            views: "",
+           registDate: "ㅁㅇㅁㅇㄴㅇ"
+           
           },
         }).then(function (response) {
           console.log("success");
@@ -119,6 +119,7 @@ export default {
   components: {
     Modal,
   },
+  
 };
 </script>
 

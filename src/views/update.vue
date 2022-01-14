@@ -85,27 +85,35 @@ export default {
         
             })
         }, */
-      updateitem(e){
-      e.preventDefault();
-      console.log(this.title);
-        let title = this.title;
-        let content = this.content;
-      console.log(content)
-        axios({
-          url: "http://localhost:8080/api/notice?noticeIdx=" + this.$route.query.noticeIdx,
-          method:'put',
-          data:{
-            title: title,
-            content: content
-            },
-          })
-        .then(function(response){
-            console.log("succeess")
-            console.log(response)
-        })
-      } 
-    },
-  }  
+
+        updateitem(e){
+         e.preventDefault();
+         console.log(this.title);
+          let title = this.title;
+          let content = this.content;
+          console.log(content)
+                      axios({
+                url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice?noticeIdx=" + this.$route.query.noticeIdx,
+                method:'put',
+                data:{
+                    title: title,
+                    content: content
+                   
+                },
+            })
+            .then(function(response){
+                console.log("succeess")
+                console.log(response)
+         
+            })
+    } 
+ 
+        },
+   
+        
+}  
+
+
 
 </script>
 
