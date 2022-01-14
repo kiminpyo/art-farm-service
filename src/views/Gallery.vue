@@ -2,12 +2,12 @@
 
   <div class="gallery"> 
     <div class="galleryenroll">
-      <button class="btn btn-sm btn-outline-secondary" style="color:white;" @click="click"><span>등록하기</span>
-      </button>
+      <div class="btn btn-sm btn-outline-secondary" style="color:white;" @click="click"><span>등록하기</span>
       </div>
-  <div class="gallery-wrap col-md-12" style="width:100%">
-  <div class="sidebar col-md-2">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px; height:100%">
+      </div>
+  <div class="gallery-wrap col-md-12" >
+  <div class="sidebar col-md-2" style="width:100%; height:100%; position:fixed;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px;  ">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-4">카테고리</span>
@@ -46,11 +46,16 @@
       </li>
     </ul>
     <hr>
+     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">카테고리</span>
+    </a>
+    <hr>
    
   </div>
   </div>
-  <div class="col-md-10">
-    <div class="album-wrap col-md-12 row">
+  <div class="col-md-8" style="margin-left:350px;">
+    <div class="album-wrap row">
     <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx">
 
           <div class="card shadow-sm">
@@ -200,9 +205,9 @@ export default {
 <style scoped lang="scss">
 .gallery-wrap{
 display:flex;
-margin-top:5%;
-
-
+}
+.gallery{
+  margin-top:10%;
 }
 .galleryenroll  {
  text-align:center;

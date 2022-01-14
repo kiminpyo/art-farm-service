@@ -1,6 +1,6 @@
 <template>
  <div id="app">
-  <v-app id="inspire">
+  <v-app id="inspire" style="margin-top:150px; ">
     <v-stepper
       v-model="e6"
       vertical
@@ -141,8 +141,10 @@
                         </v-col>
                         </v-row>
                     </v-app>
-     <!-- 캘린터 파트 종료-->
+   
+     
         </v-card>
+        
         <v-btn
           color="primary"
           @click="e6 = 4"
@@ -153,14 +155,43 @@
           Cancel
         </v-btn>
       </v-stepper-content>
+        <!-- 캘린터 파트 종료-->
+       
+       <v-stepper-step
+        :complete="e6 > 4"
+        
+        editable
+        step="4"
+      >
+        장소
+        <small>전시회의 장소를 적어주세요</small>
+      </v-stepper-step>
   
+      <v-stepper-content step="4">
+        <v-card >
+       <textarea>장소는 여기인가요?</textarea>
+       </v-card>
+      
+        <v-btn
+          color="primary"
+          @click="e6 = 5"
+          
+        >
+          Continue
+        </v-btn>
+        <v-btn text>
+          Cancel
+        </v-btn>
+      </v-stepper-content>
+    <!--장소 선택 파트 끝-->
+    <!-- 이미지 업로트 파트 -->
       <v-stepper-step
        editable
-       step="4">
+       step="5">
         업로드 파일
         <small>작품을 소개할 이미지를 등록해주세요</small>
       </v-stepper-step>
-      <v-stepper-content step="4">
+      <v-stepper-content step="5">
         
      
               <div class="upload">
@@ -192,14 +223,16 @@
           Cancel
         </v-btn>
       </v-stepper-content>
+      <!-- 이미지 업로드 파트 끝 -->
     </v-stepper>
+    <!-- 전시회 등록 폼 끝 -->
   </v-app>
 </div>
  
 </template>
 
 <script>
-import axios from 'axios'
+/*  import axios from 'axios'  */
 export default {
 
     data(){
@@ -212,10 +245,15 @@ export default {
             discription: '',
             url: '',
             /* data:  */
-            exhPeriod: [],
+           
+            exhPeriod:[
+              
+            ],
+            
+            
             menu: false,
             files: null
-        
+           
         }
     },
     methods: {
@@ -235,14 +273,18 @@ export default {
             console.log(res)
           }) 
         }, */
-     
+    
+    //전시회에 들어갈 컨텐츠 내용
         senddata(){
                console.log(this.title)
                console.log(this.exhPeriod)
               console.log(this.files)
-                 
-         axios({
-             url: ('http://localhost:8080/api/exhibition'),
+              console.log(this.exhPeriod.toString())
+                 if(this.title === null){
+                   console.log("hi")
+                 }
+/*           axios({
+             url: ('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition'),
              method: 'post',
              data: 
                 {
@@ -252,16 +294,23 @@ export default {
                     category: this.category,
                     discription: this.discription,
                     url : this.url,
-                    exhPeriod: this.exhPeriod,
-                  registDate: ""// JSON.stringify(this.dates)   
+                    
+                    exhPeriod:[
+                      {date: this.exhPeriod.toString(),
+                    
+                      }
+                     
+                    ]
+                      
+                
                 }
              
          }).
          then((response) => {
              console.log(response);
              alert('등록되었습니다')
-           /*  window.location.href="Gallery" */
-         })
+             window.location.href="Gallery"  //갤러리로 돌아감 
+         })  */
     
         }
     }
