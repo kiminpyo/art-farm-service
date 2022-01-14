@@ -1,5 +1,5 @@
 <template>
- <div>
+  <div>
     <v-form  ref="form"
     style="width:60%; margin:0 auto;"
     lazy-validation

@@ -67,7 +67,7 @@ import SplashComponent from '@/views/splash.vue'
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Fauna+One");
 
-
+/* detail에서 a태그와 button태그 차이때문에 주석처리함
 button {
   background: none;
   border: 2px solid;
@@ -75,7 +75,7 @@ button {
   line-height: 1;
   margin: 0.5em;
   padding: 1em 2em;
-}
+} */
 
 h1 { 
   font-weight: 400;
