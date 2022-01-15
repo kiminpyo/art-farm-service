@@ -27,3 +27,8 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
+//SameSite
+document.cookie="safeCookie1=foo; Samesite=Lax";
+document.cookie="safeCookie2=foo";
+document.cookie="crossCookie=bar; Samesite=None;Secure";

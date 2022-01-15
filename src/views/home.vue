@@ -4,7 +4,7 @@
       <splash-component></splash-component>
       </v-app>
     <!-- 스플래쉬 생성시 메인단의 화면을 뿌려서 데이터의 로딩저하를 막음-->
-    <!--     <div v-else>
+    <div v-else>
       <div class="container1">
         <h1>gallery</h1>
         <div id="carousel">
