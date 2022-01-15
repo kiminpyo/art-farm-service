@@ -18,11 +18,14 @@
       </template>
 
       <template>
-        <router-link to="/">
-        <div class="logo">   
-          <h1 class="justify-center">ART FARM</h1>
-            <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"></div>
+        <div style="margin:0 auto">
+          <router-link to="/">
+            <div class="logo">   
+              <h1>ART FARM</h1>
+              <!-- <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"> -->
+            </div>
           </router-link>
+        </div>
       </template>
 
       <template v-slot:extension>
@@ -125,7 +128,6 @@ export default{
 </script>
 <style scoped>
 *{
- 
   list-style: none;
 }
 .body{
@@ -136,7 +138,7 @@ export default{
   height:3000px;
 }
 .logo{
-      display: flex;
+  display: flex;
 }
 
 a{
@@ -165,5 +167,7 @@ h1{
   overflow:visible;
   
 }
-
+.v-toolbar__content{
+  justify-content: center;
+}
 </style>

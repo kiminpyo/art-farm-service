@@ -9,18 +9,34 @@
       class="indigo lighten-1 white--text text-center"
       width="100%"
     >
-      <v-card-text>
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4 white--text"
-          icon
-        >
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
+
+      <v-bottom-navigation
+        v-model="bottomNav"
+        dark
+      >
+      
+        <v-btn :href="`https://github.com/kiminpyo/artfarm-front`" target="_blank">
+          <span>GitHub</span>
+          <v-icon>mdi-github</v-icon>
         </v-btn>
-      </v-card-text>
+
+        <v-btn :href="``" target="_blank">
+          <span>Youtube</span>
+          <v-icon>mdi-youtube</v-icon>
+        </v-btn>
+
+        <v-btn :href="``" target="_blank">
+          <span>Instagram</span>
+          <v-icon>mdi-instagram</v-icon>
+        </v-btn>
+
+        <v-btn :href="``" taget="_blank">
+          <span>Gmail</span>
+          <v-icon>mdi-gmail</v-icon>
+        </v-btn>
+
+      </v-bottom-navigation>
+      <v-divider></v-divider>
 
       <v-card-text class="white--text pt-0 d-flex" cols="12">
         <v-col id="cols-foot" cols="4">
@@ -101,5 +117,7 @@
   padding:0px !important;
   border:1px solid #323232;
 }
-
+.v-item-group.v-bottom-navigation{
+  align-items:center;
+}
 </style>
