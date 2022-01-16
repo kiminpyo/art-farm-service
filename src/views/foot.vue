@@ -9,28 +9,44 @@
       class="indigo lighten-1 white--text text-center"
       width="100%"
     >
-      <v-card-text>
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4 white--text"
-          icon
-        >
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
+
+      <v-bottom-navigation
+        v-model="bottomNav"
+        dark
+      >
+      
+        <v-btn :href="`https://github.com/kiminpyo/artfarm-front`" target="_blank">
+          <span>GitHub</span>
+          <v-icon>mdi-github</v-icon>
         </v-btn>
-      </v-card-text>
+
+        <v-btn :href="``" target="_blank">
+          <span>Youtube</span>
+          <v-icon>mdi-youtube</v-icon>
+        </v-btn>
+
+        <v-btn :href="``" target="_blank">
+          <span>Instagram</span>
+          <v-icon>mdi-instagram</v-icon>
+        </v-btn>
+
+        <v-btn :href="``" taget="_blank">
+          <span>Gmail</span>
+          <v-icon>mdi-gmail</v-icon>
+        </v-btn>
+
+      </v-bottom-navigation>
+      <v-divider></v-divider>
 
       <v-card-text class="white--text pt-0 d-flex" cols="12">
         <v-col id="cols-foot" cols="4">
-          <v-row >
+          <v-row>
             <v-col>
-              <v-img max-width="200" src="@/assets/define.png"></v-img>
+              <v-img style="margin:0 auto" max-width="250" src="@/assets/define.png"></v-img>
             </v-col>
           </v-row>
-          <v-row style="width:600px; height:300px">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12931.37791404179!2d128.7360435!3d35.8773279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed9348a5a7daefae!2z7LKo64uo7KCV67O07Ya17Iug7Jy17ZWp7IKw7JeF6riw7Iig7JuQ!5e0!3m2!1sko!2skr!4v1642146264942!5m2!1sko!2skr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <v-row>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12931.37791404179!2d128.7360435!3d35.8773279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed9348a5a7daefae!2z7LKo64uo7KCV67O07Ya17Iug7Jy17ZWp7IKw7JeF6riw7Iig7JuQ!5e0!3m2!1sko!2skr!4v1642146264942!5m2!1sko!2skr" style="height:250px; border:0;" allowfullscreen="" loading="lazy"></iframe>
           </v-row>
         </v-col>
         <v-col id="cols-foot" cols="4">
@@ -53,7 +69,7 @@
         <v-col id="cols-foot" cols="4">
           <v-row>
             <v-col center>
-              <v-img max-width="200" src="@/assets/logo.png"></v-img>
+              <v-img style="margin:0 auto" max-width="200" src="@/assets/logo.png"></v-img>
             </v-col>
           </v-row>
         </v-col>
@@ -101,5 +117,7 @@
   padding:0px !important;
   border:1px solid #323232;
 }
-
+.v-item-group.v-bottom-navigation{
+  align-items:center;
+}
 </style>
