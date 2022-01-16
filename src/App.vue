@@ -18,11 +18,12 @@
       </template>
 
       <template>
-        <router-link to="/">
-        <div class="logo">   
-          <h1 class="justify-center">ART FARM</h1>
-           <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"> </div>
+        <div class="logo" style="margin:0 auto;">   
+          <router-link to="/"  style="display:flex;">
+            <h1 class="justify-center">ART FARM</h1>
+            <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px">
           </router-link>
+        </div>
       </template>
 
       <template v-slot:extension>
@@ -93,7 +94,9 @@ export default{
     }
   
 }
-
+document.cookie="safeCookie1=foo;SameSite=Lax";
+document.cookie="safeCookie=foo";
+document.cookie="crossCookie=bar;SameSite=None;Secure";
 /*import footer from './components/footer.vue'
 export default{
   name:'App',
