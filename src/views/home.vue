@@ -1,21 +1,21 @@
 <template>
   <div>
-  <!--   <v-app v-if="!isLoaded">
+    <v-app v-if="!isLoaded">
        <splash-component></splash-component> 
-      </v-app> -->
-    <!-- 스플래쉬 생성시 메인단의 화면을 뿌려서 데이터의 로딩저하를 막음-->
+      </v-app> 
+    <!--스플래쉬 생성시 메인단의 화면을 뿌려서 데이터의 로딩저하를 막음-->
          <!--  <div v-else> -->
       <div class="container1">
         <h1>gallery</h1>
         <div id="carousel">
           <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" style="width:100%;" alt="" v-on:click="detail"></figure>
-          <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"></figure>
-          <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt="" style="width:100%;"></figure>
-          <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt="" style="width:100%;"></figure>
-          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" style="width:100%;"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"></figure>
-          <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt="" style="width:100%;"></figure>
+          <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" style="width:100%;"  v-on:click="detail"></figure>
+          <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt="" style="width:100%;"  v-on:click="detail"></figure>
+          <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt="" style="width:100%;"  v-on:click="detail"></figure>
+          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" style="width:100%;"  v-on:click="detail"></figure>
+          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"  v-on:click="detail"></figure>
+          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" style="width:100%;"  v-on:click="detail"></figure>
+          <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt="" style="width:100%;"  v-on:click="detail"></figure>
         </div>
       </div>
       <div>
@@ -23,47 +23,48 @@
           <li><img src="https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g" alt=""></li>
           <li><img src="https://media4.giphy.com/media/l41YeHIAtnC6iTYPe/200w.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200w.webp&ct=g" alt=""></li>
           <li><img src="https://media4.giphy.com/media/3oGRFmcBmcSjkEmuac/200.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200.webp&ct=g" alt=""></li>
+     
         </ul>
       </div>
     <!-- </div> -->
 
     <hr
     style="color:white">
-    <div>fd</div>
+    <div></div>
   </div>
 
 </template>
 
 <script>
-/* import SplashComponent from '@/views/splash.vue' */
+ import SplashComponent from '@/views/splash.vue' 
 
   export default {
-  //   components: {
-  //       SplashComponent,
-  //     }, 
-  //       data: () => ({
-  //       isLoaded: false
-  //     }),
-  //       created() {
-  //       this.splashing()
-  //     },
+     components: {
+         SplashComponent,
+       }, 
+         data: () => ({
+         isLoaded: false
+       }),
+         created() {
+         this.splashing()
+       },
     
-  // methods:{
-  //   splashing() {
-  //         setTimeout(() => {
-  //           this.isLoaded = true
-  //         }, 2500)
-  //       },
-  //   detail(){
+   methods:{
+     splashing() {
+           setTimeout(() => {
+             this.isLoaded = true
+           }, 10)
+         },
+     detail(){
         
-  //     console.log('hi')
-  //     this.$router.push({
-  //       name:"artdetail"
-  //     })
+       console.log('hi')
+       this.$router.push({
+         name:"artdetail"
+       })
   
-  // }
+   }
   
-  // }
+   }
 }
 </script>
 
