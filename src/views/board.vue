@@ -125,25 +125,7 @@ export default {
           console.log(pageBtn)
           $("ul#pages").append(pageBtn)
         
-      let date = new Date();
-          var year = date.getFullYear(); //년도
-          var month = date.getMonth()+1; //월
-          var day = date.getDate()+" "; //일
-        var hour = date.getHours();
-        var minute = date.getMinutes(); 
-          if ((day+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
-            day = "0" + day;
-        }
-
-    
-       date = year+"-"+month+"-"+day+ hour+":" + minute; // 오늘 날짜
-        let registdate = this.data.registDate;
-       console.log(registdate)
-      console.log(date)
-      if(date == this.data.registDate){
-        console.log("날짜가 다릅니다")
-  }  
-    
+ 
         })
     },
 /*    page(pageNo){

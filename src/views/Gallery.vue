@@ -15,14 +15,15 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link text-white" @click="selectcate" >
+        <a href="#" class="nav-link text-white" >
           <svg class="bi me-2" width="16" height="16" ></svg>
           미술관
         </a>
       </li>
       <li>
+        
         <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"  @click="selectcate"><use xlink:href="#speedometer2"/></svg>
+          <svg class="bi me-2" width="16" height="16"  ><use xlink:href="#speedometer2"/></svg>
           사진전
         </a>
       </li>
@@ -50,6 +51,32 @@
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-4">카테고리</span>
     </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+     
+      <li class="ingbtn">
+        <v-button class="" 
+            v-model="data.currentPage"
+            :length="data.totalPages"
+            @click="handleDateChange"
+         >
+          <svg class="bi me-2" width="16" height="16"></svg>
+          진행중인 전시</v-button>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          종료된 전시
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+          예정 전시
+        </a>
+      </li>
+     
+    </ul>
     <hr>
    
   </div>
@@ -79,8 +106,14 @@
             v-model="data.currentPage"
             :length="data.totalPages"
             @input="handlePageChange"
-          ></v-pagination>    
+          ></v-pagination> 
+        
+          
+          
+           
+          
       </div>
+      
       </div>
   </div>
   
@@ -97,14 +130,14 @@
 </template>
 
 <script>
-import $ from 'jquery'
+ import $ from 'jquery' 
 import axios from 'axios'
 export default {
   
   data(){
     return{
       data:[],
-      
+      todaydata:[],
        page: 1
     }
   },
@@ -125,19 +158,82 @@ export default {
         })
     console.log(this.artdata)
       },
-      
-      getItem(){
+      selectDate() {  
+          let date = new Date();
+          var year = date.getFullYear(); //년도
+          var month = date.getMonth()+1; //월
+          var day = date.getDate()+" "; //일
+       /*  var hour = date.getHours();
+        var minute = date.getMinutes();  */
+          if ((day+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            day = "0" + day;
+        }
+         if ((month+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            month = "0" + month;
+        }
+
+    
+      // date = year+"-"+month+"-"+day+ hour+":" + minute;  
+       date = year+"-"+month+"-"+day// 오늘 날짜
+        let registdate = this.data.registDate;
+       console.log(registdate)
+      console.log("date===>"+date)
+     
+    
+       console.log(date)
+        axios.get('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date='+ date)
+        .then((response) => {
+          console.log(response.data)
+          this.todaydata = response.data; //현재 진행중인 데이터
+          console.log(this.todaydata)
+
+         
+        })
+      },
+      handleDateChange() {
+          let date = new Date();
+          var year = date.getFullYear(); //년도
+          var month = date.getMonth()+1; //월
+          var day = date.getDate()+" "; //일
+       /*  var hour = date.getHours();
+        var minute = date.getMinutes();  */
+          if ((day+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            day = "0" + day;
+        }
+         if ((month+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            month = "0" + month;
+        }
+
+    
+      // date = year+"-"+month+"-"+day+ hour+":" + minute;  
+       date = year+"-"+month+"-"+day// 오늘 날짜
+      this.page = date;
+      console.log(this.page)
+    axios({
+        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date=" + date,
+        type : "get",
+       
+      })
+       .then((response) =>{
+        this.data = response.data;
+        console.log(this.data.content)
+        console.log(this.data)
+
+    })
+    },
+   
+       getItem(){
         const page = 0;
 
           axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + page)
           .then((response) => {
               this.data = response.data;  
-     /*          console.log(this.data)
+               console.log(this.data)
               console.log( this.data.totalPages)
               console.log(this.data.totalElements)
               console.log(this.data.size)
               console.log(this.data.numberOfElements)
-              console.log(this.data.content) */
+              console.log(this.data.content) 
             var pageBtn  = '';
             
             for(var pageNo = 0; pageNo < this.data.totalPages; pageNo++){ 
@@ -149,7 +245,7 @@ export default {
             console.log(pageBtn)
             $("ul#pages").append(pageBtn)
         })
-      },
+      }, 
         handlePageChange(pageNo) {
       this.page = pageNo;
       console.log(this.page)
@@ -186,17 +282,18 @@ export default {
          
            $(".album-container").empty();
            $(".album-container").append(list); */
+
+    
     })
     },
-    selectcate(){
-      console.log("hi")
-    }
+  
     
   },
-    created(){
-          this.handlePageChange()
-          this.getItem();
-      }
+     created(){
+         /*  this.handlePageChange() */
+            this.getItem()
+        /*   this.selectDate()  */
+      } 
   
 
 }
@@ -212,6 +309,12 @@ display:flex;
 .galleryenroll  {
  text-align:center;
 
+}
+.ingbtn:click{
+  color:red;
+}
+.ingbtn:hover{
+  color:green;
 }
 
 
