@@ -1,10 +1,12 @@
 <template>
   <div>
-    <v-app v-if="!isLoaded">
-      <splash-component></splash-component>
-      </v-app>
+  <!--   <v-app v-if="!isLoaded">
+       <splash-component></splash-component> 
+      </v-app> -->
     <!-- 스플래쉬 생성시 메인단의 화면을 뿌려서 데이터의 로딩저하를 막음-->
-    <div v-else>
+
+         <!--  <div v-else> -->
+
       <div class="container1">
         <h1>gallery</h1>
         <div id="carousel">
@@ -25,43 +27,45 @@
           <li><img src="https://media4.giphy.com/media/3oGRFmcBmcSjkEmuac/200.webp?cid=ecf05e47d8p3t0de9f4sga4lke8z1s4502kvp21ho2sycq5l&rid=200.webp&ct=g" alt=""></li>
         </ul>
       </div>
-    </div>
+    <!-- </div> -->
 
-    
+    <hr
+    style="color:white">
+    <div>fd</div>
   </div>
 
 </template>
 
 <script>
-import SplashComponent from '@/views/splash.vue'
+/* import SplashComponent from '@/views/splash.vue' */
 
   export default {
-    components: {
-        SplashComponent,
-      },
-        data: () => ({
-        isLoaded: false
-      }),
-        created() {
-        this.splashing()
-      },
+  //   components: {
+  //       SplashComponent,
+  //     }, 
+  //       data: () => ({
+  //       isLoaded: false
+  //     }),
+  //       created() {
+  //       this.splashing()
+  //     },
     
-  methods:{
-    splashing() {
-          setTimeout(() => {
-            this.isLoaded = true
-          }, 2500)
-        },
-    detail(){
+  // methods:{
+  //   splashing() {
+  //         setTimeout(() => {
+  //           this.isLoaded = true
+  //         }, 2500)
+  //       },
+  //   detail(){
         
-      console.log('hi')
-      this.$router.push({
-        name:"artdetail"
-      })
+  //     console.log('hi')
+  //     this.$router.push({
+  //       name:"artdetail"
+  //     })
   
-  }
+  // }
   
-  }
+  // }
 }
 </script>
 

@@ -96,9 +96,7 @@ import Lingallery from 'lingallery';
 
 <style lang="scss" scoped>
 
-.artdetail{
- 
-}
+
 .v-app{
   margin:0;
   padding:0 ;

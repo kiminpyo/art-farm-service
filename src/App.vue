@@ -18,12 +18,14 @@
       </template>
 
       <template>
+
         <div style="margin:0 auto">
           <router-link to="/">
             <div class="logo">   
               <h1>ART FARM</h1>
               <!-- <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"> -->
             </div>
+
           </router-link>
         </div>
       </template>

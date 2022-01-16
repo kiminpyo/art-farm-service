@@ -6,7 +6,9 @@
       <div class="btn btn-sm btn-outline-secondary" style="color:white;" @click="click">
         <span>등록하기</span>
       </div>
+
     </div>
+
 
     <div class="gallery-wrap col-md-12" >
       <div class="sidebar col-md-2" style="width:100%; height:100%; position:fixed;">
@@ -114,6 +116,7 @@
             </div>
           </div>
           <div class="page">
+
             <v-pagination 
                 v-model="data.currentPage"
                 :length="data.totalPages"
@@ -121,6 +124,7 @@
             ></v-pagination>    
           </div>
         </div>
+
       </div>
     </div>
 
@@ -128,14 +132,17 @@
 </template>
 
 <script>
-import $ from 'jquery'
+ import $ from 'jquery' 
 import axios from 'axios'
 export default {
   
   data(){
     return{
       data:[],
-      page: 1
+
+      todaydata:[],
+       page: 1
+
     }
   },
   methods: {
@@ -155,19 +162,84 @@ export default {
         })
     console.log(this.artdata)
       },
-      
-      getItem(){
+      selectDate() {  
+          let date = new Date();
+          var year = date.getFullYear(); //년도
+          var month = date.getMonth()+1; //월
+          var day = date.getDate()+" "; //일
+       /*  var hour = date.getHours();
+        var minute = date.getMinutes();  */
+          if ((day+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            day = "0" + day;
+        }
+         if ((month+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            month = "0" + month;
+        }
+
+    
+      // date = year+"-"+month+"-"+day+ hour+":" + minute;  
+       date = year+"-"+month+"-"+day// 오늘 날짜
+        let registdate = this.data.registDate;
+       console.log(registdate)
+      console.log("date===>"+date)
+     
+    
+       console.log(date)
+        axios.get('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date='+ date)
+        .then((response) => {
+          console.log(response.data)
+          this.todaydata = response.data; //현재 진행중인 데이터
+          console.log(this.todaydata)
+
+         
+        })
+      },
+      handleDateChange() {
+          let date = new Date();
+          var year = date.getFullYear(); //년도
+          var month = date.getMonth()+1; //월
+          var day = date.getDate()+" "; //일
+       /*  var hour = date.getHours();
+        var minute = date.getMinutes();  */
+          if ((day+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            day = "0" + day;
+        }
+         if ((month+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
+            month = "0" + month;
+        }
+
+    
+      // date = year+"-"+month+"-"+day+ hour+":" + minute;  
+       date = year+"-"+month+"-"+day// 오늘 날짜
+      this.page = date;
+      console.log(this.page)
+    axios({
+        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date=" + date,
+        type : "get",
+       
+      })
+       .then((response) =>{
+        this.data = response.data;
+        console.log(this.data.content)
+        console.log(this.data)
+
+    })
+    },
+   
+       getItem(){
         const page = 0;
 
           axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + page)
           .then((response) => {
-            this.data = response.data;  
-            /*console.log(this.data)
+
+              this.data = response.data;  
+               console.log(this.data)
+
               console.log( this.data.totalPages)
               console.log(this.data.totalElements)
               console.log(this.data.size)
               console.log(this.data.numberOfElements)
-              console.log(this.data.content) */
+              console.log(this.data.content) 
             var pageBtn  = '';
             
             for(var pageNo = 0; pageNo < this.data.totalPages; pageNo++){ 
@@ -178,11 +250,13 @@ export default {
             console.log(pageBtn)
             $("ul#pages").append(pageBtn)
         })
-      },
-      handlePageChange(pageNo) {
-        this.page = pageNo;
-        console.log(this.page)
-      axios({
+
+      }, 
+        handlePageChange(pageNo) {
+      this.page = pageNo;
+      console.log(this.page)
+    axios({
+
         url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + (pageNo-1),
         type : "get",
       })
@@ -192,34 +266,45 @@ export default {
         console.log(this.data)
       /*var list= '';
         for(let i = 0; i < this.data.numberOfElements; i++){
-          list += '<div class="col-md-3">';
-          list += '<div class="card shadow-sm">';
-          list += '<img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">';
-          list += '<div class="card-body">'
-          list += '<p class="card-text">' + this.data.content[i].title + '</p>'
-          list += '<p class="card-text">' + this.data.content[i].place + '</p>'
-          list +=  '<div class="d-flex justify-content-between align-items-center">'
-          list +=   '<div class="btn-group">'
-          list +=   '<button type="button" class="btn btn-sm btn-outline-secondary" @click="artdetail">View</button>'
-          list +=     '</div>'
-          list +=      '</div>'
-          list += '</div>'
-          list +=  '</div>'
-          list +=  '</div>'
-          }
-        $(".album-container").empty();
-        $(".album-container").append(list); */
-      })
+
+            list += '<div class="col-md-3">';
+            list += '<div class="card shadow-sm">';
+            list += '<img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">';
+           
+
+            list += '<div class="card-body">'
+            list += '<p class="card-text">' + this.data.content[i].title + '</p>'
+            list += '<p class="card-text">' + this.data.content[i].place + '</p>'
+     
+            list +=  '<div class="d-flex justify-content-between align-items-center">'
+            list +=   '<div class="btn-group">'
+            list +=   '<button type="button" class="btn btn-sm btn-outline-secondary" @click="artdetail">View</button>'
+            list +=     '</div>'
+            list +=      '</div>'
+            list += '</div>'
+            list +=  '</div>'
+            list +=  '</div>'
+        }
+         
+           $(".album-container").empty();
+           $(".album-container").append(list); */
+
+    
+    })
+
     },
-    selectcate(){
-      console.log("hi")
-    }
+  
     
   },
-  created(){
-    this.handlePageChange()
-    this.getItem();
-    }
+
+     created(){
+         /*  this.handlePageChange() */
+            this.getItem()
+        /*   this.selectDate()  */
+      } 
+  
+
+
 }
 </script>
 
@@ -230,6 +315,12 @@ export default {
 
 .galleryenroll  {
   text-align:center;
+}
+.ingbtn:click{
+  color:red;
+}
+.ingbtn:hover{
+  color:green;
 }
 
 </style>
