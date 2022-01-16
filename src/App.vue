@@ -21,7 +21,7 @@
         <router-link to="/">
         <div class="logo">   
           <h1 class="justify-center">ART FARM</h1>
-            <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"></div>
+           <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"> </div>
           </router-link>
       </template>
 
