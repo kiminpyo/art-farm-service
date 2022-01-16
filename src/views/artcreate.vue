@@ -232,7 +232,7 @@
 </template>
 
 <script>
-/*  import axios from 'axios'  */
+  import axios from 'axios'  
 export default {
 
     data(){
@@ -283,7 +283,7 @@ export default {
                  if(this.title === null){
                    console.log("hi")
                  }
-/*           axios({
+           axios({
              url: ('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition'),
              method: 'post',
              data: 
@@ -310,7 +310,7 @@ export default {
              console.log(response);
              alert('등록되었습니다')
              window.location.href="Gallery"  //갤러리로 돌아감 
-         })  */
+         })  
     
         }
     }

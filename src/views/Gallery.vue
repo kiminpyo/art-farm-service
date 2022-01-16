@@ -28,6 +28,7 @@
         </a>
       </li>
       <li>
+
         <a href="#" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           개인전
@@ -55,13 +56,11 @@
     <ul class="nav nav-pills flex-column mb-auto">
      
       <li class="ingbtn">
-        <v-button class="" 
-            v-model="data.currentPage"
+        <a class="nav-link" 
             :length="data.totalPages"
-            @click="handleDateChange"
-         >
+            @click="handleDateChange">
           <svg class="bi me-2" width="16" height="16"></svg>
-          진행중인 전시</v-button>
+          진행중인 전시</a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
@@ -174,20 +173,20 @@ export default {
 
     
       // date = year+"-"+month+"-"+day+ hour+":" + minute;  
-       date = year+"-"+month+"-"+day// 오늘 날짜
+      date = year+"-"+month+"-"+day// 오늘 날짜
         let registdate = this.data.registDate;
-       console.log(registdate)
+      console.log(registdate)
       console.log("date===>"+date)
-     
     
-       console.log(date)
+    
+      console.log(date)
         axios.get('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date='+ date)
         .then((response) => {
           console.log(response.data)
           this.todaydata = response.data; //현재 진행중인 데이터
           console.log(this.todaydata)
 
-         
+        
         })
       },
       handleDateChange() {
@@ -195,7 +194,7 @@ export default {
           var year = date.getFullYear(); //년도
           var month = date.getMonth()+1; //월
           var day = date.getDate()+" "; //일
-       /*  var hour = date.getHours();
+      /*  var hour = date.getHours();
         var minute = date.getMinutes();  */
           if ((day+"").length < 2) {       // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
             day = "0" + day;
@@ -206,15 +205,15 @@ export default {
 
     
       // date = year+"-"+month+"-"+day+ hour+":" + minute;  
-       date = year+"-"+month+"-"+day// 오늘 날짜
+      date = year+"-"+month+"-"+day// 오늘 날짜
       this.page = date;
       console.log(this.page)
     axios({
         url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date=" + date,
         type : "get",
-       
+      
       })
-       .then((response) =>{
+      .then((response) =>{
         this.data = response.data;
         console.log(this.data.content)
         console.log(this.data)
@@ -222,7 +221,7 @@ export default {
     })
     },
    
-       getItem(){
+      getItem(){
         const page = 0;
 
           axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + page)
@@ -310,11 +309,11 @@ display:flex;
  text-align:center;
 
 }
-.ingbtn:click{
-  color:red;
+.nav-link{
+  color:white;
 }
-.ingbtn:hover{
-  color:green;
+.nav-link:hover{
+  color: gray;
 }
 
 
