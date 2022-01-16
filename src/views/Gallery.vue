@@ -4,6 +4,7 @@
       <div class="btn btn-sm btn-outline-secondary" style="color:white;" @click="click">
         <span>등록하기</span>
       </div>
+
     </div>
     <div class="gallery-wrap col-md-12">
       <div class="sidebar col-md-2" style="width:100%; height:100%; position:fixed;">
@@ -203,6 +204,7 @@ export default {
 
 
       // date = year+"-"+month+"-"+day+ hour+":" + minute;  
+
       date = year + "-" + month + "-" + day // 오늘 날짜
       let registdate = this.data.registDate;
       console.log(registdate)
@@ -211,10 +213,12 @@ export default {
 
       console.log(date)
       axios.get('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date=' + date)
+
         .then((response) => {
           console.log(response.data)
           this.todaydata = response.data; //현재 진행중인 데이터
           console.log(this.todaydata)
+
 
 
         })
@@ -234,7 +238,9 @@ export default {
       }
 
 
+
       // date = year+"-"+month+"-"+day+ hour+":" + minute;  
+
       date = year + "-" + month + "-" + day // 오늘 날짜
       this.page = date;
       console.log(this.page)
@@ -248,8 +254,10 @@ export default {
           console.log(this.data.content)
           console.log(this.data)
 
+
         })
     },
+
 
     getItem() {
       const page = 0;
@@ -273,6 +281,7 @@ export default {
           }
           console.log(pageBtn)
           $("ul#pages").append(pageBtn)
+
         })
     },
     handlePageChange(pageNo) {
@@ -334,8 +343,11 @@ export default {
   margin-top: 4%;
 }
 
-.galleryenroll {
-  text-align: center;
+.nav-link{
+  color:white;
+}
+.nav-link:hover{
+  color: gray;
 
 }
 
