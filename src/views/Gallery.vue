@@ -1,11 +1,14 @@
 <template>
+
   <div class="gallery">
+
     <div class="galleryenroll">
       <div class="btn btn-sm btn-outline-secondary" style="color:white;" @click="click">
         <span>등록하기</span>
       </div>
 
     </div>
+
     <div class="gallery-wrap col-md-12">
       <div class="sidebar col-md-2" style="width:100%; height:100%; position:fixed;">
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px;  ">
@@ -137,6 +140,7 @@
                 <p class="card-text">{{data.place}}</p>
                 <p class="card-text">{{data.author}}</p>
 
+
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" @click="artdetail(data)">View</button>
@@ -150,6 +154,7 @@
             <v-pagination v-model="data.currentPage" :length="data.totalPages" @input="handlePageChange"></v-pagination>
           </div>
 
+
         </div>
       </div>
 
@@ -157,6 +162,8 @@
 
   </div>
 
+
+  </div>
 </template>
 
 <script>
@@ -164,11 +171,13 @@ import $ from 'jquery'
 import axios from 'axios'
 export default {
 
+
   data() {
     return {
       data: [],
       todaydata: [],
       page: 1
+
     }
   },
   methods: {
@@ -259,6 +268,7 @@ export default {
     },
 
 
+
     getItem() {
       const page = 0;
 
@@ -320,10 +330,12 @@ export default {
 
 
         })
+
     },
 
 
   },
+
   created() {
     /*  this.handlePageChange() */
     this.getItem()
@@ -331,16 +343,20 @@ export default {
   }
 
 
+
+
 }
 </script>
 
 <style scoped lang="scss">
+
 .gallery-wrap {
   display: flex;
 }
 
 .gallery {
   margin-top: 4%;
+
 }
 
 .nav-link{
@@ -358,4 +374,5 @@ export default {
 .ingbtn:hover {
   color: green;
 }
+
 </style>

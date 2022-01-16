@@ -18,10 +18,12 @@
       </template>
 
       <template>
+
         <div class="logo" style="margin:0 auto;">   
           <router-link to="/"  style="display:flex;">
             <h1 class="justify-center">ART FARM</h1>
             <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px">
+
           </router-link>
         </div>
       </template>
@@ -128,7 +130,6 @@ export default{
 </script>
 <style scoped>
 *{
- 
   list-style: none;
 }
 .body{
@@ -139,7 +140,7 @@ export default{
   height:3000px;
 }
 .logo{
-      display: flex;
+  display: flex;
 }
 
 a{
@@ -168,5 +169,7 @@ h1{
   overflow:visible;
   
 }
-
+.v-toolbar__content{
+  justify-content: center;
+}
 </style>
