@@ -125,6 +125,7 @@ import Lingallery from 'lingallery';
 }
 tbody > tr  th,td{
   padding: 25px;
+  
 }
 .colth{
   border-right: 2px solid white;
@@ -132,7 +133,7 @@ tbody > tr  th,td{
 table{
   color:white;
   margin-top:3%;
-  border: 1px solid white;
+  
   width:100%;
   height:auto;
   text-align:center;
@@ -142,6 +143,7 @@ table{
   width:1000px;
   height:500px;
   color:white;
+  border:1px solid;
 }
 
 
