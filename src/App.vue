@@ -1,5 +1,5 @@
 <template>
-
+<div>
     <v-card class="overflow-hidden">
     <v-app-bar
       absolute
@@ -60,7 +60,7 @@
     <foot-component></foot-component>
 
   </v-card>
-
+</div>
   
   
  <!--  
@@ -133,8 +133,8 @@ export default{
   list-style: none;
 }
 .body{
-    background-color:pink;
- /*  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg'); */
+
+  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');  
   background-repeat: repeat;
   margin-top:80px;
   height:3000px;

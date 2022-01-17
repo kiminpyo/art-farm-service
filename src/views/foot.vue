@@ -11,8 +11,7 @@
     >
 
       <v-bottom-navigation
-        v-model="bottomNav"
-        dark
+      dark
       >
       
         <v-btn :href="`https://github.com/kiminpyo/artfarm-front`" target="_blank">

@@ -1,7 +1,7 @@
 <template>
 <div>
   <v-container>
-    <table class="table">
+    <table class="table" style="margin-top:40px;">
       <thead>
         <tr> 
           <th scope="col" style="width:20%;">게시글 번호</th> 
