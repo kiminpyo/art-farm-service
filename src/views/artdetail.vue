@@ -1,6 +1,6 @@
 <template>
-  <div class="artdetail">
- 
+  <div  >
+ <div class="artdetail" style="text-align:center; margin-left:30%;">
   <lingallery iid.sync="currentId" :width="1000" :height="600"  :items="[
     {id:'someid1', src: 'https://picsum.photos/1000/600/?image=0', thumbnail: 'https://picsum.photos/64/64/?image=0', alt: 'Some alt text', caption: '제목이 들어갈 부분'},
 
@@ -21,28 +21,34 @@
       <tbody>
         <tr>
           <th scope="row">기간</th>
-        <td>021212~</td>
+        <td>{{this.exhPeriod}}</td>
         </tr>
         <tr>
-            <th scope="row">기간</th>
-        <td>021212~</td>
+            <th scope="row">제목</th>
+        <td>{{this.title}}</td>
         </tr>
         <tr>
-            <th scope="row">기간</th>
-        <td>021212~</td>
+            <th scope="row">장소</th>
+        <td>{{this.place}}</td>
         </tr>
         <tr>
-            <th scope="row">기간</th>
-        <td>021212~</td>
+            <th scope="row">작가</th>
+        <td>{{this.author}}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <div>
     <div class="artintro">
-     수원과 경기남부권의 독창적인 미술문화를 중점 수용하는 복합 예술 공간입니다.
-미술활동의 활성화를 위해 다양한 현대미술 전시 및 미술 담론을 생성하는 기획 전시로 수원지역 미술문화의 중심역할을 하고 있으며, 대관 및 전시연구기반의 확충, 교육, 홍보사업 등을 운영하여 지역미술문화를 선도해 나가고 있습니다
+     {{this.discription}}
     </div>
+  </div>
+  <div class="artbtn">
+    <v-button
+    style="background-color:white;">수정</v-button>
+    <v-button
+    style="background-color:white;">뒤로가기</v-button>
+  </div>
   </div>
 </div>
 		
@@ -64,21 +70,25 @@ import Lingallery from 'lingallery';
 	export default {
   props:['artdetail'],
 	data(){
-    const data = this.$route.query.artdiscription
-    const da
+    const discription = this.$route.query.artdiscription
+    const title = this.$route.query.arttitle 
+    const author = this.$route.query.artauthor
+    const place = this.$route.query.artplace
+    const exhPeriod = this.$route.query.artexhPeriod
     return{
-    data : data,
-     items: [
-       
-     
-      ]};
+    discription : discription, 
+    title: title,
+    author : author,
+    place : place,
+    exhPeriod: exhPeriod,
+    };
   },
    components: {
       Lingallery
     },
   created(){
-    console.log(this.data)
-    
+    console.log(this.discription,this.title, this.author, this.place, this.artexhPeriod)
+    console.log(this.exhPeriod)
   },
    
 }

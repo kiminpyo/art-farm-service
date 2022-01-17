@@ -1,65 +1,61 @@
 <template>
 <div>
-    <v-card class="overflow-hidden">
+    <v-card model="" class="overflow-hidden">
     <v-app-bar
       absolute
       dark
-      src="https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg"
-      fade-img-on-scroll
-      scroll-target="#scrolling-techniques-3"
-    >
-      <template v-slot:img="{ props }">
-        <v-img
+      src="https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg" 
+      >
+        <template v-slot:img="{ props }">
+          <v-img
+             v-bind="props"
+              gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+          ></v-img>
+        </template>
 
-          v-bind="props"
+        <template>
 
-          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
-        ></v-img>
-      </template>
+          <div class="logo" style="margin:0 auto;">   
+            <router-link to="/" style="display:flex;">
+              <h1 class="justify-center">ART FARM</h1>
+           <!--    <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"> -->
 
-      <template>
+            </router-link>
+          </div>
+        </template>
 
-        <div class="logo" style="margin:0 auto;">   
-          <router-link to="/"  style="display:flex;">
-            <h1 class="justify-center">ART FARM</h1>
-            <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px">
-
-          </router-link>
-        </div>
-      </template>
-
-      <template v-slot:extension>
-        <v-tabs id="tabs"
-          grow
-          centered
-        >
+        <template v-slot:extension>
+          <v-tabs id="tabs"
+            grow
+            centered
+          >
           <v-tab to="/">
-            HOME
-          </v-tab>
-          <v-tab to="/board">
-            게시판
-          </v-tab>
-          <v-tab to="/Gallery">
-            전시글
-          </v-tab>
-          <v-tab to="/cal">
-            전시일정
-          </v-tab>
-        </v-tabs>
-      </template>
+              HOME
+              </v-tab>
+            <v-tab to="/board">
+              게시판
+            </v-tab>
+            <v-tab to="/Gallery">
+              전시글
+            </v-tab>
+            <v-tab to="/cal">
+              전시일정
+            </v-tab>
+            
+          </v-tabs>
+          
+        </template>
+      
     </v-app-bar>
-    <v-sheet
-      id="scrolling-techniques-3"
-      class="overflow-y-auto"
-      max-height="600"
-    >
-      <v-container ></v-container>
-    </v-sheet>
-    <router-view class="body"></router-view>
+    
+    <router-view class="body">
+    
+    </router-view>
 
     <foot-component></foot-component>
 
   </v-card>
+     
 </div>
   
   
@@ -129,8 +125,17 @@ export default{
   */
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  font-family: 'Roboto', sans-serif;
+}
 *{
-  list-style: none;
+   font-family: 'Roboto', sans-serif;
 }
 .body{
 
@@ -171,5 +176,16 @@ h1{
 }
 .v-toolbar__content{
   justify-content: center;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
 </style>
