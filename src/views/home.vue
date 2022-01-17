@@ -12,21 +12,23 @@
        
         <div id="carousel">
            <h1>gallery</h1>
-          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" v-on:click="detail"></figure>
-          <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt=""  v-on:click="detail"></figure>
-          <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt=""  v-on:click="detail"></figure>
-          <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt=""  v-on:click="detail"></figure>
-          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt=""  v-on:click="detail"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  v-on:click="detail"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  v-on:click="detail"></figure>
-          <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt=""  v-on:click="detail"></figure>
+          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
+          <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt=""  @:click="detail"></figure>
+          <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt=""  @:click="detail"></figure>
+          <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt=""  @:click="detail"></figure>
+          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt=""  @:click="detail"></figure>
+          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
+          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
+          <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt=""  @:click="detail"></figure>
           
           
         </div>
        </div>
-        
       
-      <div class="second">
+        
+          
+      
+       <div class="second">
         
         <div>
           <hr style="color:white"/>
@@ -39,8 +41,9 @@
                 <div class="content">
                   <div class="loader"></div>
                   <div class="text">
-                    <h3>LINA</h3>
-                    <p>The sibling rivalries between Lina the Slayer, and her younger sister Rylai, the Crystal Maiden, were the stuff of legend in the temperate region where they spent their quarrelsome childhoods together. Lina always had the advantage, however, for while Crystal was guileless and naive, Lina's fiery ardor was tempered by cleverness and conniving. The exasperated parents of these incompatible offspring went through half a dozen homesteads, losing one to fire, the next to ice, before they realized life would be simpler if the children were separated.</p>
+                     <div class="btn-group" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
+                  </div>
                   </div>
                 </div>
               </a>
@@ -63,42 +66,92 @@
             </div>
           </div>
         </li>
-        <li>
-          <div class="flip">
-            <div class="front-side"></div>
-            <div class="back-side">
-              <a href="#">
-                <div class="content">
-                  <div class="loader"></div>
-                  <div class="text">
-                    <h3>DROW RANGER</h3>
-                    <p>Drow Ranger's given name is Traxex--a name well suited to the short, trollish, rather repulsive Drow people. But Traxex herself is not a Drow. Her parents were travelers in a caravan set upon by bandits, whose noisy slaughter of innocents roused the ire of the quiet Drow people. After the battle settled, the Drow discovered a small girl-child hiding in the ruined wagons, and agreed she could not be abandoned. Even as child, Traxex showed herself naturally adept at the arts they prized: Stealth, silence, subtlety. In spirit, if not in physique, she might have been a Drow changeling, returned to her proper home. But as she grew, she towered above her family and came to think of herself as ugly.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="flip">
-            <div class="front-side"></div>
-            <div class="back-side">
-              <a href="#">
-                <div class="content">
-                  <div class="loader"></div>
-                  <div class="text">
-                    <h3>WINDRANGER</h3>
-                    <p>The western forests guard their secrets well. One of these is Lyralei, master archer of the wood, and favored godchild of the wind. Known now as Windranger, Lyralei's family was killed in a storm on the night of her birth--their house blown down by the gale, contents scattered to the winds. Only the newborn survived among the debris field of death and destruction. In the quiet after the storm, the wind itself took notice of the lucky infant crying in the grass. The wind pitied the child and so lifted her into the sky and deposited her on a doorstep in a neighboring village.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
+        
+       
         
           </ul>
         </div>
       </div>
+     
+    
+              <div class="scene">
+           <hr style="color:white"/>
+            <!-- camera -->
+            <div class="roll-camera">
+              <h1
+              style="padding:0;margin-bottom:0;">article</h1>
+          <!-- shelf -->
+          <div class="shelf top" style="margin:0">
+            <div class="face top"></div>
+            <div class="face front">
+             
+              <a class="photocard">
+                  <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg" alt="">
+              </a>
+              <a href="#" class="photocard">
+                  <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg" alt="">
+              </a>
+              <a href="#" class="photocard">
+                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg" alt="">
+              </a>
+              
+
+            </div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face bottom"></div>
+          </div>
+          <!-- /shelf -->
+
+          <!-- shelf -->
+          <div class="shelf middle">
+            <div class="face top"></div>
+            <div class="face front">
+
+              <a  class="photocard">
+                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/4.jpg" alt="">
+              </a>
+              <a href="#" class="photocard">
+                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/5.jpg" alt="">
+              </a>
+              <a href="#" class="photocard">
+                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/6.jpg" alt="">
+              </a>
+
+            </div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face bottom"></div>
+          </div>
+          <!-- /shelf -->
+
+          <!-- shelf -->
+          <div class="shelf bottom" style="margin:0">
+            <div class="face top"></div>
+            <div class="face front">
+
+              <a class="photocard">
+                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/7.jpg" alt="">
+              </a>
+              <a href="#" class="photocard">
+                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/8.jpg" alt="">
+              </a>
+              <a class="photocard" >
+                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/9.jpg" alt="">
+              </a>
+
+            </div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face bottom"></div>
+          </div>
+          <!-- /shelf -->
+        
+        <!-- /camera -->
+            </div>
+        </div>
+          
+         
      
     
   
@@ -171,7 +224,7 @@ code {
   font: inherit;
 } 
 
-/* 2nd section */
+/* first section */
 
  h1{
 	display: table;
@@ -259,23 +312,26 @@ code {
   opacity: 1;
 } 
 /*
-3rd 이미지파트*/
+2nd 이미지파트*/
 .gallery {
   list-style-type: none;
   height: 500px;
   overflow: hidden;
   padding:0;
+    margin-left:25%;
+ 
 }
 .gallery li {
   float: left;
   height: 100%;
-  width: 25%;
+     width:15%;
+
   background: #2E4053;
 }
 .gallery .flip {
   height: 100%;
   width: 100%;
-  position: relative;
+  
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -540,6 +596,170 @@ code {
     opacity: 0;
   }
 }
+/*third */
 
+
+.scene {
+  overflow: hidden;
+  margin:0 auto;
+  width:100%;
+  height:100%;
+  perspective: 1000px;
+  perspective-origin: 50% 25%;
+  backface-visibility:  hidden;
+  transform-style:  preserve-3d;
+
+}
+
+
+
+.roll-camera {
+  transform-style: preserve-3d;
+}
+.roll-camera .move-camera {
+  transform-style: preserve-3d;
+  transform: translateY(0px);
+  transition: all 3s ease-in-out;
+}
+
+.wallpaper {
+  position: absolute;
+  width: 200%;
+  height: 2000px;
+  margin-left:-50%;
+  background-image: none;
+}
+.wallpaper:before {
+  content:"";
+  display:block;
+  width:100%;
+  height:100%;
+  background: none;
+}
+.shelf {
+  position: absolute;
+  left:50%;
+  margin-left:-325px;
+  transform-style:  preserve-3d;
+  backface-visibility:  hidden;
+  transform: rotateY(90deg) rotateX(90deg) translateX(199px);
+}
+.shelf.top {
+  top: 300px;
+}
+.shelf.middle {
+  top: 500px;
+}
+.shelf.bottom {
+  top: 700px;
+}
+.shelf .face {
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: #fff7eb;
+  box-shadow: inset 0 0 75px 1.5px rgba(0, 0, 0, .1);
+}
+.shelf .front {
+  width: 100px;
+  height: 700px;
+  transform-style: preserve-3d;
+  transform: translateX(35px) translateY(-350px) translateZ(10px);
+}
+.shelf .back {
+  width: 100px;
+  height: 700px;
+  transform: translateX(35px) translateY(-350px) translateZ(-10px);
+}
+.shelf .left {
+  width: 20px;
+  height: 700px;
+  background: linear-gradient(0deg, #eae3d8 0%, #fff7eb 100%);
+  transform: translateX(25px) translateY(-350px) rotateY(-90deg) translateZ(0);
+}
+.shelf .top {
+  width: 20px;
+  height: 100px;
+  transform: translateX(75px) translateY(300px) rotateX(90deg) rotateZ(90deg);
+}
+.shelf .bottom {
+  width: 20px;
+  height: 100px;
+  transform: translateX(75px) translateY(-400px) rotateX(90deg) rotateZ(90deg);
+}
+
+/* lighting */
+.shelf:before {
+  content:"";
+  display:block;
+  width: 670px;
+  height:20px;
+  box-shadow: 0 -30px 30px 20px rgba(0, 0, 0, 0.5);
+  transform:  rotateX(90deg)
+              rotateY(90deg)
+              translateX(-20px)
+              translateZ(-200px)
+              skew(-45deg);
+}
+.shelf .back:before {
+  content:"";
+  position: absolute;
+  display:block;
+  width: 100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.65);
+}
+.shelf .top:before,
+.shelf .bottom:before,
+.shelf .left:before,
+.shelf .right:before {
+  content:"";
+  position: absolute;
+  display:block;
+  width: 100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+
+/* photo cards */
+.shelf .photocard {
+  position: relative;
+  display:block;
+  width: 150px;
+  height:100px;
+  transform-style:  preserve-3d;
+  transform:        rotateX(-90deg)
+                    rotateY(270deg)
+                    translateY(-50px)
+                    translateZ(25px);
+}
+.shelf .photocard:after {
+  content:"";
+  position: absolute;
+  bottom:0px;
+  right:0;
+  display:block;
+  width: 100px;
+  height:1px;
+  box-shadow: 0 30px 30px 20px rgba(0, 0, 0, 0.5);
+  transform:  rotateX(90deg)
+              rotateZ(180deg)
+              translateX(25px)
+              translateY(-15px)
+              skew(-45deg);
+  
+  /* don't apply box-shadow to FF (render bug) */
+  -moz-transform: scale(0);
+}
+.shelf .photocard:nth-child(1n) {
+  top:75px;
+}
+.shelf .photocard:nth-child(2n){
+  top:200px;
+}
+.shelf .photocard:nth-child(3n){
+  top: 325px;
+}
 
 </style>

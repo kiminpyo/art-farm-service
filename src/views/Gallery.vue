@@ -3,21 +3,22 @@
   <div class="gallery">
 
     <div class="galleryenroll">
-      <div class="btn btn-sm btn-outline-secondary" style="color:white;" @click="click">
-        <span>등록하기</span>
-      </div>
+     <!-- 원래 버튼있던 자리 -->
 
+    <select class="btn" name="" id="">
+      <option value=""></option>
+    </select>
     </div>
 
-    <div class="gallery-wrap col-md-12">
-      <div class="sidebar col-md-2" style="width:100%; height:100%; position:fixed;">
+    <div class="gallery-wrap col-md-12 justify-content-center">
+      <div class="sidebar col-md-2" style="width:100%; height:100%; text-align:center">
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px;  ">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
+        
+            <svg class="bi me-5" width="40" height="32">
               <use xlink:href="#bootstrap" />
             </svg>
             <span class="fs-4">카테고리</span>
-          </a>
+          
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
@@ -92,12 +93,12 @@
             </li>
           </ul>
           <hr>
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
+        
+            <svg class="bi me-5" width="40" height="32">
               <use xlink:href="#bootstrap" />
             </svg>
             <span class="fs-4">카테고리</span>
-          </a>
+        
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
 
@@ -134,14 +135,14 @@
 
         </div>
       </div>
-      <div class="col-md-8" style="margin-left:350px;">
+      <div class="col-md-6" >
         <div class="album-wrap row col-md-12">
           <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx">
             
               <v-hover v-slot="{hover}">
                 
-                  <card
-  
+                  <v-card
+                    v-model="data.items"
                     color="black"  
                   >
             <div class="card shadow-sm" >
@@ -151,8 +152,8 @@
               <div class="card-body">
                 <p class="card-text">{{data.title}}</p>
                 <p class="card-text">{{data.place}}</p>
-                <p class="card-text">{{data.author}}</p>
-              
+                <p class="card-text">{{data.category}}</p>
+             
 
              
               
@@ -163,13 +164,11 @@
                   class="d-flex transition-fast-in-fast-out v-card--reveal"
                   style="height:100%; background-color:white; width:100%"
                 >
-
-                <div class="hoverwrap" style="display:flex">
-                    <div>
-                  {{data.discription}}
-                </div>
-                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" @click="artdetail(data)">View</button>
+                  <!-- 호버 시 나오는 데이터 -->
+                <div class="hoverwrap" >
+                  
+                   <div class="btn-group" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
                   </div>
                 </div>
                 
@@ -180,7 +179,7 @@
                 
               </v-expand-transition>
             </div>
-            </card>
+            </v-card>
                   
             </v-hover>
             
@@ -188,6 +187,9 @@
           
           <div class="page">
             <v-pagination v-model="data.currentPage" :length="data.totalPages" @input="handlePageChange"></v-pagination>
+             <div class="btn btn-sm btn-outline-secondary" style="color:white; width:100px; font-weight:bold; font-size: 15px; " @click="click">
+            <span>등록하기</span>
+            </div>
           </div>
 
 
@@ -209,9 +211,13 @@ export default {
 
 
   data() {
+   
     return {
-      data: [],
-      todaydata: [],
+      data: [
+        
+      ],
+      exhPeriod: [],
+      todaydate: '',
       page: 1
 
     }
@@ -225,18 +231,36 @@ export default {
     },
 
     artdetail(data) {
+      
+      for(let i = 0; i < data.exhPeriod.length; i++ ){
+       
+        console.log(data.exhPeriod[i].date)
+        this.todaydate  += data.exhPeriod[i].date ;
+        console.log(this.todaydate)
+       
+      }
       console.log(data)
+      console.log(data.discription)
+      console.log(data.title)
+      console.log(data.place)
+      console.log(this.todaydate)
+      console.log(data.subTitle)
+      console.log(data.author)
       this.$router.push({
         name: "artdetail",
+       
         query: {
           artdiscription: data.discription,
           arttitle: data.title,
           artplace: data.place,
           artauthor: data.author,
-          aredate: data.exhPeriod
+          artexhPeriod: this.todaydate,
+          artsubTitle: data.subTitle
+          
         }
-      })
-      console.log(this.artdata)
+      }) 
+ 
+  
     },
     selectDate() {
       let date = new Date();
@@ -266,9 +290,9 @@ export default {
 
         .then((response) => {
           console.log(response.data)
-          this.todaydata = response.data; //현재 진행중인 데이터
-          console.log(this.todaydata)
-
+          this.data = response.data; //현재 진행중인 데이터
+          
+          console.log(this.data)
 
 
         })
@@ -301,8 +325,8 @@ export default {
         })
         .then((response) => {
           this.data = response.data;
-          console.log(this.data.content)
-          console.log(this.data)
+        
+          console.log(this.data.content[0])
 
 
         })
@@ -313,7 +337,7 @@ export default {
     getItem() {
       const page = 0;
 
-      axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + page)
+      axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?size=20&page=" + page)
         .then((response) => {
           this.data = response.data;
           console.log(this.data)
@@ -322,6 +346,7 @@ export default {
           console.log(this.data.size)
           console.log(this.data.numberOfElements)
           console.log(this.data.content)
+            console.log(this.data.content[0].author)
           var pageBtn = '';
 
           for (var pageNo = 0; pageNo < this.data.totalPages; pageNo++) {
