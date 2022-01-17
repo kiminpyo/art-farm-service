@@ -16,14 +16,21 @@
         <v-row no-gutters>
           
           <v-col id="cont">
-            <v-text-field class="writer" hint="20자 이내로 입력하세요" placeholder="작성자명을 입력해 주세요" name="writer" :counter="20" required maxlength="20" outlined>
+            <v-text-field class="writer" hint="20자 이내로 입력하세요" placeholder="작성자명을 입력해 주세요" name="writer" v-model="writer" :counter="20" required maxlength="20" outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
           
           <v-col id="cont">
-            <v-textarea class="context" hint="1000자 이내로 입력하세요" placeholder="글 내용을 입력해 주세요" name="context"   :counter="1000" required maxlength="1000" outlined>
+            <v-textarea 
+            class="context" 
+            hint="1000자 이내로 입력하세요"
+             placeholder="글 내용을 입력해 주세요"
+              name="context"  v-model="content" 
+              :counter="1000" 
+              required maxlength="1000"
+               outlined>
             </v-textarea>
           </v-col>
         </v-row>

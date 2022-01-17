@@ -65,7 +65,8 @@ export default {
         query :{body: data.content,
                 id: data.noticeIdx,
                 title: data.title,
-                views: data.views}
+                views: data.views,
+                content: data.content}
       })
     },
     handlePageChange(pageNo) {
@@ -196,7 +197,7 @@ table tbody tr{
   height:35px;
 }
 #board_tr{
-  height:50px;
+  height:80px;
   vertical-align: middle;
 }
 #board_title{

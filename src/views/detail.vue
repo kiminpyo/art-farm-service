@@ -47,7 +47,7 @@
             </v-col>
             <v-col cols="1"></v-col>
             <v-col id="detail_cont_1" cols="7">
-              <span>{{$route.query.body}}</span>
+              <span>{{$route.query.content}}</span>
             </v-col>
             <v-col cols="1"></v-col>
           </v-row>
@@ -79,7 +79,7 @@ export default {
      data() {
         const noticeIdx = this.$route.query.id;
         const title = this.$route.query.title;
-        const body = this.$route.query.body;
+        const content = this.$route.query.content;
         const writer = this.$route.query.writer;
         let views = this.$route.query.views;
   
@@ -87,7 +87,8 @@ export default {
         return{
         noticeIdx : noticeIdx,
         title : title,
-        body: body,
+       
+        content: content,
         writer: writer,
         views : views
         }
@@ -122,6 +123,7 @@ export default {
           console.log("success");
           console.log(response);
           console.log(response.data.views)
+          console.log(this.content)
           
         }); 
   }
