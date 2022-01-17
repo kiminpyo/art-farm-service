@@ -1,7 +1,8 @@
 <template>
+
 <div>
   <v-container>
-    <table class="table" style="margin-top:40px;">
+    <table class="table">
       <thead>
         <tr> 
           <th scope="col" style="width:20%;">게시글 번호</th> 
@@ -191,12 +192,16 @@ a {
   width:100%;
   text-align: center;
   color:white;
+  font-size:1.3rem;
+}
+.table a{
+  font-size:1.3rem;
 }
 table tbody tr{
   height:35px;
 }
 #board_tr{
-  height:50px;
+  height:80px;
   vertical-align: middle;
 }
 #board_title{

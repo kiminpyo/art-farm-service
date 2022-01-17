@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-form  ref="form"
-    style="width:40%; margin:100px 0 0 0;"
+    style="width:40%;"
     lazy-validation
     @submit="checkform" 
     >

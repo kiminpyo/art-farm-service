@@ -3,7 +3,7 @@
 
     <v-container>
       <v-card elevation="10" outluined width="100%" class="mx-auto">
-        <v-card-text style="margin-top:100px; padding-bottom:50px !important;">
+        <v-card-text style="padding-bottom:50px !important;">
           <v-row style="margin:30px 0;">
             <v-col cols="1"></v-col>
             <v-col id="detail_sub" cols="2">

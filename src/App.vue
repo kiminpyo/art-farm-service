@@ -1,10 +1,10 @@
 <template>
+
 <div>
     <v-card model="" class="overflow-hidden">
     <v-app-bar
       absolute
       dark
-
       src="https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg" 
       >
         <template v-slot:img="{ props }">
@@ -28,9 +28,9 @@
 
         <template v-slot:extension>
           <v-tabs id="tabs"
-            grow
             centered
           >
+
           <v-tab to="/">
               HOME
               </v-tab>
@@ -43,17 +43,19 @@
             <v-tab to="/cal">
               전시일정
             </v-tab>
-            
+
           </v-tabs>
           
         </template>
       
     </v-app-bar>
-    
-
-    <router-view class="body">
+    <vue-page-transition name="fade">
+      <router-view class="body">
     
     </router-view>
+</vue-page-transition>
+
+
 
 
     <foot-component></foot-component>
@@ -94,8 +96,8 @@ export default{
   components: {
     footComponent
     }
-  
 }
+
 document.cookie="safeCookie1=foo;SameSite=Lax";
 document.cookie="safeCookie=foo";
 document.cookie="crossCookie=bar;SameSite=None;Secure";
@@ -145,8 +147,8 @@ html, body {
 
   background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');  
   background-repeat: repeat;
-  margin-top:80px;
   height:3000px;
+  padding-top:200px;
 }
 .logo{
   display: flex;
@@ -172,6 +174,11 @@ h1{
 }
 #tabs{
   margin:0 auto;
+  display:flex;
+  justify-content:center;
+}
+#tabs a{
+  padding: 0 40px;
 }
 #art{
   text-overflow:clip;
