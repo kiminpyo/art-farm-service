@@ -6,7 +6,6 @@
       dark
       src="https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg"
       fade-img-on-scroll
-      scroll-target="#scrolling-techniques-3"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -48,13 +47,7 @@
         </v-tabs>
       </template>
     </v-app-bar>
-    <v-sheet
-      id="scrolling-techniques-3"
-      class="overflow-y-auto"
-      max-height="600"
-    >
-      <v-container ></v-container>
-    </v-sheet>
+    
     <router-view class="body"></router-view>
 
     <foot-component></foot-component>

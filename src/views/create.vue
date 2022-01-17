@@ -1,42 +1,29 @@
 <template>
   <div>
     <v-form  ref="form"
-    style="width:60%; margin:0 auto;"
+    style="width:40%; margin:100px 0 0 0;"
     lazy-validation
     @submit="checkform" 
     >
       <v-card>
-        
         <v-row no-gutters>
-          <v-col id="tit">
-            제목
-          </v-col>
-        </v-row>
-        <v-row>
+          
           <v-col id="cont">
-            <v-text-field class="title" hint="제목을 입력해주세요." name="title" v-model="title" :counter="50" required maxlength="50">
+            <v-text-field class="title" hint="50자 이내로 입력하세요" placeholder="제목을 입력해 주세요" name="title" v-model="title" :counter="50" required maxlength="50" outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
-          <v-col id="tit">
-            글쓴이
-          </v-col>
-        </v-row>
-        <v-row>
+          
           <v-col id="cont">
-            <v-text-field class="writer" hint="글쓴이를 입력해주세요." name="writer" :counter="20" required maxlength="20">
+            <v-text-field class="writer" hint="20자 이내로 입력하세요" placeholder="작성자명을 입력해 주세요" name="writer" :counter="20" required maxlength="20" outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
-          <v-col id="tit">
-            내용
-          </v-col>
-        </v-row>
-        <v-row>
+          
           <v-col id="cont">
-            <v-textarea class="context" hint="내용을 입력해주세요." name="context"   :counter="1000" required maxlength="1000">
+            <v-textarea class="context" hint="1000자 이내로 입력하세요" placeholder="글 내용을 입력해 주세요" name="context"   :counter="1000" required maxlength="1000" outlined>
             </v-textarea>
           </v-col>
         </v-row>
@@ -150,9 +137,12 @@ div{
   padding:20px;
 }
 #tit{
-  padding:10px 40px;
+  padding:10px;
   font-size:1.5rem;
   font-weight:400;
+  display:flex;
+  align-items: flex-start;
+  justify-content:center;
 }
 #cont{
   padding:10px 20px;
@@ -168,5 +158,12 @@ div{
   background-color:#1867c0;
   font-size:1rem;
   font-weight:400;
+}
+.body{
+  display:flex;
+  justify-content:center;
+}
+.row{
+  padding:10px;
 }
 </style>

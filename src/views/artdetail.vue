@@ -65,7 +65,7 @@ import Lingallery from 'lingallery';
   props:['artdetail'],
 	data(){
     const data = this.$route.query.artdiscription
-    const da
+    
     return{
     data : data,
      items: [

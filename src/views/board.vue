@@ -11,27 +11,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="data in data.content" :key="data.noticeIdx">
+        <tr v-for="data in data.content" :key="data.noticeIdx" id="board_tr">
           <td scope="row">{{data.noticeIdx}}</td>
-          <td><a v-on:click="view(data)">{{data.title}}</a></td>
+          <td><a v-on:click="view(data)" id="board_title">{{data.title}}</a></td>
           <td scope="row">{{data.registDate}}</td>
           <td scope="row">{{data.views}}</td>
         </tr>
       </tbody>
     </table>
 
-    <v-row>
-      <v-col></v-col>
-      <v-col></v-col>
-     
-      <v-col>
+    <v-row d-flex align="center"
+      justify="center">
+      <v-col align="center"
+      justify="center">
         <router-link 
         class="button" 
         to="/create"
         >작성하기</router-link>
       </v-col>
-      <v-col></v-col>
-      <v-col></v-col>
     </v-row>
     <v-row>
       <div class="">
@@ -158,7 +155,6 @@ export default {
   
   created(){
     this.getItem();
-   
   }
   
 
@@ -197,7 +193,14 @@ a {
   color:white;
 }
 table tbody tr{
-  height:25px;
+  height:35px;
+}
+#board_tr{
+  height:50px;
+  vertical-align: middle;
+}
+#board_title{
+  cursor:pointer;
 }
 /* button 스타일링 */
 a {
