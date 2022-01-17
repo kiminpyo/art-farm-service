@@ -4,10 +4,12 @@
 
     <!--원래 버튼있던 자리
     <div class="galleryenroll">
+
       <select class="btn" name="" id="">
         <option value=""></option>
       </select>
     </div>-->
+
 
     <div class="gallery-wrap col-md-12 justify-content-center">
       <div class="sidebar col-md-2" style="width:100%; height:100%; text-align:center">
@@ -135,6 +137,12 @@
         </div>
       </div>
       <div class="col-md-6" >
+        
+        <select class="btn" name="" id="">
+          <option value="">5개씩 보기</option>
+          <option value="">10개씩 보기</option>
+          <option value="">15개씩 보기</option>
+        </select>
         <div class="album-wrap row col-md-12">
           <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx">
             
@@ -161,13 +169,14 @@
                       <div
                   v-if="hover"
                   class="d-flex transition-fast-in-fast-out v-card--reveal"
-                  style="height:100%; background-color:white; width:100%"
+                  style="height:100%;  background-image: linear-gradient(to right, #6770ab, #4d5e8a, #394c68, #2c3948, #22262a); width:100%"
+
                 >
                   <!-- 호버 시 나오는 데이터 -->
                 <div class="hoverwrap" >
                   
                    <div class="btn-group" >
-                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" style="color:white" v-on:click="artdetail(data)"><h2>view</h2></button>
                   </div>
                 </div>
                 
@@ -439,12 +448,14 @@ export default {
 align-items: center;
 bottom: 0;
 justify-content: center;
-opacity: 0.8;
+opacity: 0.9;
 position: absolute;
 width: 100%;
+
 }
 .v-responsive__content{
   flex: auto;
+  
 }
 
 </style>

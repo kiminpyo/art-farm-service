@@ -66,6 +66,40 @@
             </div>
           </div>
         </li>
+          <li>
+          <div class="flip">
+            <div class="front-side"></div>
+            <div class="back-side">
+              <a href="#">
+                <div class="content">
+                  <div class="loader"></div>
+                  <div class="text">
+                     <div class="btn-group" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
+                  </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+          <li>
+          <div class="flip">
+            <div class="front-side"></div>
+            <div class="back-side">
+              <a href="#">
+                <div class="content">
+                  <div class="loader"></div>
+                  <div class="text">
+                     <div class="btn-group" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
+                  </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
         
        
         
@@ -179,7 +213,7 @@ import SplashComponent from '@/views/splash.vue'
      splashing() {
            setTimeout(() => {
              this.isLoaded = true
-           }, 10)
+           }, 2000)
          },
      detail(){
         

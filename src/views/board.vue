@@ -66,7 +66,8 @@ export default {
         query :{body: data.content,
                 id: data.noticeIdx,
                 title: data.title,
-                views: data.views}
+                views: data.views,
+                content: data.content}
       })
     },
     handlePageChange(pageNo) {

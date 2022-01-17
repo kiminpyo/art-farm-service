@@ -19,7 +19,7 @@
 
           <div class="logo" style="margin:0 auto;">   
             <router-link to="/" style="display:flex;">
-              <h1 class="justify-center">ART FARM</h1>
+              <h1 class="justify-center"><img src="@/assets/3.png" alt="" style="width:300px;"></h1>
            <!--    <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"> -->
 
             </router-link>
@@ -32,16 +32,16 @@
           >
 
           <v-tab to="/">
-              HOME
+              홈
               </v-tab>
             <v-tab to="/board">
-              게시판
+             게시판
             </v-tab>
             <v-tab to="/Gallery">
-              전시글
+            전시글
             </v-tab>
             <v-tab to="/cal">
-              전시일정
+              일정
             </v-tab>
 
           </v-tabs>
@@ -144,8 +144,8 @@ html, body {
    font-family: 'Roboto', sans-serif;
 }
 .body{
-
-  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');  
+  background-image: linear-gradient(to bottom, #5c6772, #4f5761, #414851, #353941, #282b32);
+ /*  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');   */
   background-repeat: repeat;
   height:3000px;
   padding-top:200px;
