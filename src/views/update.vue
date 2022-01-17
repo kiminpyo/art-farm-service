@@ -9,43 +9,30 @@
   </div> -->
   <div>
   <v-form  ref="form"
-    style="width:60%; margin:0 auto; padding-top:40px;"
+    style="width:50%; margin:0 auto; padding-top:40px;"
     lazy-validation
     action=""
     @submit="updateitem"
-    id="modal-temlate"
+    id="modal-template"
     >
-      <v-card id="card_board">
+      <v-card id="card_board" style="margin-top:100px;">
         <v-row no-gutters>
-          <v-col id="tit">
-            제목
-          </v-col>
-        </v-row>
-        <v-row>
           <v-col id="cont">
-            <v-text-field class="title" hint="제목을 입력해주세요." name="title" v-model="title" :counter="50" required maxlength="50">
+            <v-text-field class="title" hint="50자 이내로 입력하세요" placeholder="제목을 입력해 주세요" name="title" v-model="title" :counter="50" required maxlength="50" outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
-          <v-col id="tit">
-            글쓴이
-          </v-col>
-        </v-row>
-        <v-row>
+          
           <v-col id="cont">
-            <v-text-field class="writer" hint="글쓴이를 입력해주세요." name="writer" :counter="20" required maxlength="20">
+            <v-text-field class="writer" hint="20자 이내로 입력하세요" placeholder="작성자명을 입력해 주세요" name="writer" :counter="20" required maxlength="20" outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
-          <v-col id="tit">
-            내용
-          </v-col>
-        </v-row>
-        <v-row>
+          
           <v-col id="cont">
-            <v-textarea class="context" hint="내용을 입력해주세요." name="context"   :counter="1000" required maxlength="1000">
+            <v-textarea class="context" hint="1000자 이내로 입력하세요" placeholder="글 내용을 입력해 주세요" name="context"   :counter="1000" required maxlength="1000" outlined>
             </v-textarea>
           </v-col>
         </v-row>

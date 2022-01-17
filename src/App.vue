@@ -4,6 +4,7 @@
     <v-app-bar
       absolute
       dark
+
       src="https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg" 
       >
         <template v-slot:img="{ props }">
@@ -12,6 +13,7 @@
               gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
           ></v-img>
         </template>
+
 
         <template>
 
@@ -48,9 +50,11 @@
       
     </v-app-bar>
     
+
     <router-view class="body">
     
     </router-view>
+
 
     <foot-component></foot-component>
 

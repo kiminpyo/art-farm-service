@@ -70,11 +70,13 @@ import Lingallery from 'lingallery';
 	export default {
   props:['artdetail'],
 	data(){
+
     const discription = this.$route.query.artdiscription
     const title = this.$route.query.arttitle 
     const author = this.$route.query.artauthor
     const place = this.$route.query.artplace
     const exhPeriod = this.$route.query.artexhPeriod
+
     return{
     discription : discription, 
     title: title,

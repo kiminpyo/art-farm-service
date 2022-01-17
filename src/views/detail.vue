@@ -3,38 +3,50 @@
 
     <v-container>
       <v-card elevation="10" outluined width="100%" class="mx-auto">
-        <v-card-text>
-          <v-row style="margin:20px 0;">
+        <v-card-text style="margin-top:100px; padding-bottom:50px !important;">
+          <v-row style="margin:30px 0;">
             <v-col cols="1"></v-col>
-            <v-col id="detail_sub" cols="1">
-              <v-subheader>ID</v-subheader>
+            <v-col id="detail_sub" cols="2">
+              <v-subheader>글번호</v-subheader>
             </v-col>
             <v-col cols="1"></v-col>
-            <v-col id="detail_cont" cols="8">
+            <v-col id="detail_cont" cols="7">
               <span>{{$route.query.id}}</span>
             </v-col>
             <v-col cols="1"></v-col>
           </v-row>
           
-          <v-row style="margin:20px 0;">
+          <v-row style="margin:30px 0;">
             <v-col cols="1"></v-col>
-            <v-col id="detail_sub" cols="1">
+            <v-col id="detail_sub" cols="2">
               <v-subheader>제목</v-subheader>
             </v-col>
             <v-col cols="1"></v-col>
-            <v-col id="detail_cont" cols="8">
+            <v-col id="detail_cont" cols="7">
               <span>{{$route.query.title}}</span>
             </v-col>
             <v-col cols="1"></v-col>
           </v-row>
-          
-          <v-row style="margin:20px 0;">
+
+          <v-row style="margin30pxx 0;">
             <v-col cols="1"></v-col>
-            <v-col id="detail_sub" cols="1">
+            <v-col id="detail_sub" cols="2">
+              <v-subheader>글쓴이</v-subheader>
+            </v-col>
+            <v-col cols="1"></v-col>
+            <v-col id="detail_cont" cols="7">
+              <span>{{$route.query.writer}}</span>
+            </v-col>
+            <v-col cols="1"></v-col>
+          </v-row>
+          
+          <v-row style="margin:30px 0;">
+            <v-col cols="1"></v-col>
+            <v-col id="detail_sub" cols="2">
               <v-subheader>내용</v-subheader>
             </v-col>
             <v-col cols="1"></v-col>
-            <v-col id="detail_cont_1" cols="8">
+            <v-col id="detail_cont_1" cols="7">
               <span>{{$route.query.body}}</span>
             </v-col>
             <v-col cols="1"></v-col>
@@ -43,16 +55,17 @@
           <v-row>
             <v-col>
               <button v-on:click="update" class="button">
-                <v-icon style="font-size:15px; margin-right:10px;">mdi-tooltip-edit</v-icon>수정하기
+                <v-icon style="font-size:15px; margin-right:10px; padding:10px 0;">mdi-tooltip-edit</v-icon>수정하기
               </button>
             </v-col>
             <v-col>
               <router-link class="button" to="/board" >
-                <v-icon style="font-size:15px; margin-right:10px;">mdi-find-replace</v-icon>돌아가기
+                <v-icon style="font-size:15px; margin-right:10px; padding:10px 0;">mdi-find-replace</v-icon>돌아가기
               </router-link>
             </v-col> 
             
           </v-row>
+          
         </v-card-text>
       </v-card>
     </v-container>
@@ -67,6 +80,7 @@ export default {
         const noticeIdx = this.$route.query.id;
         const title = this.$route.query.title;
         const body = this.$route.query.body;
+        const writer = this.$route.query.writer;
         let views = this.$route.query.views;
   
 
@@ -74,6 +88,7 @@ export default {
         noticeIdx : noticeIdx,
         title : title,
         body: body,
+        writer: writer,
         views : views
         }
     }, 
@@ -206,4 +221,5 @@ a.button:hover {
 #detail_cont_1:hover{
   box-shadow: 2px 2px rgba(0,0,0,.25);
 }
+
 </style>
