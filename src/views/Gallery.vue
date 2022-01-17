@@ -102,18 +102,23 @@
           <ul class="nav nav-pills flex-column mb-auto">
 
             <li class="ingbtn">
-              <v-button class="" v-model="data.currentPage" :length="data.totalPages" @click="handleDateChange">
+              <v-button
+            
+              v-model="data.currentPage"
+               :length="data.totalPages" 
+               @click="handleDatenow">
                 <svg class="bi me-2" width="16" height="16"></svg>
                 진행중인 전시
               </v-button>
             </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#table" />
-                </svg>
-                종료된 전시
-              </a>
+             <li class="ingbtn">
+              <v-button 
+              v-model="data.currentPage"
+               :length="data.totalPages" 
+               @click="handleDatenow">
+                <svg class="bi me-2" width="16" height="16"></svg>
+                진행중인 전시
+              </v-button>
             </li>
             <li>
               <a href="#" class="nav-link text-white">
@@ -130,26 +135,57 @@
         </div>
       </div>
       <div class="col-md-8" style="margin-left:350px;">
-        <div class="album-wrap row">
+        <div class="album-wrap row col-md-12">
           <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx">
-
-            <div class="card shadow-sm">
-              <img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">
+            
+              <v-hover v-slot="{hover}">
+                
+                  <card
+  
+                    color="black"  
+                  >
+            <div class="card shadow-sm" >
+              
+              <v-img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">
+             </v-img>
               <div class="card-body">
                 <p class="card-text">{{data.title}}</p>
                 <p class="card-text">{{data.place}}</p>
                 <p class="card-text">{{data.author}}</p>
+              
 
+             
+              
+              </div>
+                    <v-expand-transition>
+                      <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out v-card--reveal"
+                  style="height:100%; background-color:white; width:100%"
+                >
 
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
+                <div class="hoverwrap" style="display:flex">
+                    <div>
+                  {{data.discription}}
+                </div>
+                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" @click="artdetail(data)">View</button>
                   </div>
                 </div>
-              </div>
-            </div>
+                
+              
 
+
+                </div>
+                
+              </v-expand-transition>
+            </div>
+            </card>
+                  
+            </v-hover>
+            
           </div>
+          
           <div class="page">
             <v-pagination v-model="data.currentPage" :length="data.totalPages" @input="handlePageChange"></v-pagination>
           </div>
@@ -163,7 +199,7 @@
   </div>
 
 
-  </div>
+
 </template>
 
 <script>
@@ -184,6 +220,7 @@ export default {
     click() {
       this.$router.push({
         name: "artcreate"
+        
       })
     },
 
@@ -192,7 +229,11 @@ export default {
       this.$router.push({
         name: "artdetail",
         query: {
-          artdata: data.discription
+          artdiscription: data.discription,
+          arttitle: data.title,
+          artplace: data.place,
+          artauthor: data.author,
+          aredate: data.exhPeriod
         }
       })
       console.log(this.artdata)
@@ -232,7 +273,7 @@ export default {
 
         })
     },
-    handleDateChange() {
+    handleDatenow() {
       let date = new Date();
       var year = date.getFullYear(); //년도
       var month = date.getMonth() + 1; //월
@@ -337,9 +378,9 @@ export default {
   },
 
   created() {
-    /*  this.handlePageChange() */
+    this.handlePageChange() 
     this.getItem()
-    /*   this.selectDate()  */
+      
   }
 
 
@@ -373,6 +414,18 @@ export default {
 
 .ingbtn:hover {
   color: green;
+}
+
+.v-card--reveal {
+align-items: center;
+bottom: 0;
+justify-content: center;
+opacity: 0.8;
+position: absolute;
+width: 100%;
+}
+.v-responsive__content{
+  flex: auto;
 }
 
 </style>
