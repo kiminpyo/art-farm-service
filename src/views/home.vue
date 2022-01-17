@@ -352,7 +352,7 @@ code {
   height: 500px;
   overflow: hidden;
   padding:0;
-    margin-left:25%;
+  margin-left:25%;
  
 }
 .gallery li {

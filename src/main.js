@@ -9,12 +9,15 @@ import vuetify from './plugins/vuetify'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import VueSplash from 'vue-splash';
-
+import VuePageTransition from 'vue-page-transition'
+import Model from 'v-model';
 // install Swiper modules
 
 
 Vue.use(VueSplash);
 Vue.use(VueAwesomeSwiper);
+Vue.use(VuePageTransition)
+Vue.use(Model);
 
 library.add(faUserSecret)
 Vue.component('font-awesome-icon',FontAwesomeIcon)

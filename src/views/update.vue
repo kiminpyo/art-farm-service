@@ -9,13 +9,13 @@
   </div> -->
   <div>
   <v-form  ref="form"
-    style="width:50%; margin:0 auto; padding-top:40px;"
+    style="width:50%; margin:0 auto;"
     lazy-validation
     action=""
     @submit="updateitem"
     id="modal-template"
     >
-      <v-card id="card_board" style="margin-top:100px;">
+      <v-card id="card_board" >
         <v-row no-gutters>
           <v-col id="cont">
             <v-text-field class="title" hint="50자 이내로 입력하세요" placeholder="제목을 입력해 주세요" name="title" v-model="title" :counter="50" required maxlength="50" outlined>

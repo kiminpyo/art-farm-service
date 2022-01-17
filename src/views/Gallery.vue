@@ -2,10 +2,14 @@
 
   <div class="gallery">
 
+    <!--원래 버튼있던 자리
     <div class="galleryenroll">
-     <!-- 원래 버튼있던 자리 -->
 
-    </div>
+      <select class="btn" name="" id="">
+        <option value=""></option>
+      </select>
+    </div>-->
+
 
     <div class="gallery-wrap col-md-12 justify-content-center">
       <div class="sidebar col-md-2" style="width:100%; height:100%; text-align:center">
@@ -422,11 +426,6 @@ export default {
 
 .gallery-wrap {
   display: flex;
-}
-
-.gallery {
-  margin-top: 4%;
-
 }
 
 .nav-link{
