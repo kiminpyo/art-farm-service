@@ -213,7 +213,7 @@ import SplashComponent from '@/views/splash.vue'
      splashing() {
            setTimeout(() => {
              this.isLoaded = true
-           }, 2000)
+           }, 200)
          },
      detail(){
         
