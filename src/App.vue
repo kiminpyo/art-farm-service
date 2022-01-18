@@ -49,13 +49,15 @@
         </template>
       
     </v-app-bar>
-    <vue-page-transition name="fade">
-      <router-view class="body">
     
+    <vue-page-transition name="fade">
+    
+      <router-view class="body">
+        
     </router-view>
 </vue-page-transition>
 
-
+      
 
 
     <foot-component></foot-component>
@@ -144,10 +146,8 @@ html, body {
    font-family: 'Roboto', sans-serif;
 }
 .body{
-  background-image: linear-gradient(to bottom, #5c6772, #4f5761, #414851, #353941, #282b32);
- /*  background-image:url('https://cdn.pixabay.com/photo/2018/08/17/22/19/m42-3613914_1280.jpg');   */
-  background-repeat: repeat;
-  height:3000px;
+  width:100%;
+  height:100%;
   padding-top:200px;
 }
 .logo{
