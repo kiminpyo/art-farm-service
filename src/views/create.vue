@@ -7,30 +7,32 @@
     >
       <v-card>
         <v-row no-gutters>
-          
+          <div id="app">
+            <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+          </div>
+        </v-row>
+        <v-row no-gutters>
           <v-col id="cont">
             <v-text-field class="title" hint="50자 이내로 입력하세요" placeholder="제목을 입력해 주세요" name="title" v-model="title" :counter="50" required maxlength="50" outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
-          
           <v-col id="cont">
             <v-text-field class="writer" hint="20자 이내로 입력하세요" placeholder="작성자명을 입력해 주세요" name="writer" v-model="writer" :counter="20" required maxlength="20" outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
-          
           <v-col id="cont">
             <v-textarea 
-            class="context" 
-            hint="1000자 이내로 입력하세요"
-             placeholder="글 내용을 입력해 주세요"
+              class="context" 
+              hint="1000자 이내로 입력하세요"
+              placeholder="글 내용을 입력해 주세요"
               name="context"  v-model="content" 
               :counter="1000" 
               required maxlength="1000"
-               outlined>
+              outlined>
             </v-textarea>
           </v-col>
         </v-row>
@@ -40,18 +42,15 @@
             <v-btn id="back" large outlined type="" elevation="2">
               목록보기
             </v-btn>
-            
             <v-btn id="reg" large outlined type="submit" elevation="2">
               등록하기
             </v-btn>
           </v-col>
         </v-row>
-        
       </v-card>
     </v-form>
 
     <Modal v-if="showModal" @close="showModal = false">
-      
       <h3 slot="header">경고!</h3>
       <h3 slot="body">뭔가를 입력하세요</h3>
       <h3 slot="footer">
@@ -60,35 +59,34 @@
     </Modal>
   </div>
 </template>
-<!--v-model은 data에 return값으로 반환 가능-->
-<!--slot은 현재 컴포넌트에서 재사용을 할 수 있다 modal에서 header만 끌어온것-->
-
 
 <script>
 import axios from "axios";
 import Modal from "../common/Modal.vue";
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import CKEditor from '@ckeditor/ckeditor5-vue2';
+import Vue from 'vue';
+Vue.use(CKEditor);
 export default {
-  name: "create",
-  data() {
-    return {
-      title: '',
-      content: '',
-      writer: '',
-     
-      showModal: false,
-    }
-  },
-/*   myDateFormat(d) {
-    var d1 = new Date(Date.now());
-    console.log(d1);
-    return (
-      d.getFullYear() +
-      "/" +
-      ("0" + d.getDate()).slice(-2) +
-      "/" +
-      ("0" + (d.getMonth() + 1)).slice(-2)
-    );
-  }, */
+  name: 'app',
+        data() {
+            return {
+                editor: ClassicEditor,
+                editorData: '<p>Content of the editor.</p>',
+                editorConfig: {
+                    // The configuration of the editor.
+                }
+            };
+        },
+  // name: "create",
+  // data() {
+  //   return {
+  //     title: '',
+  //     content: '',
+  //     writer: '',
+  //     showModal: false,
+  //   }
+  // },
   methods: {
     async checkform(e) {
       e.preventDefault();
@@ -96,14 +94,6 @@ export default {
       let content = this.content;
       let writer = this.writer;
       console.log(title, content, writer);
-     /*  if (title == '') {
-        console.log("modalSuccess");
-        this.showModal = !this.showModal;
-      
-      } else { */
-      /*   const event = new Date();
-        console.log(event.toDateString()); */
-
         axios({
           url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice/",
           method: "post",
@@ -111,28 +101,25 @@ export default {
             title: title,
             content: content,
             writer: writer,
-           registDate: "ㅁㅇㅁㅇㄴㅇ"
-           
+            registDate: "ㅁㅇㅁㅇㄴㅇ"
           },
         }).then(function (response) {
           console.log("success");
           console.log(response);
         });
-     /*  } */
+      },
     },
-  },
-  components: {
-    Modal,
-  },
-  
-};
+    components: {
+      Modal,
+    },
+  };
+
 </script>
 
 <style scoped>
 button{
-    background-color:black;
-    color:white;
-    
+  background-color:black;
+  color:white;  
 }
 .title{
   background-color:white;
