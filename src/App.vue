@@ -60,28 +60,8 @@
      
 </div>
   
-  
- <!--  
-  <div id="app" >
-     <v-app v-if="!isLoaded">
-    <splash-component></splash-component>
-  </v-app>
 
- <v-app v-else>
-   <div class="header">
-     <router-link to="/"><h1>ART FARM</h1></router-link>
-      <div id="nav" >
 
-         
-        </template>
-      </v-app-bar>
-      <vue-page-transition name="fade">
-        <router-view class="body">
-        </router-view>
-      </vue-page-transition>
-      <foot-component></foot-component>
-    </v-card>
-  </div>
 </template>
 
 <script>
@@ -163,4 +143,5 @@ h1{
 .fade-leave-active {
   opacity: 0
 }
+
 </style>

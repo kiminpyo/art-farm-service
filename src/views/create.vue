@@ -1,16 +1,11 @@
 <template>
-  <div>
+  <div id="app">
     <v-form  ref="form"
     style="width:40%;"
     lazy-validation
     @submit="checkform" 
     >
       <v-card>
-        <v-row no-gutters>
-          <div id="app">
-            <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
-          </div>
-        </v-row>
         <v-row no-gutters>
           <v-col id="cont">
             <v-text-field class="title" hint="50자 이내로 입력하세요" placeholder="제목을 입력해 주세요" name="title" v-model="title" :counter="50" required maxlength="50" outlined>
@@ -23,7 +18,13 @@
             </v-text-field>
           </v-col>
         </v-row>
-        <v-row no-gutters>
+        <v-row id="ckeditor_wrap">
+            <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"
+                      
+                      id="ckeditor" class="context" name="context">
+            </ckeditor>
+        </v-row>
+        <v-row no-gutters justify-content-center>
           <v-col id="cont">
             <v-textarea 
               class="context" 
@@ -72,9 +73,13 @@ export default {
         data() {
             return {
                 editor: ClassicEditor,
-                editorData: '<p>Content of the editor.</p>',
-                editorConfig: {
+                editorData: '',
+                title: '',
+                content: '',
+                writer:'',
+                showModal: false,
                     // The configuration of the editor.
+                editorConfig: {
                 }
             };
         },
@@ -113,7 +118,7 @@ export default {
       Modal,
     },
   };
-
+// CKEditor.replace('board_contents',{width:'200px'});
 </script>
 
 <style scoped>
@@ -159,5 +164,16 @@ div{
 }
 .row{
   padding:10px;
+}
+#ckeditor_wrap{
+  justify-content:center;
+}
+.ck.ck-reset{
+  min-width:100% !important;
+}
+.ck-editor .ck .ck-editor__main{
+  width:50px;
+  height:1000px;
+
 }
 </style>
