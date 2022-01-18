@@ -14,9 +14,11 @@ import Model from 'v-model';
 // import CKEditor from '@ckeditor/ckeditor5-vue2'
 // install Swiper modules
 
+
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 
 Vue.use(CKEditor);
+
 Vue.use(VueSplash);
 Vue.use(VueAwesomeSwiper);
 Vue.use(VuePageTransition)

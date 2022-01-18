@@ -184,6 +184,7 @@
         </v-btn>
       </v-stepper-content>
     <!--장소 선택 파트 끝-->
+   
     <!-- 이미지 업로트 파트 -->
       <v-stepper-step
        editable
@@ -195,21 +196,33 @@
         
      
               <div class="upload">
-                <form @submit.prevent="handleSubmit">
+                <form @submit.prevent="handleSubmit" enctype="multipart/form-data">
                     <div class="form-group">
                         <input
-                    
                          type="file"
                           @change="uploadFile"
-                          
-                           multiple>
+                          multiple>
+                        
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-success btn-block btn-lg">Upload</button>
+                        <button class="btn btn-success btn-block btn-lg">업로드하기</button>
                     </div>
                     </form>
               </div>    
+              <!--이미지 업로드 성공-->
+           
+           <!-- 이미지 업로드 실패파트
+                 <div>
+                <v-file-input
+                label="File input"
+                @change="selectFile" 
+                type="file"
+                enctype="multipart/form-data">
+
+                </v-file-input>
+                  <v-btn @click="submit">서버에 전송하기</v-btn>
+              </div> -->
  
 
       
@@ -245,34 +258,41 @@ export default {
             discription: '',
             url: '',
             /* data:  */
-           
+          
             exhPeriod:[
               
             ],
             
-            
+         
             menu: false,
             files: null
+          
            
         }
     },
     methods: {
-       
+       //이미지 파일 변환시
        uploadFile (event) {
         this.files = event.target.files
-        },
 
-      /*   handleSubmit() {
+        },
+    //이미지 파일 보내기
+         handleSubmit() {
+
           const formData = new FormData();
           for (const i of Object.keys(this.files)) {
-            formData.append('files', this.files[i])
+            formData.append('images', this.files[i])
           }
           console.log(this.files)
-           axios.post('', formData, {
+           axios.post('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/images', formData, { 
+              headers:{
+               'Content-Type': 'multipart/form-data'
+
+             }, 
           }).then((res) => {
             console.log(res)
-          }) 
-        }, */
+          })
+        }, 
     
     //전시회에 들어갈 컨텐츠 내용
         senddata(){
@@ -284,9 +304,10 @@ export default {
                    console.log("hi")
                  }
            axios({
-             url: ('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition'),
-             method: 'post',
-             data: 
+            url: ('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition'),
+            method: 'post',
+
+              data: 
                 {
                     title: this.title,
                     place: this.place,
@@ -297,22 +318,47 @@ export default {
                     
                     exhPeriod:[
                       {date: this.exhPeriod.toString(),
-                    
-                      }
-                     
-                    ]
-                      
-                
-                }
-             
+                      }                  
+                   ]
+                  },       
          }).
          then((response) => {
              console.log(response);
+             console.log(this.files)
              alert('등록되었습니다')
              window.location.href="Gallery"  //갤러리로 돌아감 
-         })  
+         })
+ 
     
-        }
+        },
+        selectFile(file){
+          this.image = file;
+          console.log(this.image)
+        },
+          async submit() {
+            console.log(this.image)
+      const formData = new FormData();
+      formData.append("image", this.image);
+        console.log(formData);
+      try {
+        axios({
+          method: "post",
+          url : "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/images",
+          
+          headers: {
+            "Content-Type" : "multipart/form-data"
+            } ,
+          data :  {
+            images : formData.images
+            }
+         
+
+        })
+  
+      } catch (err) {
+        console.log(err);
+      }
+    },
     }
     
     
