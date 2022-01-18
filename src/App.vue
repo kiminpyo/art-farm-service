@@ -38,6 +38,40 @@
               일정
             </v-tab>
           </v-tabs>
+
+          
+        </template>
+      
+    </v-app-bar>
+    
+    <vue-page-transition name="fade">
+    
+      <router-view class="body">
+        
+    </router-view>
+</vue-page-transition>
+
+      
+
+
+    <foot-component></foot-component>
+
+  </v-card>
+     
+</div>
+  
+  
+ <!--  
+  <div id="app" >
+     <v-app v-if="!isLoaded">
+    <splash-component></splash-component>
+  </v-app>
+
+ <v-app v-else>
+   <div class="header">
+     <router-link to="/"><h1>ART FARM</h1></router-link>
+      <div id="nav" >
+
          
         </template>
       </v-app-bar>
@@ -76,9 +110,11 @@ html, body {
    font-family: 'Roboto', sans-serif;
 }
 .body{
+
   background-image: linear-gradient(to bottom, #5c6772, #4f5761, #414851, #353941, #282b32);
   background-repeat: repeat;
   height:3000px;
+
   padding-top:200px;
 }
 .logo{
