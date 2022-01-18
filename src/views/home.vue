@@ -8,10 +8,13 @@
 
          <!--  <div v-else> -->
 
-      <div class="container1">
-       
+      <div class="container1" >
+            <div class="hometitle">
+              
+            </div>
+          
         <div id="carousel">
-           <h1>gallery</h1>
+        
           <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
           <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt=""  @:click="detail"></figure>
           <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt=""  @:click="detail"></figure>
@@ -31,9 +34,9 @@
        <div class="second">
         
         <div>
-          <hr style="color:white"/>
-          <ul class="gallery">
-        <li>
+      
+          <ul class="gallery col-md-12">
+        <li >
           <div class="flip">
             <div class="front-side"></div>
             <div class="back-side">
@@ -109,11 +112,11 @@
      
     
               <div class="scene">
-           <hr style="color:white"/>
+          
             <!-- camera -->
             <div class="roll-camera">
               <h1
-              style="padding:0;margin-bottom:0;">article</h1>
+              style="padding:0;margin-bottom:0; color:white;">article</h1>
           <!-- shelf -->
           <div class="shelf top" style="margin:0">
             <div class="face top"></div>
@@ -263,8 +266,8 @@ code {
  h1{
 	display: table;
 	margin: 5% auto 0;
-	text-transform: uppercase;
-	font-family: 'Anaheim', sans-serif;
+
+	
 	font-size: 4em;
 	font-weight: 400;
 	text-shadow: 0 1px white, 0 2px black;
@@ -278,12 +281,12 @@ code {
 }
 
 #carousel{
-  margin-top:200px;
+  margin-top:180px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	transform-style: preserve-3d;
-	animation: rotation 20s infinite linear;
+	animation: rotation 15s infinite linear;
 }
 #carousel:hover{
 	animation-play-state: paused;
@@ -297,7 +300,7 @@ code {
 	top: 10px;
 	background: wi;
 	overflow: hidden;
-	border: solid 5px white;
+	border: solid 1px white;
 }
 #carousel figure img{
   overflow: hidden;
@@ -349,10 +352,10 @@ code {
 2nd 이미지파트*/
 .gallery {
   list-style-type: none;
-  height: 500px;
+  height: 300px;
   overflow: hidden;
   padding:0;
-  margin-left:25%;
+  margin-left:20%;
  
 }
 .gallery li {
