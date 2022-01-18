@@ -13,7 +13,6 @@
       <v-bottom-navigation
       dark
       >
-      
         <v-btn :href="`https://github.com/kiminpyo/artfarm-front`" target="_blank">
           <span>GitHub</span>
           <v-icon>mdi-github</v-icon>
