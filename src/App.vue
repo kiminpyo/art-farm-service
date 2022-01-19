@@ -26,15 +26,32 @@
             </v-tab>
           </v-tabs>
         </template>
-      </v-app-bar>
-      <vue-page-transition name="fade">
-        <router-view class="body">
-        </router-view>
+
+      
+    </v-app-bar>
+    
+
+      <router-view class="body">
+         
+       <vue-page-transition name="fade">
+ 
       </vue-page-transition>
-      <foot-component></foot-component>
-    </v-card>
-  </div>
-<!--  
+    </router-view>
+   
+
+    
+
+
+    <foot-component></foot-component>
+
+  </v-card>
+     
+</div>
+  
+
+  
+ <!--  
+
   <div id="app" >
      <v-app v-if="!isLoaded">
     <splash-component></splash-component>
