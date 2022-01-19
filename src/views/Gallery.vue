@@ -17,6 +17,11 @@
           
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
+             <vue-page-transition 
+           
+             
+             name="fade">
+            </vue-page-transition>
             <li class="nav-item">
               <a href="#" class="nav-link text-white" id="VISUAL" v-on:click="category(bar, $event)" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
@@ -380,5 +385,6 @@ export default {
 .v-responsive__content{
   flex: auto;
 }
+
 
 </style>
