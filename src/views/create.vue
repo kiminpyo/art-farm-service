@@ -1,28 +1,50 @@
 <template>
   <div id="app">
     <v-form  ref="form"
-    style="width:40%;"
+    style="width:40%; margin-top:100px;"
     lazy-validation
     @submit="checkform" 
     >
       <v-card>
         <v-row no-gutters>
           <v-col id="cont">
-            <v-text-field class="title" hint="50자 이내로 입력하세요" placeholder="제목을 입력해 주세요" name="title" v-model="title" :counter="50" required maxlength="50" outlined>
+            <v-text-field
+              class="title"
+              hint="50자 이내로 입력하세요"
+              placeholder="제목을 입력해 주세요"
+              name="title"
+              v-model="title"
+              :counter="50"
+              required
+              maxlength="50"
+              outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row no-gutters>
           <v-col id="cont">
-            <v-text-field class="writer" hint="20자 이내로 입력하세요" placeholder="작성자명을 입력해 주세요" name="writer" v-model="writer" :counter="20" required maxlength="20" outlined>
+            <v-text-field
+              class="writer"
+              hint="20자 이내로 입력하세요"
+              placeholder="작성자명을 입력해 주세요"
+              name="writer"
+              v-model="writer"
+              :counter="20"
+              required
+              maxlength="20"
+              outlined>
             </v-text-field>
           </v-col>
         </v-row>
         <v-row id="ckeditor_wrap">
-            <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"
-                      
-                      id="ckeditor" class="context" name="context">
-            </ckeditor>
+          <ckeditor
+            :editor="editor"
+            v-model="editorData"
+            :config="editorConfig"
+            id="ckeditor"
+            class="context"
+            name="context">
+          </ckeditor>
         </v-row>
         <v-row no-gutters justify-content-center>
           <v-col id="cont">
@@ -70,19 +92,19 @@ import Vue from 'vue';
 Vue.use(CKEditor);
 export default {
   name: 'app',
-        data() {
-            return {
-                editor: ClassicEditor,
-                editorData: '',
-                title: '',
-                content: '',
-                writer:'',
-                showModal: false,
-                    // The configuration of the editor.
-                editorConfig: {
-                }
-            };
-        },
+    data() {
+      return {
+        editor: ClassicEditor,
+        editorData: '',
+        title: '',
+        content: '',
+        writer:'',
+        showModal: false,
+        // The configuration of the editor.
+        editorConfig: {
+        }
+      };
+    },
   // name: "create",
   // data() {
   //   return {
@@ -174,6 +196,5 @@ div{
 .ck-editor .ck .ck-editor__main{
   width:50px;
   height:1000px;
-
 }
 </style>

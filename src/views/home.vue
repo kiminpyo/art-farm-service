@@ -1,207 +1,188 @@
 <template>
   <div>
     <v-app v-if="!isLoaded">
-       <splash-component></splash-component> 
-
-      </v-app> 
+    <splash-component></splash-component>
+    </v-app>
     <!--스플래쉬 생성시 메인단의 화면을 뿌려서 데이터의 로딩저하를 막음-->
-
-         <!--  <div v-else> -->
-
-      <div class="container1" >
-            <div class="hometitle">
-              
-            </div>
-          
-        <div id="carousel">
-        
-          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
-          <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt=""  @:click="detail"></figure>
-          
-          
-        </div>
-       </div>
-      
-        
-          
-      
-       <div class="second">
-        
-        <div>
-      
-          <ul class="gallery col-md-12">
-        <li >
-          <div class="flip">
-            <div class="front-side"></div>
-            <div class="back-side">
-              <a href="#">
-                <div class="content">
-                  <div class="loader"></div>
-                  <div class="text">
-                     <div class="btn-group" >
-                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
-                  </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-            <li>
-          <div class="flip">
-            <div class="front-side"></div>
-            <div class="back-side">
-              <a href="#">
-                <div class="content">
-                  <div class="loader"></div>
-                  <div class="text">
-                    <h3>CRYSTAL MAIDEN</h3>
-                    <p>Born in a temperate realm, raised with her fiery older sister Lina, Rylai the Crystal Maiden soon found that her innate elemental affinity to ice created trouble for all those around her. Wellsprings and mountain rivers froze in moments if she stopped to rest nearby; ripening crops were bitten by frost, and fruiting orchards turned to mazes of ice and came crashing down, spoiled. When their exasperated parents packed Lina off to the equator, Rylai found herself banished to the cold northern realm of Icewrack, where she was taken in by an Ice Wizard who had carved himself a hermitage at the crown of the Blueheart Glacier.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-          <li>
-          <div class="flip">
-            <div class="front-side"></div>
-            <div class="back-side">
-              <a href="#">
-                <div class="content">
-                  <div class="loader"></div>
-                  <div class="text">
-                     <div class="btn-group" >
-                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
-                  </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-          <li>
-          <div class="flip">
-            <div class="front-side"></div>
-            <div class="back-side">
-              <a href="#">
-                <div class="content">
-                  <div class="loader"></div>
-                  <div class="text">
-                     <div class="btn-group" >
-                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
-                  </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-        
-       
-        
-          </ul>
-        </div>
+    <!--  <div v-else> -->
+    <div class="container1">
+      <div class="hometitle">
       </div>
-     
-    
-              <div class="scene">
-          
-            <!-- camera -->
-            <div class="roll-camera">
-              <h1
-              style="padding:0;margin-bottom:0; color:white;">article</h1>
-          <!-- shelf -->
-          <div class="shelf top" style="margin:0">
-            <div class="face top"></div>
-            <div class="face front">
-             
-              <a class="photocard">
-                  <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg" alt="">
-              </a>
-              <a href="#" class="photocard">
-                  <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg" alt="">
-              </a>
-              <a href="#" class="photocard">
-                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg" alt="">
-              </a>
-              
-
+      <div id="carousel">
+        <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
+        <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt="" @:click="detail"></figure>
+        <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt="" @:click="detail"></figure>
+        <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt="" @:click="detail"></figure>
+        <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
+        <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" @:click="detail"></figure>
+        <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt="" @:click="detail"></figure>
+        <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt="" @:click="detail"></figure>
+      </div>
+    </div>
+    <div class="second">
+      <div>
+        <ul class="gallery col-md-12">
+          <li>
+          <div class="flip">
+            <div class="front-side">
             </div>
-            <div class="face back"></div>
-            <div class="face left"></div>
-            <div class="face bottom"></div>
+            <div class="back-side">
+              <a href="#">
+              <div class="content">
+                <div class="loader">
+                </div>
+                <div class="text">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
+                  </div>
+                </div>
+              </div>
+              </a>
+            </div>
           </div>
-          <!-- /shelf -->
-
-          <!-- shelf -->
-          <div class="shelf middle">
-            <div class="face top"></div>
-            <div class="face front">
-
-              <a  class="photocard">
-                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/4.jpg" alt="">
-              </a>
-              <a href="#" class="photocard">
-                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/5.jpg" alt="">
-              </a>
-              <a href="#" class="photocard">
-                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/6.jpg" alt="">
-              </a>
-
+          </li>
+          <li>
+          <div class="flip">
+            <div class="front-side">
             </div>
-            <div class="face back"></div>
-            <div class="face left"></div>
-            <div class="face bottom"></div>
+            <div class="back-side">
+              <a href="#">
+              <div class="content">
+                <div class="loader">
+                </div>
+                <div class="text">
+                  <h3>CRYSTAL MAIDEN</h3>
+                  <p>
+                    Born in a temperate realm, raised with her fiery older sister Lina, Rylai the Crystal Maiden soon found that her innate elemental affinity to ice created trouble for all those around her. Wellsprings and mountain rivers froze in moments if she stopped to rest nearby; ripening crops were bitten by frost, and fruiting orchards turned to mazes of ice and came crashing down, spoiled. When their exasperated parents packed Lina off to the equator, Rylai found herself banished to the cold northern realm of Icewrack, where she was taken in by an Ice Wizard who had carved himself a hermitage at the crown of the Blueheart Glacier.
+                  </p>
+                </div>
+              </div>
+              </a>
+            </div>
           </div>
-          <!-- /shelf -->
-
-          <!-- shelf -->
-          <div class="shelf bottom" style="margin:0">
-            <div class="face top"></div>
-            <div class="face front">
-
-              <a class="photocard">
-                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/7.jpg" alt="">
-              </a>
-              <a href="#" class="photocard">
-                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/8.jpg" alt="">
-              </a>
-              <a class="photocard" >
-                <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/9.jpg" alt="">
-              </a>
-
+          </li>
+          <li>
+          <div class="flip">
+            <div class="front-side">
             </div>
-            <div class="face back"></div>
-            <div class="face left"></div>
-            <div class="face bottom"></div>
+            <div class="back-side">
+              <a href="#">
+              <div class="content">
+                <div class="loader">
+                </div>
+                <div class="text">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
+                  </div>
+                </div>
+              </div>
+              </a>
+            </div>
           </div>
-          <!-- /shelf -->
-        
-        <!-- /camera -->
+          </li>
+          <li>
+          <div class="flip">
+            <div class="front-side">
             </div>
+            <div class="back-side">
+              <a href="#">
+              <div class="content">
+                <div class="loader">
+                </div>
+                <div class="text">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="artdetail(data)">View</button>
+                  </div>
+                </div>
+              </div>
+              </a>
+            </div>
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="scene">
+      <!-- camera -->
+      <div class="roll-camera">
+        <h1 style="padding:0;margin-bottom:0; color:white;">article</h1>
+        <!-- shelf -->
+        <div class="shelf top" style="margin:0">
+          <div class="face top">
+          </div>
+          <div class="face front">
+            <a class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg" alt="">
+            </a>
+            <a href="#" class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg" alt="">
+            </a>
+            <a href="#" class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg" alt="">
+            </a>
+          </div>
+          <div class="face back">
+          </div>
+          <div class="face left">
+          </div>
+          <div class="face bottom">
+          </div>
         </div>
-          
-         
-     
-    
-  
+        <!-- /shelf -->
+        <!-- shelf -->
+        <div class="shelf middle">
+          <div class="face top">
+          </div>
+          <div class="face front">
+            <a class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/4.jpg" alt="">
+            </a>
+            <a href="#" class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/5.jpg" alt="">
+            </a>
+            <a href="#" class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/6.jpg" alt="">
+            </a>
+          </div>
+          <div class="face back">
+          </div>
+          <div class="face left">
+          </div>
+          <div class="face bottom">
+          </div>
+        </div>
+        <!-- /shelf -->
+        <!-- shelf -->
+        <div class="shelf bottom" style="margin:0">
+          <div class="face top">
+          </div>
+          <div class="face front">
+            <a class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/7.jpg" alt="">
+            </a>
+            <a href="#" class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/8.jpg" alt="">
+            </a>
+            <a class="photocard">
+            <img src="https://raw.github.com/peterwestendorp/shelves/master/photos/9.jpg" alt="">
+            </a>
+          </div>
+          <div class="face back">
+          </div>
+          <div class="face left">
+          </div>
+          <div class="face bottom">
+          </div>
+        </div>
+        <!-- /shelf -->
+        <!-- /camera -->
+      </div>
+    </div>
   </div>
-
 </template>
-
 <script>
-
 import SplashComponent from '@/views/splash.vue' 
-
   export default {
-    
      components: {
          SplashComponent,
        }, 
@@ -211,7 +192,6 @@ import SplashComponent from '@/views/splash.vue'
          created() {
          this.splashing()
        },
-    
    methods:{
      splashing() {
            setTimeout(() => {
@@ -219,30 +199,20 @@ import SplashComponent from '@/views/splash.vue'
            }, 200)
          },
      detail(){
-        
        console.log('hi')
        this.$router.push({
          name:"artdetail"
        })
-  
    },
-   
-  
    },
-   
-  
 }
 </script>
-
-<style scoped lang="scss" >
+<style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,700");
 @import url("https://fonts.googleapis.com/css?family=Anaheim");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Fauna+One");
-
-
 /* detail에서 a태그와 button태그 차이때문에 주석처리함
-
 button {
   background: none;
   border: 2px solid;
@@ -251,23 +221,17 @@ button {
   margin: 0.5em;
   padding: 1em 2em;
 } */
-
  h1 { 
   font-weight: 400;
   }
-
 code { 
   color: #e4cb58;
   font: inherit;
 } 
-
 /* first section */
-
  h1{
 	display: table;
 	margin: 5% auto 0;
-
-	
 	font-size: 4em;
 	font-weight: 400;
 	text-shadow: 0 1px white, 0 2px black;
@@ -279,7 +243,6 @@ code {
 	position: relative;
 	perspective: 1500px;
 }
-
 #carousel{
   margin-top:180px;
 	width: 100%;
@@ -316,7 +279,6 @@ code {
 #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
 #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
 #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
-
 @keyframes rotation{
 	from{
 		transform: rotateY(0deg);
@@ -333,7 +295,6 @@ code {
   width:100%;
   display:flex;
   justify-content: space-evenly;
-  
 }
 .img-wrap li{
   width:20%;
@@ -356,23 +317,19 @@ code {
   overflow: hidden;
   padding:0;
   margin-left:20%;
- 
 }
 .gallery li {
   float: left;
   height: 100%;
      width:15%;
-
   background: #2E4053;
 }
 .gallery .flip {
   height: 100%;
   width: 100%;
-  
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-
   -webkit-perspective: 2000px;
   -moz-perspective: 2000px;
   perspective: 2000px;
@@ -400,7 +357,6 @@ code {
   -webkit-backface-visibility:  hidden;
   -moz-backface-visibility:  hidden;
   backface-visibility:  hidden;
-
   -webkit-transition: transform 0.4s ease-out, opacity 0.3s ease-out;
   -moz-transition: transform 0.4s ease-out, opacity 0.3s ease-out;
   transition: transform 0.4s ease-out, opacity 0.3s ease-out;
@@ -410,7 +366,6 @@ code {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   transform: rotateY(0deg);
@@ -426,7 +381,6 @@ code {
   width: 100%;
   height: 100%;
 }
-
 .gallery li:nth-child(1) .front-side {
   background-image:url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
@@ -443,7 +397,6 @@ code {
 .gallery li:nth-child(2) .front-side {
   background-image: url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
-
 .gallery li:nth-child(3) .front-side {
   background-image: url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
@@ -457,7 +410,6 @@ code {
 .gallery li:nth-child(3) .text h3:after {
   background: #515A5A;
 }
-
 .gallery li:nth-child(4) .front-side {
   background-image: url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
@@ -471,7 +423,6 @@ code {
 .gallery li:nth-child(4) .text h3:after {
   background: #F7DC6F;
 }
-
 .gallery li:nth-child(5) .front-side {
   background-image: url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
@@ -485,7 +436,6 @@ code {
 .gallery li:nth-child(5) .text h3:after {
   background: #48C9B0;
 }
-
 .gallery li:nth-child(6) .front-side {
   background-image: url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
@@ -499,7 +449,6 @@ code {
 .gallery li:nth-child(6) .text h3:after {
   background: #EC7063;
 }
-
 .gallery li:nth-child(7) .front-side {
   background-image: url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
@@ -513,7 +462,6 @@ code {
 .gallery li:nth-child(7) .text h3:after {
   background: #A569BD;
 }
-
 .gallery li:nth-child(8) .front-side {
   background-image: url('https://media4.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif?cid=ecf05e471s6tfym5j5kgkekeqksorbi16hwcv1i66mk9f7yz&rid=giphy.gif&ct=g');
 }
@@ -536,7 +484,6 @@ code {
   transform: translateY(-50%);
   padding: 25px 20px;
 }
-
 .gallery li:hover .text {
   opacity: 1;
   visibility: visible;
@@ -589,7 +536,6 @@ code {
   border-top-color: #3498DB;
   border-left-color: #3498DB;
 }
-
 @-webkit-keyframes load {
   0% {
     -webkit-transform: rotate(0deg);
@@ -614,7 +560,6 @@ code {
     transform: rotate(360deg);
   }
 }
-
 @-webkit-keyframes hide {
   100% {
     visibility: hidden;
@@ -634,8 +579,6 @@ code {
   }
 }
 /*third */
-
-
 .scene {
   overflow: hidden;
   margin:0 auto;
@@ -645,11 +588,7 @@ code {
   perspective-origin: 50% 25%;
   backface-visibility:  hidden;
   transform-style:  preserve-3d;
-
 }
-
-
-
 .roll-camera {
   transform-style: preserve-3d;
 }
@@ -658,7 +597,6 @@ code {
   transform: translateY(0px);
   transition: all 3s ease-in-out;
 }
-
 .wallpaper {
   position: absolute;
   width: 200%;
@@ -724,7 +662,6 @@ code {
   height: 100px;
   transform: translateX(75px) translateY(-400px) rotateX(90deg) rotateZ(90deg);
 }
-
 /* lighting */
 .shelf:before {
   content:"";
@@ -757,8 +694,6 @@ code {
   height:100%;
   background: rgba(0, 0, 0, 0.25);
 }
-
-
 /* photo cards */
 .shelf .photocard {
   position: relative;
@@ -785,7 +720,6 @@ code {
               translateX(25px)
               translateY(-15px)
               skew(-45deg);
-  
   /* don't apply box-shadow to FF (render bug) */
   -moz-transform: scale(0);
 }
@@ -798,5 +732,4 @@ code {
 .shelf .photocard:nth-child(3n){
   top: 325px;
 }
-
 </style>
