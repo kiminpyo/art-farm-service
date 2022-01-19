@@ -19,14 +19,11 @@
           </v-col>
         </v-row>
         <v-row id="ckeditor_wrap">
-            <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"
-                      
-                      id="ckeditor" class="context" name="context">
-            </ckeditor>
+          
         </v-row>
         <v-row no-gutters justify-content-center>
           <v-col id="cont">
-            <v-textarea 
+          <!--   <v-textarea 
               class="context" 
               hint="1000자 이내로 입력하세요"
               placeholder="글 내용을 입력해 주세요"
@@ -34,7 +31,12 @@
               :counter="1000" 
               required maxlength="1000"
               outlined>
-            </v-textarea>
+            </v-textarea> -->
+              <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"
+                      
+                     >
+                      
+            </ckeditor>
           </v-col>
         </v-row>
         <span></span>
@@ -69,19 +71,26 @@ import CKEditor from '@ckeditor/ckeditor5-vue2';
 import Vue from 'vue';
 Vue.use(CKEditor);
 export default {
-  name: 'app',
+  name: 'CKEditor',
         data() {
+          
             return {
                 editor: ClassicEditor,
-                editorData: '',
+         
                 title: '',
                 content: '',
                 writer:'',
                 showModal: false,
                     // The configuration of the editor.
                 editorConfig: {
+                height: '1000px',
+                 language: 'ko'
                 }
             };
+        },
+        components: {
+          ckeditor: CKEditor.component,
+          Modal
         },
   // name: "create",
   // data() {
@@ -114,9 +123,7 @@ export default {
         });
       },
     },
-    components: {
-      Modal,
-    },
+ 
   };
 // CKEditor.replace('board_contents',{width:'200px'});
 </script>
@@ -171,9 +178,5 @@ div{
 .ck.ck-reset{
   min-width:100% !important;
 }
-.ck-editor .ck .ck-editor__main{
-  width:50px;
-  height:1000px;
 
-}
 </style>
