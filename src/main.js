@@ -13,9 +13,8 @@ import VuePageTransition from 'vue-page-transition'
 import Model from 'v-model';
 // import CKEditor from '@ckeditor/ckeditor5-vue2'
 // install Swiper modules
-
-
 import CKEditor from '@ckeditor/ckeditor5-vue2';
+
 
 Vue.use(CKEditor);
 

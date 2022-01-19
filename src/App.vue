@@ -44,13 +44,14 @@
       
     </v-app-bar>
     
-    <vue-page-transition name="fade">
-    
-      <router-view class="body">
-    
 
+      <router-view class="body">
+         
+       <vue-page-transition name="fade">
+ 
+      </vue-page-transition>
     </router-view>
-</vue-page-transition>
+   
 
     
 
