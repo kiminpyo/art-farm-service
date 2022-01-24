@@ -1,6 +1,7 @@
 <template>
  <div id="app">
   <v-app id="inspire" style="margin-top:150px; ">
+    
     <v-stepper
       v-model="e6"
       vertical

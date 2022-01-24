@@ -43,8 +43,7 @@
         </template>
       
     </v-app-bar>
-    
-
+    <!-- 전체적인 페이지 트랜지션 처리 -->
       <router-view class="body">
          
        <vue-page-transition name="fade">
@@ -52,10 +51,7 @@
       </vue-page-transition>
     </router-view>
    
-
-    
-
-
+<!-- 푸터 영역 -->
     <foot-component></foot-component>
 
   </v-card>
