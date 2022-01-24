@@ -186,11 +186,22 @@
 
 import $ from 'jquery'
 import axios from 'axios'
+
+//이안에는 data(실제 데이터를 반환하는 곳), methods(함수를 생성하는 곳), created(즉시 실행 함수)와 같은 기본제공 함수들 존재
+
 export default {
+
+//view에서 axios통신을 하면 return값에 data의 형태로 담긴다. ex) data.title과 같은 정보들이 배열형태로 담긴상태
+
   data() {
     return {
-      data: [],
-      exhPeriod: [],
+
+      data: [
+        
+      ],
+     
+     exhPeriod: [],
+
       todaydate: '',
       page: 1,
     }
@@ -201,6 +212,9 @@ export default {
         name: "artcreate"
       })
     },
+
+      //게시글 하나를 클릭했을때 라우터를 통해 게시글에 맞는 정보들을 보내준다
+
     artdetail(data) {
       for(let i = 0; i < data.exhPeriod.length; i++ ){
         console.log(data.exhPeriod[i].date)
@@ -216,6 +230,10 @@ export default {
       console.log(data.author)
       this.$router.push({
         name: "artdetail",
+
+       //query와 param방식이 있는데 qurey같은 경우는 새로고침을 해도 데이터가 날라가진 않음
+       //router를 쓸때 router폴더에 있는 index.js 확인 (부모->자식 컴포넌트 이동시 props를 true 해야 넘어감)
+
         query: {
           artdiscription: data.discription,
           arttitle: data.title,
@@ -226,36 +244,11 @@ export default {
         }
       }) 
     },
-    selectDate() {
-      let date = new Date();
-      var year = date.getFullYear(); //년도
-      var month = date.getMonth() + 1; //월
-      var day = date.getDate() + " "; //일
-      /*  var hour = date.getHours();
-       var minute = date.getMinutes();  */
-      if ((day + "").length < 2) { // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
-        day = "0" + day;
-      }
-      if ((month + "").length < 2) { // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
-        month = "0" + month;
-      }
-      // date = year+"-"+month+"-"+day+ hour+":" + minute;  
-
-      date = year + "-" + month + "-" + day // 오늘 날짜
-      let registdate = this.data.registDate;
-      console.log(registdate)
-      console.log("date===>" + date)
 
 
-      console.log(date)
-      axios.get('http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date=' + date)
 
-      .then((response) => {
-        console.log(response.data)
-        this.data = response.data; //현재 진행중인 데이터
-        console.log(this.data)
-      })
-    },
+    // 진행중인 전시함수 
+
     handleDatenow() {
       let date = new Date();
       var year = date.getFullYear(); //년도
@@ -270,41 +263,59 @@ export default {
         month = "0" + month;
       }
       // date = year+"-"+month+"-"+day+ hour+":" + minute;  
-      date = year + "-" + month + "-" + day // 오늘 날짜
+
+
+      date = year + "-" + month + "-" + day // 오늘 날짜를 생성
       this.page = date;
       console.log(this.page)
       axios({
-        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date=" + date,
-        type: "get",
-      })
-      .then((response) => {
-        this.data = response.data;
-        console.log(this.data.content[0])
-      })
+          url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/period?date=" + date, 
+          type: "get",
+
+        })
+        .then((response) => {
+          this.data = response.data;
+        
+          console.log(this.data.content[0])
+
+
+        })
     },
+
+
+// 페이징 함수 구현  
+
     getItem() {
       const page = 0;
 
       axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?size=20&page=" + page)
-      .then((response) => {
-        this.data = response.data;
-        console.log(this.data)
-        console.log(this.data.totalPages)
-        console.log(this.data.totalElements)
-        console.log(this.data.size)
-        console.log(this.data.numberOfElements)
-        console.log(this.data.content)
-        console.log(this.data.content[0].author)
-        var pageBtn = '';
-        for (var pageNo = 0; pageNo < this.data.totalPages; pageNo++) {
-          pageBtn += "<li>";
-          pageBtn += "<button id=\"btn_write\" class=\"btn_write btn btn-primary btn-floating\" v-on:click=\"page(" + (pageNo + 1) + ")\">" + (pageNo + 1) + "</button>";
-          pageBtn += "</li>";
-        }
-        console.log(pageBtn)
-        $("ul#pages").append(pageBtn)
-      })
+
+        .then((response) => {
+          this.data = response.data;
+          console.log(this.data)
+          console.log(this.data.totalPages)
+          console.log(this.data.totalElements)
+          console.log(this.data.size)
+          console.log(this.data.numberOfElements)
+          console.log(this.data.content)
+            console.log(this.data.content[0].author)
+          var pageBtn = '';
+
+          for (var pageNo = 0; pageNo < this.data.totalPages; pageNo++) {
+            pageBtn += "<li>";
+            pageBtn += "<button id=\"btn_write\" class=\"btn_write btn btn-primary btn-floating\" v-on:click=\"page(" + (pageNo + 1) + ")\">" + (pageNo + 1) + "</button>";
+            pageBtn += "</li>";
+
+          }
+          console.log(pageBtn)
+          $("ul#pages").append(pageBtn)
+
+      
+
+        })
+
     },
+    //
     handlePageChange(pageNo) {
       this.page = pageNo;
       console.log(this.page)
@@ -350,9 +361,9 @@ export default {
       })
     }
   },
-
+  //created ==> 페이지에 접속 시에 가장먼저 실행되는 힘수 
   created() {
-    this.handlePageChange() 
+    this.handlePageChange()  
     this.getItem()
   }
 }

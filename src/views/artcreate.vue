@@ -1,9 +1,18 @@
 <template>
-  <div id="app">
-    <v-app id="inspire" style="margin-top:150px; ">
-      <v-stepper
-        v-model="e6"
-        vertical
+
+ <div id="app">
+  <v-app id="inspire" style="margin-top:150px; ">
+    
+    <v-stepper
+      v-model="e6"
+      vertical
+    >
+      <v-stepper-step
+        :complete="e6 > 1"
+        
+        editable
+        step="1"
+
       >
         <v-stepper-step
           :complete="e6 > 1"

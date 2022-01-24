@@ -34,12 +34,15 @@ export default {
             const locPositon= new kakao.maps.LatLng(lat, lon);
             console.log(locPositon)
             map.setCenter(locPositon)
+         
           })
         }
         
            var container = document.getElementById('map'); 
+          
           var options = {
-          center: new kakao.maps.LatLng(33.450701, 126.570667),
+            center: new kakao.maps.LatLng(33.450701, 126.570667),  
+         
           level: 6
           }; 
            var map = new kakao.maps.Map(container, options); 
@@ -55,7 +58,7 @@ export default {
              
             
            let marker= new kakao.maps.Marker({
-                image: markerImage,
+              image: markerImage,
                map : map,
                clickable: true,
                position: new kakao.maps.LatLng(list.records[i].위도,list.records[i].경도)

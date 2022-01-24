@@ -52,7 +52,12 @@
 
 <script>
 import Lingallery from 'lingallery';
-export default {
+
+
+
+//gallery에서 내려온 propsdata고, return값으로 반환 해줌
+	export default {
+
   props:['artdetail'],
 	data(){
 
@@ -73,7 +78,15 @@ export default {
   components: {
     Lingallery
   },
-  created(){
+
+  //import를 시켜주면 components로 등록해줘야 사용가능
+   components: {
+      Lingallery
+    },
+
+    //콘솔을 찍기 힘들어서 즉시 실행함수에 부모쪽 데이터들이 잘 들어오는지 확인용
+      created(){
+
     console.log(this.discription,this.title, this.author, this.place, this.artexhPeriod)
     console.log(this.exhPeriod)
   }, 
