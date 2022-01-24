@@ -98,7 +98,7 @@
             <svg class="bi me-5" width="40" height="32">
               <use xlink:href="#bootstrap" />
             </svg>
-            <span class="fs-4">카테고리</span>
+            <span class="fs-4">일정</span>
         
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">

@@ -19,10 +19,13 @@
             게시판 
             </v-tab>
             <v-tab id="tab" to="/Gallery">
-            전시글 
+            전시회 찾기
             </v-tab>
             <v-tab id="tab" to="/cal">
             일정 
+            </v-tab>
+            <v-tab id="tab" to="/test">
+            우리동네전시회
             </v-tab>
           </v-tabs>
         </template>
