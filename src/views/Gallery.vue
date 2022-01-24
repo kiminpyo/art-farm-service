@@ -1,24 +1,19 @@
 <template>
-
   <div class="gallery">
-
     <!--원래 버튼있던 자리
     <div class="galleryenroll">
-
       <select class="btn" name="" id="">
         <option value=""></option>
       </select>
     </div>-->
-
-
     <div class="gallery-wrap col-md-12 justify-content-center">
       <div class="sidebar col-md-2" style="width:100%; height:100%; text-align:center">
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px;   ">
         
-            <svg class="bi me-5" width="40" height="32">
-              <use xlink:href="#bootstrap" />
-            </svg>
-            <span class="fs-4">카테고리</span>
+          <svg class="bi me-5" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-4">카테고리</span>
           
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
@@ -30,9 +25,9 @@
             <li class="nav-item">
               <a href="#" class="nav-link text-white" id="VISUAL" v-on:click="category(bar, $event)" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
-                <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z"/>
-              </svg>
+                  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                  <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z"/>
+                </svg>
                 미술
               </a>
             </li>
@@ -46,9 +41,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white" 
-              
-               v-on:click="category(bar, $event)">
+              <a href="#" class="nav-link text-white" v-on:click="category(bar, $event)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
                   <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
@@ -109,20 +102,18 @@
         
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
-
             <li class="ingbtn">
               <button
                 :length="data.totalPages" 
-               @click="handleDatenow">
+                @click="handleDatenow">
                 <svg class="bi me-2" width="16" height="16"></svg>
                 진행중인 전시
               </button>
             </li>
-             <li class="ingbtn">
+            <li class="ingbtn">
               <button 
-             
-               :length="data.totalPages" 
-               @click="handleDatenow">
+                :length="data.totalPages" 
+                @click="handleDatenow">
                 <svg class="bi me-2" width="16" height="16"></svg>
                 진행중인 전시
               </button>
@@ -135,14 +126,11 @@
                 예정 전시
               </a>
             </li>
-
           </ul>
           <hr>
-
         </div>
       </div>
       <div class="col-md-6" >
-        
         <select class="btn" name="" id="">
           <option value="">5개씩 보기</option>
           <option value="">10개씩 보기</option>
@@ -150,112 +138,88 @@
         </select>
         <div class="album-wrap row col-md-12">
           <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx">
-            
               <v-hover v-slot="{hover}">
-                
-                  <v-card
-                    v-model="data.items"
-                    color="black"  
-                  >
-            <div class="card shadow-sm" >
+                <v-card
+                  v-model="data.items"
+                  color="black"  
+                >
+                  <div class="card shadow-sm" >
               
-              <v-img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">
-             </v-img>
-              <div class="card-body">
-                <p class="card-text">{{data.title}}</p>
-                <p class="card-text">{{data.place}}</p>
-                <p class="card-text">{{data.category}}</p>
-             
-
-             
-              
-              </div>
+                    <v-img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">
+                    </v-img>
+                    <div class="card-body">
+                      <p class="card-text">{{data.title}}</p>
+                      <p class="card-text">{{data.place}}</p>
+                      <p class="card-text">{{data.category}}</p>
+                    </div>
                     <v-expand-transition>
                       <div
-                  v-if="hover"
-                  class="d-flex transition-fast-in-fast-out v-card--reveal"
-                  style="height:100%;  background-image: linear-gradient(to right, #6770ab, #4d5e8a, #394c68, #2c3948, #22262a); width:100%"
-
-                >
+                        v-if="hover"
+                        class="d-flex transition-fast-in-fast-out v-card--reveal"
+                        style="height:100%;  background-image: linear-gradient(to right, #6770ab, #4d5e8a, #394c68, #2c3948, #22262a); width:100%"
+                      >
                   <!-- 호버 시 나오는 데이터 -->
-                <div class="hoverwrap" >
-                  
-                   <div class="btn-group" >
-                    <button type="button" class="btn btn-sm btn-outline-secondary" style="color:white" v-on:click="artdetail(data)"><h2>view</h2></button>
+                        <div class="hoverwrap" >
+                          <div class="btn-group" >
+                            <button type="button" class="btn btn-sm btn-outline-secondary" style="color:white" v-on:click="artdetail(data)"><h2>view</h2></button>
+                          </div>
+                        </div>
+                      </div>
+                    </v-expand-transition>
                   </div>
-                </div>
-                
-              
-
-
-                </div>
-                
-              </v-expand-transition>
+                </v-card>
+              </v-hover>
             </div>
-            </v-card>
-                  
-            </v-hover>
-            
-          </div>
-          
-          <div class="page">
-            <v-pagination v-model="data.currentPage" :length="data.totalPages" @input="handlePageChange"></v-pagination>
-             <div class="btn btn-sm btn-outline-secondary" style="color:white; width:100px; font-weight:bold; font-size: 15px; " @click="click">
-            <span>등록하기</span>
+            <div class="page">
+              <v-pagination v-model="data.currentPage" :length="data.totalPages" @input="handlePageChange"></v-pagination>
+              <div class="btn btn-sm btn-outline-secondary" style="color:white; width:100px; font-weight:bold; font-size: 15px; " @click="click">
+              <span>등록하기</span>
             </div>
           </div>
-
-
         </div>
       </div>
-
     </div>
-
   </div>
-
-
-
 </template>
 
 <script>
 
 import $ from 'jquery'
 import axios from 'axios'
+
 //이안에는 data(실제 데이터를 반환하는 곳), methods(함수를 생성하는 곳), created(즉시 실행 함수)와 같은 기본제공 함수들 존재
 
 export default {
 
 //view에서 axios통신을 하면 return값에 data의 형태로 담긴다. ex) data.title과 같은 정보들이 배열형태로 담긴상태
+
   data() {
-   
     return {
+
       data: [
         
       ],
      
      exhPeriod: [],
+
       todaydate: '',
       page: 1,
-    
     }
-
   },
   methods: {
     click() {
       this.$router.push({
         name: "artcreate"
-        
       })
     },
+
       //게시글 하나를 클릭했을때 라우터를 통해 게시글에 맞는 정보들을 보내준다
+
     artdetail(data) {
-      
       for(let i = 0; i < data.exhPeriod.length; i++ ){
-       
         console.log(data.exhPeriod[i].date)
         this.todaydate  += data.exhPeriod[i].date ;
         console.log(this.todaydate)
-       
       }
       console.log(data)
       console.log(data.discription)
@@ -266,8 +230,10 @@ export default {
       console.log(data.author)
       this.$router.push({
         name: "artdetail",
+
        //query와 param방식이 있는데 qurey같은 경우는 새로고침을 해도 데이터가 날라가진 않음
        //router를 쓸때 router폴더에 있는 index.js 확인 (부모->자식 컴포넌트 이동시 props를 true 해야 넘어감)
+
         query: {
           artdiscription: data.discription,
           arttitle: data.title,
@@ -275,15 +241,14 @@ export default {
           artauthor: data.author,
           artexhPeriod: this.todaydate,
           artsubTitle: data.subTitle
-          
         }
       }) 
- 
-  
     },
 
 
+
     // 진행중인 전시함수 
+
     handleDatenow() {
       let date = new Date();
       var year = date.getFullYear(); //년도
@@ -297,10 +262,8 @@ export default {
       if ((month + "").length < 2) { // 일이 한자리 수인 경우 앞에 0을 붙여주기 위해
         month = "0" + month;
       }
-
-
-
       // date = year+"-"+month+"-"+day+ hour+":" + minute;  
+
 
       date = year + "-" + month + "-" + day // 오늘 날짜를 생성
       this.page = date;
@@ -321,10 +284,12 @@ export default {
 
 
 // 페이징 함수 구현  
+
     getItem() {
       const page = 0;
 
       axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?size=20&page=" + page)
+
         .then((response) => {
           this.data = response.data;
           console.log(this.data)
@@ -348,27 +313,25 @@ export default {
       
 
         })
+
     },
     //
     handlePageChange(pageNo) {
       this.page = pageNo;
       console.log(this.page)
       axios({
-          url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + (pageNo - 1),
-          type: "get",
-
-        })
-        .then((response) => {
-          this.data = response.data;
-          console.log(this.data.content)
-          console.log(this.data)
-
+        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibitionlist?page=" + (pageNo - 1),
+        type: "get",
+      })
+      .then((response) => {
+        this.data = response.data;
+        console.log(this.data.content)
+        console.log(this.data)
           /*     var list= '';
               for(let i = 0; i < this.data.numberOfElements; i++){
                   list += '<div class="col-md-3">';
                   list += '<div class="card shadow-sm">';
                   list += '<img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">';
-
                   list += '<div class="card-body">'
                   list += '<p class="card-text">' + this.data.content[i].title + '</p>'
                   list += '<p class="card-text">' + this.data.content[i].place + '</p>'
@@ -383,76 +346,55 @@ export default {
               }
                 $(".album-container").empty();
                 $(".album-container").append(list); */
-
-
-        })
-
+      })
     },
     category(bar, event){
-     const targetId = event.currentTarget.id;
-     console.log(targetId)
-     axios({
-      method: "get",
-      url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/category?category=" + targetId,
-      
-    }).then((response) =>{
-      console.log(response.data)
-      this.data = response.data;
-    })
+      const targetId = event.currentTarget.id;
+      console.log(targetId)
+      axios({
+        method: "get",
+        url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition/category?category=" + targetId,
+        
+      }).then((response) =>{
+        console.log(response.data)
+        this.data = response.data;
+      })
     }
-
-
   },
   //created ==> 페이지에 접속 시에 가장먼저 실행되는 힘수 
   created() {
     this.handlePageChange()  
     this.getItem()
-      
   }
-
-
-
-
 }
 </script>
 
 <style scoped lang="scss">
-.gallery{
- 
-}
 .gallery-wrap {
   display: flex;
-  
 }
-
 .nav-link{
   color:white;
 }
 .nav-link:hover{
   color: gray;
-
 }
-
 .ingbtn:click {
   color: red;
 }
-
 .ingbtn:hover {
   color: green;
 }
-
 .v-card--reveal {
-align-items: center;
-bottom: 0;
-justify-content: center;
-opacity: 0.9;
-position: absolute;
-width: 100%;
-
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
 }
 .v-responsive__content{
   flex: auto;
-  
 }
 
 
