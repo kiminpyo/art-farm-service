@@ -75,10 +75,7 @@ import Lingallery from 'lingallery';
       exhPeriod: exhPeriod,
       };
   },
-  components: {
-    Lingallery
-  },
-
+ 
   //import를 시켜주면 components로 등록해줘야 사용가능
    components: {
       Lingallery
