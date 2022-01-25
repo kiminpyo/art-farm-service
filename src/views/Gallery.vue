@@ -112,8 +112,11 @@
             </li>
             <li class="ingbtn">
               <button 
-                :length="data.totalPages" 
-                @click="handleDatenow">
+
+                
+               :length="data.totalPages" 
+               @click="handleDatenow">
+
                 <svg class="bi me-2" width="16" height="16"></svg>
                 진행중인 전시
               </button>

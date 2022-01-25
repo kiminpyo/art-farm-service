@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
  {
   path: '/',
-  name: 'Home',
+  name: 'home',
   component: home
  },
   {
@@ -67,7 +67,11 @@ const routes = [
     name: 'cal',
     component:() => import("@/views/cal.vue")
   },
- 
+  {
+  path:'/article',
+    name: 'article',
+    component:() => import("@/views/article.vue")
+  }
 ]
 
 const router = new VueRouter({

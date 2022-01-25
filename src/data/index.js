@@ -1,17 +1,16 @@
-let eventGuid = 0
-let todayStr = new Date().toISOString().replace(/T.*$/, '') // YYYY-MM-DD of today
-export const INITIAL_EVENTS = [
-  {
-    id: createEventId(),
-    title: 'All-day event',
-    start: todayStr
-  },
-  {
-    id: createEventId(),
-    title: 'Timed event',
-    start: todayStr + 'T12:00:00'
-  }
-]
-export function createEventId() {
-  return String(eventGuid++)
-}
+
+var request = require('request');
+
+var url = 'http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period';
+var queryParams = '?' + encodeURIComponent('serviceKey') + 'CrKLRo9pEvAeiF%2FhQrj%2Fn8ztOim9YM%2F40R3%2FhzhHg0NWXrH%2Bipm7wNfEKOfUzK5Q%2B5OQV4zyxN5FyIIuAHbT6w%3D%3D'; /* Service Key*/
+queryParams += '&' + encodeURIComponent('keyword') + '=' + encodeURIComponent(''); /* */
+
+request({
+    url: url + queryParams,
+    method: 'GET'
+}, function (error, response, body) {
+    console.log('Status', response.statusCode);
+    console.log('Headers', JSON.stringify(response.headers));
+    console.log('Reponse received', body);
+    console.log(response.data)
+});
