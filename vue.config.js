@@ -9,5 +9,6 @@ module.exports = {
       shouldServeApp: true,
       serverDir: './srv'
     }
-  }
+  },
+  
 }

@@ -14,7 +14,9 @@ export default {
     data(){
 
     return{
-      
+      data: 'hi',
+      hi: '',
+
     }
   },
     mounted(){
@@ -22,7 +24,7 @@ export default {
       console.log(list)
     },
     methods: {
-
+   
       initMap(){
 
         if(navigator.geolocation){
@@ -54,7 +56,7 @@ export default {
                 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
                         const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
     
-           for(let i= 0; i < list.records.length - 500; i++){
+           for(let i= 0; i < list.records.length -1510 ; i++){
              
             
            let marker= new kakao.maps.Marker({
@@ -70,40 +72,23 @@ export default {
                     /*    iwContent += '<div>'+list.records[i].시설명+'</div>';
                        iwContent += '<div>'+list.records[i].소재지도로명주소+'</div>';
                       iwContent += '<div>'+list.records[i].관리기관전화번호+'</div>'; */
-                      iwContent ='<div class="overlaybox">' +
-                      '    <div class="boxtitle">금주 영화순위</div>' +
-                      '    <div class="first">' +
-                      '        <div class="triangle text">1</div>' +
-                      '        <div class="movietitle text">'+  +'</div>' +
-                      '    </div>' +
-                      '    <ul>' +
-                      '        <li class="up">' +
-                      '            <span class="number">2</span>' +
-                      '            <span class="title">명량</span>' +
-                      '            <span class="arrow up"></span>' +
-                      '            <span class="count">2</span>' +
-                      '        </li>' +
-                      '        <li>' +
-                      '            <span class="number">3</span>' +
-                      '            <span class="title">해적(바다로 간 산적)</span>' +
-                      '            <span class="arrow up"></span>' +
-                      '            <span class="count">6</span>' +
-                      '        </li>' +
-                      '        <li>' +
-                      '            <span class="number">4</span>' +
-                      '            <span class="title">해무</span>' +
-                      '            <span class="arrow up"></span>' +
-                      '            <span class="count">3</span>' +
-                      '        </li>' +
-                      '        <li>' +
-                      '            <span class="number">5</span>' +
-                      '            <span class="title">안녕, 헤이즐</span>' +
-                      '            <span class="arrow down"></span>' +
-                      '            <span class="count">1</span>' +
-                      '        </li>' +
-                      '    </ul>' +
-                      '</div>';
-                
+                   iwContent = '<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            전시회정보' + 
+            '            <div class="close"  v-on:click="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">'+list.records[i].시설명+'</div>' + 
+            '                <div class="jibun ellipsis">'+list.records[i].소재지도로명주소+'</div>' + 
+            '                <div><a href="https://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>';
+            console.log(iwContent)
+       /*          
                     let iwRemoveable = true; 
                 let infowindow = new kakao.maps.InfoWindow({
                         content : iwContent,
@@ -116,24 +101,29 @@ export default {
                 infowindow.open(map, marker);  
                 console.log("맵 & 마커"+ map, marker)
                   }); 
+         */
         
-        
-         /* 커스텀 오버레이시에는 이벤트가 따로 먹지않아서 나중에 구현예정    
-               var customOverlay = new kakao.maps.CustomOverlay({
+          // 커스텀 오버레이시에는 이벤트가 따로 먹지않아서 나중에 구현예정    
+               var Overlay = new kakao.maps.CustomOverlay({
                           map: map,
-                          clickable: true,
-                          content: test,
-                          xAnchor: 0.3,
-                          yAnchor: 0.91,
-                         
+                        
+                          position: marker.getPosition(),
+                          content: iwContent
+                  
+                      
                     });
                  
              
                     kakao.maps.event.addListener(marker,'click', function(){
+                      
+                      Overlay.setMap(map)
+                      console.log(iwContent)
+                    })
+                 
+                
 
-                      customOverlay.setMap(map)
-                      console.log(test,Content)
-                    }) */
+                   
+          
      
            }
          
@@ -149,6 +139,8 @@ export default {
               document.head.appendChild(script); 
             
         },
+     
+     
   
       
     }
@@ -158,24 +150,18 @@ export default {
 </script>
 
 <style>
-.overlaybox {position:relative;width:360px;height:350px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;padding:15px 10px;}
-.overlaybox div, ul {overflow:hidden;margin:0;padding:0;}
-.overlaybox li {list-style: none;}
-.overlaybox .boxtitle {color:#fff;font-size:16px;font-weight:bold;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;margin-bottom:8px;}
-.overlaybox .first {position:relative;width:247px;height:136px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumb.png') no-repeat;margin-bottom:8px;}
-.first .text {color:#fff;font-weight:bold;}
-.first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}
-.first .movietitle {position:absolute;width:100%;bottom:0;background:rgba(0,0,0,0.4);padding:7px 15px;font-size:14px;}
-.overlaybox ul {width:247px;}
-.overlaybox li {position:relative;margin-bottom:2px;background:#2b2d36;padding:5px 10px;color:#aaabaf;line-height: 1;}
-.overlaybox li span {display:inline-block;}
-.overlaybox li .number {font-size:16px;font-weight:bold;}
-.overlaybox li .title {font-size:13px;}
-.overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
-.overlaybox li .up {background-position:0 -40px;}
-.overlaybox li .down {background-position:0 -60px;}
-.overlaybox li .count {position:absolute;margin-top:5px;right:15px;font-size:10px;}
-.overlaybox li:hover {color:#fff;background:#d24545;}
-.overlaybox li:hover .up {background-position:0 0px;}
-.overlaybox li:hover .down {background-position:0 -20px;}   
+    .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    .wrap * {padding: 0;margin: 0;}
+    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
+    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+    .info .close:hover {cursor: pointer;}
+    .info .body {position: relative;overflow: hidden;}
+    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+    .info .link {color: #5085BB;} 
 </style>

@@ -7,14 +7,12 @@
     <!--스플래쉬 생성시 메인단의 화면을 뿌려서 데이터의 로딩저하를 막음-->
 
          <!--  <div v-else> -->
-
       <div class="container1" >
             <div class="hometitle">
               
             </div>
           
-        <div id="carousel">
-        
+        <div id="carousel">        
           <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
           <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt=""  @:click="detail"></figure>
           <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt=""  @:click="detail"></figure>
@@ -23,14 +21,10 @@
           <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
           <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
           <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt=""  @:click="detail"></figure>
-          
-          
+                   
         </div>
        </div>
-      
-        
           
-      
        <div class="second">
         
         <div>
