@@ -1,8 +1,7 @@
 <template>
   <div>
-
     <v-container>
-      <v-card elevation="10" outluined width="100%" class="mx-auto">
+      <v-card elevation="10" outluined width="100%" class="mx-auto" style="margin-top:100px;">
         <v-card-text style="padding-bottom:50px !important;">
           <v-row style="margin:30px 0;">
             <v-col cols="1"></v-col>
@@ -62,8 +61,7 @@
               <router-link class="button" to="/board" >
                 <v-icon style="font-size:15px; margin-right:10px; padding:10px 0;">mdi-find-replace</v-icon>돌아가기
               </router-link>
-            </v-col> 
-            
+            </v-col>   
           </v-row>
           
         </v-card-text>
@@ -76,67 +74,48 @@
 <script>
 import axios from 'axios'
 export default {
-     data() {
-        const noticeIdx = this.$route.query.id;
-        const title = this.$route.query.title;
-        const content = this.$route.query.content;
-        const writer = this.$route.query.writer;
-        let views = this.$route.query.views;
-  
-
-        return{
-        noticeIdx : noticeIdx,
-        title : title,
-       
-        content: content,
-        writer: writer,
-        views : views
-        }
-    }, 
-
-    props:['detail'],
-    
-  
-  methods: {
-  
-  update(){
+  data() {
+    const noticeIdx = this.$route.query.id;
+    const title = this.$route.query.title;
+    const content = this.$route.query.content;
+    const writer = this.$route.query.writer;
+    let views = this.$route.query.views;
+    return{
+      noticeIdx : noticeIdx,
+      title : title,
+      content: content,
+      writer: writer,
+      views : views
+    }
+  }, 
+  props:['detail'],
+  methods: {    
+    update(){
       console.log('hi')
       this.$router.push({
         name:"update",
         query: 
-        {noticeIdx : this.noticeIdx,
-        }
+        {noticeIdx : this.noticeIdx,}
       })
     console.log(this.noticeIdx)
     },
-    
-    
   },
   mounted(){
     console.log(this.$route.query.views)
-    
-         axios({
-          url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice?noticeIdx="+this.$route.query.id,
-          method: "get",
-          
-        }).then(function (response) {
-          console.log("success");
-          console.log(response);
-          console.log(response.data.views)
-          console.log(this.content)
-          
-        }); 
+    axios({
+      url: "http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/notice?noticeIdx="+this.$route.query.id,
+      method: "get",
+    }).then(function (response) {
+      console.log("success");
+      console.log(response);
+      console.log(response.data.views)
+      console.log(this.content)
+    }); 
   }
 }
-  
-   
-    
-
 </script>
 
 <style>
-
-
 a.button {
 	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
@@ -211,11 +190,9 @@ a.button:hover {
   align-items:center;
   vertical-align: middle;
   padding:10px 20px;
-  
   font-size:1rem;
   /* background-color:#cdcdcd;
   color:#fff; */
-
   background: white;
   box-shadow: 5px 5px rgba(0,0,0,.15);
   transition: all .4s ease;
