@@ -16,18 +16,17 @@ import Model from 'v-model';
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 
 
-Vue.use(CKEditor);
 
+
+Vue.use(CKEditor);
 Vue.use(VueSplash);
 Vue.use(VueAwesomeSwiper);
 Vue.use(VuePageTransition)
 Vue.use(Model);
 // Vue.use(CKEditor);
-
 library.add(faUserSecret)
 Vue.component('font-awesome-icon',FontAwesomeIcon)
 Vue.config.productionTip = false
-
 new Vue({
   router,
   store,
@@ -35,8 +34,6 @@ new Vue({
   // CKEditor,
   render: h => h(App)
 }).$mount('#app');
-
-
 //SameSite
 document.cookie="safeCookie1=foo; Samesite=Lax";
 document.cookie="safeCookie2=foo";
