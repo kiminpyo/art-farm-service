@@ -2,10 +2,11 @@
 
  <div class="fullpage">
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <div class="firstpage" style="background-image: linear-gradient(to left, #26ec00, #65da29, #80c93f, #8eb853, #94a866); height: 1200px; color:white; display:flex">
+    <!-- <div class="firstpage" style="background-image: linear-gradient(to left, #26ec00, #65da29, #80c93f, #8eb853, #94a866); height: 1200px; color:white; display:flex"> -->
+      <div class="firstpage" style="background-image: #fff; height: 1200px; color:white; display:flex">
         <div style="width:100%;">
             <div class="firstpage-wrap" style="margin-top:170px;">
-               <div class="firstpage-header">Artfarm..</div>
+               <div class="firstpage-header">art farm 아트팜</div>
                <div class="firstpage-subheader">온라인 전시회 소개 플랫폼</div>
                <div class="firstpage-context">아트팜은 어떤 것을 소개합니까? <p>
                    아트팜은 어떤 것을 보여줍니까?</p></div>
@@ -194,9 +195,21 @@ export default {
 
 </script>
 
-<style scoped>
+<style scoped>  
+/* 김인환 수정사항
 
+폰트
+font-family: Lato,NotoSansKR,Apple SD Gothic Neo,Malgun Gothic,sans-serif;
+-webkit-font-smoothing: antialiased;
+*/
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
 .fullpage{
   
     color:black;
@@ -205,9 +218,13 @@ export default {
 .firstpage-header{
     margin-left:300px;
     margin-top:300px;
-    font-weight:bold;
+    font-weight:100;
     font-size:150px;
-    font-family: 'Roboto', sans-serif;
+    color:greenyellow;
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: Lato,NotoSansKR,Apple SD Gothic Neo,Malgun Gothic,sans-serif;
+    -webkit-font-smoothing: antialiased; */
+    font-family:'SBaggroB';
 }
 .firstpage-subheader{
     margin-left:300px;
