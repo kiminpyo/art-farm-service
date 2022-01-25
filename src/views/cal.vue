@@ -1,6 +1,5 @@
 <template>
-    <div class='demo-app'>
-    
+  <div class='demo-app'>
     <div class='demo-app-main'>
       <FullCalendar
         class='demo-app-calendar'
@@ -13,9 +12,6 @@
       </FullCalendar>
     </div>
   </div>
-   
-
-   
 </template>
 
 
