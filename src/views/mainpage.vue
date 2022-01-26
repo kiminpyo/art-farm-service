@@ -5,10 +5,13 @@
     <div class="firstpage" style="background-image: linear-gradient(to left, #26ec00, #65da29, #80c93f, #8eb853, #94a866); height: 1200px; color:white; display:flex">
         <div style="width:100%;">
             <div class="firstpage-wrap" style="margin-top:170px;">
-               <div class="firstpage-header">Artfarm..</div>
-               <div class="firstpage-subheader">온라인 전시회 소개 플랫폼</div>
-               <div class="firstpage-context">아트팜은 어떤 것을 소개합니까? <p>
-                   아트팜은 어떤 것을 보여줍니까?</p></div>
+              <div class="firstpage-header">Artfarm..</div>
+              <div class="firstpage-subheader">온라인 전시회 소개 플랫폼</div>
+              <div class="firstpage-context">
+                  <p>아트팜은 문화예술의 텃밭입니다.</p>
+                  <p>언제나 청년 예술가들의 작품을 기다리고 있습니다.</p>
+                  <p>그들의 출발을 지켜봐주실 분들도 기다리고 있습니다.</p>
+                </div>
             </div>
         </div>
       
@@ -49,10 +52,10 @@
     
     <div class="thirdpage">
         <div class="thirdpage-header">전시회 위치보기</div> 
-       
-     <div id="map" style="width:40%; height:50%; margin-left:10%; margin-top:100px; display:inline-block;"></div>
+
+        <div id="map" style="width:40%; height:50%; margin-left:10%; margin-top:100px; display:inline-block;"></div>
         <v-tab type="button" style="border:1px solid black; display:inline-block; margin-left:30px;" to="/artcreate"  >
-           등록하기
+          등록하기
         </v-tab>
     </div>
     <div class="fourthpage">
@@ -80,25 +83,25 @@
     </div>
     <div class="fifthpage">
         <div class="fifthpage-header">gallery</div>
-       <div class="container1" >
+        <div class="container1" >
             <div class="hometitle">
               
             </div>
           
-        <div id="carousel">        
-          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
-          <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
-          <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt=""  @:click="detail"></figure>
-                   
+          <div id="carousel">        
+            <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt="" @:click="detail"></figure>
+            <figure><img src="@/assets/galaxy-ge099f3f44_1280.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/milky-way-gd0a11e093_1920.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/orion-nebula-g627181e6f_1920.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/constellations-g95da062c7_1920.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/starry-sky-gd2b975337_1920.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/wall-g7bf2bd61d_1920.jpg" alt=""  @:click="detail"></figure>
+                    
+          </div>
         </div>
-       </div>
           
-       <div class="second">
+        <div class="second">
         
         <div>
       
