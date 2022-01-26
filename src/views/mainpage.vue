@@ -63,12 +63,25 @@
         <div class="fourthpage-content-wrap">
             <div class="fourthpage-content-before">
                 <div class="fourthpage-content-header">향후 개선 기술</div>
-                <div>이런식으로 개선할 예정입니다</div>
+                <div style="text-align:start;">
+                  <p>○ NFT 도입</p>
+                  <p>- 온라인으로 저작(소유)권을 판매 함으로써 신진 작가에게는 수입원을 제공하고</p>
+                  <p>소비자에게는 다소 적은 금액으로도 작품을 소유·투자할 기회 제공</p>
+                  <p>- 블록체인 관련 기술을 도입하여 전문성을 확보한 후 창출되는 수입으로 R&D에</p>
+                  <p>재투자함으로써 새로운 트렌드(ex) dutch auction 등)를 이끌 수 있는 전문인력 확보</p>
+                  <p>○ 메타버스</p>
+                  <p>- 비대면 시대에 발맞추어 온라인 전시회를 제공함으로써,</p>
+                  <p>관람문화에 대한 장벽을 좀 더 허물 수 있음.</p>
+                  <p>- 문화·예술을 이끄는 플랫폼으로써 자리매김하여 신진 작가에게는 더 많은 기회를,</p>
+                  <p>선두에서 이끄는 작가에게는 수요층과의 거리를 좁혀주는 장을 제공.</p>
+                  </div>
             </div>
             <div class="fourthpage-content-icon">아이콘이나 방향</div>
             <div class="fourthpage-content-after">
                 <div class="fourthpage-content-header">기대효과</div>
-                <div>이런식의 기대효과가 있습니다</div>
+                <div>
+                  <p>K-art 선두주자</p>
+                </div>
             </div>
         </div>
         <div class="fourthpage-ourprofile">
