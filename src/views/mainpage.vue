@@ -257,21 +257,21 @@ export default {
                     /*    iwContent += '<div>'+list.records[i].시설명+'</div>';
                        iwContent += '<div>'+list.records[i].소재지도로명주소+'</div>';
                       iwContent += '<div>'+list.records[i].관리기관전화번호+'</div>'; */
-                   iwContent = '<div class="wrap">' + 
-                    '    <div class="info">' + 
-                    '        <div class="title">' + 
-                    '            전시회정보' + 
-                    '            <div class="close"  v-on:click="Overlay()" title="닫기"></div>' + 
-                    '        </div>' + 
-                    '        <div class="body1">' + 
-                    '            <div class="desc">' + 
-                    '                <div class="ellipsis">'+list.records[i].시설명+'</div>' + 
-                    '                <div class="jibun ellipsis">'+list.records[i].소재지도로명주소+'</div>' + 
-                    '                <div><a href="" target="_blank" class="link">홈페이지</a></div>' + 
-                    '            </div>' + 
-                    '        </div>' + 
-                    '    </div>' +    
-                    '</div>';
+                 iwContent = '<div class="kakao-wrap" style="position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Malgun Gothic", dotum, "돋움", sans-serif;line-height: 1.5;" >' + 
+            '    <div class="kakao-info" style="width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;">' + 
+            '        <div class="kakao-title" style="padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;">' + 
+            '            전시회정보' + 
+            '            <div class="kakao-close"  v-on:click="closeOverlay" title="닫기" style="position: absolute;top: 10px;right: 10px;color:#888;width: 17px;height: 17px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png)"></div>' + 
+            '        </div>' + 
+            '        <div class="kakao-body" style="position: relative;overflow: hidden;">' + 
+            '            <div class="kakao-desc" style="position: relative;margin: 13px 0 0 90px;height: 75px;">' + 
+            '                <div class="kakao-ellipsis">'+list.records[i].시설명+'</div>' + 
+            '                <div class="kakao-jibun ellipsis" style="font-size: 11px;color: #888;margin-top: -2px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">'+list.records[i].소재지도로명주소+'</div>' + 
+            '                <div><a href="https://www.kakaocorp.com/main" target="_blank" class="kakao-link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>';
             console.log(iwContent)
        /*          
                     let iwRemoveable = true; 
@@ -291,7 +291,6 @@ export default {
           // 커스텀 오버레이시에는 이벤트가 따로 먹지않아서 나중에 구현예정    
                var customOverlay = new kakao.maps.CustomOverlay({
                           map: map,
-                        
                           position: marker.getPosition(),
                           content: iwContent                 
                     });
@@ -300,8 +299,11 @@ export default {
                       
                       customOverlay.setMap(map)
                       console.log(iwContent)
-                    })
+                    }),
 
+                   function closeOverlay(){
+              customOverlay.setMap(null)  
+        }
            }
          
         },
@@ -315,6 +317,7 @@ export default {
               document.head.appendChild(script); 
             
         },
+       
 
       
     }
@@ -383,22 +386,40 @@ export default {
 .secondpage-content-img{
     margin-top:150px;
 }
-    .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
-    .wrap * {padding: 0;margin: 0;}
-    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
-    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
-    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
-    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
-    .info .close:hover {cursor: pointer;}
-    .info .body1 {position: relative;overflow: hidden;}
-    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
-    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
-    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
-    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
-    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-    .info .link {color: #5085BB
-    ;
-    } 
+.kakao-wrap {
+    position: absolute;
+    left: 0;bottom: 40px;
+    width: 288px;
+    height: 132px;
+    margin-left: -144px;
+    text-align: left;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;
+    }
+.kakao-wrap * {
+    padding: 0;
+    margin: 0;
+    }
+.kakao-wrap .kakao-info {
+    width: 286px;
+    height: 120px;
+    border-radius: 5px;
+    border-bottom: 2px solid #ccc;
+    border-right: 1px solid #ccc;
+    overflow: hidden;background: #fff;
+    }
+.kakao-wrap .kakao-info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+.kakao-info .kakao-title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
+.kakao-info .kakao-close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+.kakao-info .kakao-close:hover {cursor: pointer;}
+.kakao-info .kakao-body {position: relative;overflow: hidden;}
+.kakao-info .kakao-desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+.kakao-desc .kakao-ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.kakao-desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+.kakao-info .kakao-img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+.kakao-info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+.kakao-info .kakao-link {color: #5085BB;}
 .thirdpage{ 
     height:1400px;
     background-image: linear-gradient(to right bottom, #1a1b1d, #2e2c31, #453e44, #605155, #796563);
