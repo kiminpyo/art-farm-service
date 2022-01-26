@@ -7,13 +7,7 @@
       v-model="e6"
       vertical
     >
-      <v-stepper-step
-        :complete="e6 > 1"
-        
-        editable
-        step="1"
-
-      >
+    
         <v-stepper-step
           :complete="e6 > 1"
           editable
@@ -346,4 +340,5 @@
 </script>
 
 <style scoped>
+
 </style>
