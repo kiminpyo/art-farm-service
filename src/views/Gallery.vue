@@ -144,23 +144,31 @@
           <option value="">15개씩 보기</option>
         </select>
         <div class="album-wrap row col-md-12">
-           <div style="color:white;">총 {{this.data.length}} 건이 검색되었습니다.</div>
-          <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx">
-           
+           <div style="color:white;">총 {{data.content.length}} 건이 검색되었습니다.</div>
+          <div class="album-container col-md-3" v-for="data in data.content" :key="data.exhibitionIdx" >
+              <div style="border:1px solid white; width:30%; margin-bottom:10px; color:white; text-align:center;" >{{data.category}}</div>
               <v-hover v-slot="{hover}">
+                
                 <v-card
                   v-model="data.items"
-                  color="black"  
+                  color="black"
+                 
                 >
+             
                   <div class="card shadow-sm" >
-              
-                    <v-img src="@/assets/wall-g7bf2bd61d_1920.jpg" class="bd-placeholder-img card-img-top" style="width:100%; height:225px">
+            
+                    <v-img :src="data.thumbnail" class="bd-placeholder-img card-img-top" style="width:100%; height:135px">
                     </v-img>
-                    <div class="card-body">
-                      <p class="card-text">{{data.title}}</p>
-                      <p class="card-text">{{data.place}}</p>
-                      <p class="card-text">{{data.category}}</p>
-                       <p class="card-text">{{data.exhibitionIdx}}</p>
+                    <div class="card-body" style="height:200px; width:100%;">
+                      <div style="font-weight:bold;">
+                         {{data.title}}
+                      </div>
+                      <div style="font-size:13px;">{{data.subTitle}}</div>
+                     
+                       <div style="margin-top:10px; font-weight:bold;">{{data.author}}</div>
+                       {{data.exhibitionIdx}}
+                      
+                 
                     </div>
                     <v-expand-transition>
                       <div
@@ -310,7 +318,7 @@ export default {
           console.log(this.data.numberOfElements)
           console.log(this.data.content)
             console.log(this.data.content[0].author)
-            console.log(this.data.content[9])
+            console.log(this.data.content[0].thumbnail)
           var pageBtn = '';
 
           for (var pageNo = 0; pageNo < this.data.totalPages; pageNo++) {

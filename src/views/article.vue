@@ -1,8 +1,14 @@
 
 <template>
-  <swiper class="swiper" :options="swiperOption"  >
-    <div v-for="data in data.exhFile" :key="data.exhibitionIdx">
-        <swiper-slide>Slide 1</swiper-slide>
+ <div>
+    <div type:button style="border:1px solid black; display:inline-block; font-size:40px; font-weight:bold; margin:end;" >나가기</div>
+  <swiper class="swiper" :options="swiperOption" >
+  
+        <swiper-slide><img :src="data.exhFile[0].filePath" alt="" style="100%; height:100%;" ></swiper-slide>
+        <swiper-slide><img :src="data.exhFile[1].filePath" alt=""></swiper-slide>
+        <swiper-slide><img :src="data.exhFile[2].filePath" alt=""></swiper-slide>
+        <swiper-slide><img :src="data.exhFile[3].filePath" alt=""></swiper-slide>
+          <div v-for="data in data.exhFile" :key="data.exhibitionIdx">
     </div>
     
    
@@ -10,6 +16,7 @@
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
   </swiper>
+  </div>
 </template>
 
 <script>
@@ -52,7 +59,7 @@ export default {
   }, 
   methods:{
     getFile(){
-      axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition?exhibitionIdx=" + this.exhibitionIdx)
+      axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition?exhibitionIdx=" + 3)
       .then((response) => {
         console.log(response.data)
          this.data =response.data;
@@ -71,7 +78,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- .swiper { height: 300px; width: 100%;
+.body{
+  height:2000px;
+  background:none;
+  
+}
+ .swiper { 
+ 
+  height:1000px;
+  overflow:hidden;
+  
  } 
  .swiper-slide { display: flex; 
   justify-content: center;
@@ -79,6 +95,7 @@ export default {
   text-align: center;
    font-weight: bold; 
    color:white;
+  
    } 
    
 
