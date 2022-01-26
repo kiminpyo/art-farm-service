@@ -1,17 +1,16 @@
 <template>
-
- <div class="fullpage">
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <div class="fullpage">
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
     <!-- <div class="firstpage" style="background-image: linear-gradient(to left, #26ec00, #65da29, #80c93f, #8eb853, #94a866); height: 1200px; color:white; display:flex"> -->
-      <div class="firstpage" style="background-image: #fff; height: 1200px; color:white; display:flex">
+        <div class="firstpage" style="background-color:#fff; height: 1200px; color:white; display:flex">
         <div style="width:100%;">
-            <div class="firstpage-wrap" style="margin-top:170px;">
-               <div class="firstpage-header">art farm 아트팜</div>
-               <div class="firstpage-subheader">온라인 전시회 소개 플랫폼</div>
-               <div class="firstpage-context">아트팜은 어떤 것을 소개합니까? <p>
-                   아트팜은 어떤 것을 보여줍니까?</p></div>
-            </div>
+        <div class="firstpage-wrap" style="margin-top:170px;">
+        <div class="firstpage-header">art farm 아트팜</div>
+        <div class="firstpage-subheader">온라인 전시회 소개 플랫폼</div>
+        <div class="firstpage-context">아트팜은 어떤 것을 소개합니까? <p>
+        아트팜은 어떤 것을 보여줍니까?</p></div>
         </div>
+    </div>
       
     </div>
     <div class="secondpage" >
@@ -52,7 +51,7 @@
         <div id="map" style="width:80%; height:50%; margin:auto; margin-top:150px;">
         </div>
     </div>
- </div>
+    </div>
 
 </template>
 
@@ -220,6 +219,7 @@ font-family: Lato,NotoSansKR,Apple SD Gothic Neo,Malgun Gothic,sans-serif;
     margin-top:300px;
     font-weight:100;
     font-size:150px;
+    
     color:greenyellow;
     /* font-family: 'Roboto', sans-serif; */
     /* font-family: Lato,NotoSansKR,Apple SD Gothic Neo,Malgun Gothic,sans-serif;
