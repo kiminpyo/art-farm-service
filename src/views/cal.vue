@@ -66,7 +66,7 @@ export default {
     //입력값 기입 
     handleDateSelect(selectInfo) {
       
-      let title = prompt('Please enter a new title for your event')
+      let title = prompt('새로운 일정을 등록해주세요')
       let calendarApi = selectInfo.view.calendar
       console.log(selectInfo.view.calendar)
       calendarApi.unselect() // clear date selection
@@ -117,6 +117,7 @@ b { /* used for event dates/times */
   min-height: 100%;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
+ 
 }
 .demo-app-sidebar {
   width: 300px;
@@ -130,6 +131,7 @@ b { /* used for event dates/times */
 .demo-app-main {
   flex-grow: 1;
   padding: 3em;
+   background-color:white;
 }
 .fc { /* the calendar root */
   max-width: 1100px;
