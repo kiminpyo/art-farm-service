@@ -1,16 +1,19 @@
 <template>
-  <div  >
+  <div >
     <div class="artdetail" style="text-align:center; margin-left:30%;">
    
-
-      <div v-for="data in data.exhFile" :key="data.exhibitionIdx">
+        <div style="display:flex; padding-top:150px;">
+          <div v-for="data in data.exhFile" :key="data.exhibitionIdx" >
        <div>
        <img 
        :src="data.filePath" 
+       style="width:100px; height:100px; "
        alt=""/>
        </div>
       </div> 
-      <div class="artinfo">
+        </div>
+      
+      <div class="artinfo" style="padding-top:100px;">
         <table>
           <colgroup>
             <col class="colth"> 
@@ -37,7 +40,7 @@
         </table>
       </div>
       <div>
-        <div class="artintro">
+        <div class="artintro"  style="padding-top:100px;">
           {{this.discription}}
         </div>
       </div>
@@ -129,12 +132,14 @@ import axios from 'axios';
 }
 .artdetail{
   padding:0; 
+ 
 }
 .artinfo{
   width:1000px;
 }
 tbody > tr  th,td{
   padding: 25px;
+  font-weight: bold;
 }
 .colth{
   border-right: 2px solid white;
@@ -151,6 +156,7 @@ table{
   width:1000px;
   height:500px;
   color:white;
-  border:1px solid;
+ 
+  font-size:25px;
 }
 </style>
