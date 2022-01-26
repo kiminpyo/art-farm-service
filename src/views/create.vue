@@ -36,18 +36,7 @@
             </v-text-field>
           </v-col>
         </v-row>
-        <v-row id="ckeditor_wrap">
-
-          <ckeditor
-            :editor="editor"
-            v-model="editorData"
-            :config="editorConfig"
-            id="ckeditor"
-            class="context"
-            name="context">
-          </ckeditor>
-
-        </v-row>
+      
         <v-row no-gutters justify-content-center>
           <v-col id="cont">
           <!--   <v-textarea 

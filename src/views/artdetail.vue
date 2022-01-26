@@ -1,14 +1,15 @@
 <template>
   <div  >
     <div class="artdetail" style="text-align:center; margin-left:30%;">
-      <lingallery iid.sync="currentId" :width="1000" :height="600"  :items="[
-        {id:'someid1', src: 'https://picsum.photos/1000/600/?image=0', thumbnail: 'https://picsum.photos/64/64/?image=0', alt: 'Some alt text', caption: '제목이 들어갈 부분'},
-        {id:'someid2', src: 'https://picsum.photos/1000/600/?image=10', thumbnail: 'https://picsum.photos/64/64/?image=10', alt: 'Another alt text', caption: 'Another Caption'},
-        {id:'someid3', src: 'https://picsum.photos/1000/600/?image=20', thumbnail: 'https://picsum.photos/64/64/?image=20'},
-        {id:'someid4', src: 'https://picsum.photos/1000/600/?image=30', thumbnail: 'https://picsum.photos/64/64/?image=30'},
-        {id:'someid5', src: 'https://picsum.photos/1000/600/?image=40', thumbnail: 'https://picsum.photos/64/64/?image=40'},
-        ]"
-      />
+   
+
+      <div v-for="data in data.exhFile" :key="data.exhibitionIdx">
+       <div>
+       <img 
+       :src="data.filePath" 
+       alt=""/>
+       </div>
+      </div> 
       <div class="artinfo">
         <table>
           <colgroup>
@@ -41,19 +42,21 @@
         </div>
       </div>
       <div class="artbtn">
-        <v-button
-        style="background-color:white;">수정</v-button>
-        <v-button
-        style="background-color:white;">뒤로가기</v-button>
+        <button
+        style="background-color:white;">수정</button>
+        <button 
+        style="background-color:white;"
+        v-on:click="picturedetail">더보기 </button>
+        <button
+        style="background-color:white;">뒤로가기</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Lingallery from 'lingallery';
-
-
+/* import Lingallery from 'lingallery'; */
+import axios from 'axios';
 
 //gallery에서 내려온 propsdata고, return값으로 반환 해줌
 	export default {
@@ -66,6 +69,7 @@ import Lingallery from 'lingallery';
     const author = this.$route.query.artauthor
     const place = this.$route.query.artplace
     const exhPeriod = this.$route.query.artexhPeriod
+    const exhibitionIdx = this.$route.query.artexhibitionIdx
 
     return{
       discription : discription, 
@@ -73,20 +77,46 @@ import Lingallery from 'lingallery';
       author : author,
       place : place,
       exhPeriod: exhPeriod,
+      exhibitionIdx : exhibitionIdx,
+      data: [],
+      
+      
       };
   },
  
   //import를 시켜주면 components로 등록해줘야 사용가능
-   components: {
+ /*   components: {
       Lingallery
-    },
+    }, */
 
     //콘솔을 찍기 힘들어서 즉시 실행함수에 부모쪽 데이터들이 잘 들어오는지 확인용
       created(){
 
     console.log(this.discription,this.title, this.author, this.place, this.artexhPeriod)
-    console.log(this.exhPeriod)
+    console.log(this.exhibitionIdx)
+    this.getFile();
   }, 
+  methods:{
+    getFile(){
+      axios.get("http://ec2-13-124-134-65.ap-northeast-2.compute.amazonaws.com:8080/api/exhibition?exhibitionIdx=" + this.exhibitionIdx)
+      .then((response) => {
+        console.log(response.data)
+         this.data =response.data;
+          this.file = this.data.exhFile;
+           for(let i = 0 ; i <= this.file.length; i++){
+            /* this.fileUrl = this.file[i].filePath; */
+         /*    console.log("fileurl==>"+ this.fileUrl) */
+        
+          } 
+         
+      })
+      
+    },
+    picturedetail(){
+      console.log('hi')
+      
+    }
+  }
 }
 	
 </script>

@@ -15,7 +15,7 @@
           <div class="logo" style="margin:0 auto; ">   
 
             <router-link to="/" style="display:flex;">
-              <h1 class="justify-center"><img src="@/assets/3.png" alt="" style="width:400px; margin-top:50px;"></h1>
+              <h1 class="justify-center"><img src="@/assets/3.png" alt="" style="height:80px; margin-top:50px;"></h1>
               <!--    <img src="@/assets/artfarm.png" alt="" style="width:50px; height:45px"> -->
             </router-link>
           </div>
