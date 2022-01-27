@@ -1,7 +1,7 @@
 <template>
 
- <div id="app">
-  <v-app id="inspire" style="margin-top:150px; ">
+ <div >
+  <v-app id="inspire" style="margin-top:150px; background:none; ">
     
     <v-stepper
       v-model="e6"

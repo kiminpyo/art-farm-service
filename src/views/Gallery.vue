@@ -368,7 +368,7 @@ export default {
                 $(".album-container").append(list); */
       })
     },
-    category( event){
+    category(event){
       const targetId = event.currentTarget.id;
       console.log(targetId)
       axios({
