@@ -33,7 +33,7 @@
               </v-tab>
 
             <v-tab id="tab" to="/board">
-            게시판 
+            공지사항 
             </v-tab>
             <v-tab id="tab" to="/Gallery">
             전시글 
