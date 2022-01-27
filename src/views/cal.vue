@@ -4,8 +4,9 @@
       <FullCalendar
         class='demo-app-calendar'
         :options='calendarOptions'
+        style="color:white;"
       >
-        <template v-slot:eventContent='arg'>
+        <template v-slot:eventContent='arg' >
           <b>{{ arg.timeText }}</b>
           <i>{{ arg.event.title }}</i>
         </template>
@@ -131,7 +132,7 @@ b { /* used for event dates/times */
 .demo-app-main {
   flex-grow: 1;
   padding: 3em;
-   background-color:white;
+
 }
 .fc { /* the calendar root */
   max-width: 1100px;

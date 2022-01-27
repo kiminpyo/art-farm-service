@@ -1,16 +1,16 @@
 <template>
 
  <div class="fullpage">
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     
     <div class="firstpage" style="background-image: linear-gradient(to left, #26ec00, #65da29, #80c93f, #8eb853, #94a866); height: 1200px; color:white; display:flex">
         <div style="width:100%;">
             <div class="firstpage-wrap" style="margin-top:170px;">
-              <div class="firstpage-header">Artfarm..</div>
-              <div class="firstpage-subheader">온라인 전시회 소개 플랫폼</div>
+              <div class="firstpage-header"> <span style="color:rgb(226, 190, 143);" >A</span>rtfarm</div>
+              <div class="firstpage-subheader"><span style="color:rgb(226, 190, 143);">온라인</span> 전시회 소개 플랫폼</div>
               <div class="firstpage-context">
-                  <p>아트팜은 문화예술의 텃밭입니다.</p>
-                  <p>언제나 청년 예술가들의 작품을 기다리고 있습니다.</p>
-                  <p>그들의 출발을 지켜봐주실 분들도 기다리고 있습니다.</p>
+                  <p>   <span style="color:rgb(226, 190, 143);">아트팜</span>은 문화예술의 <span style="color:rgb(226, 190, 143);">텃밭</span>입니다</p>
+                  <p>언제나 청년 예술가들의 <span style="color:rgb(226, 190, 143);">작품</span>을 기다리고 있습니다</p>
+                  <p>그들의 <span style="color:rgb(226, 190, 143);">출발</span>을 지켜봐주실 분들도 기다리고 있습니다</p>
                 </div>
             </div>
         </div>
@@ -27,16 +27,7 @@
             
            
             <div class="secondpage-content-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100">
-                    <defs>
-                        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
-                        refX="0" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" />
-                        </marker>
-                    </defs>
-                    <line x1="0" y1="50" x2="250" y2="50" stroke="#000" 
-                    stroke-width="8" marker-end="url(#arrowhead)" />
-                </svg>
+               <i class="fas fa-arrow-circle-right" style="width:100px;"></i>
              
             </div>
             
@@ -54,34 +45,40 @@
         <div class="thirdpage-header">전시회 위치보기</div> 
 
         <div id="map" style="width:40%; height:50%; margin-left:10%; margin-top:100px; display:inline-block;"></div>
-        <v-tab type="button" style="border:1px solid black; display:inline-block; margin-left:30px;" to="/artcreate"  >
+        <v-tab type="button" style="border:1px solid black; display:inline-block; margin-left:30px; width:100px;" to="/artcreate">
           등록하기
+          
         </v-tab>
+   
+        <div style="display:inline-block;"></div>
+       
     </div>
     <div class="fourthpage">
         <div class="fourthpage-header">Later</div>
         <div class="fourthpage-content-wrap">
-            <div class="fourthpage-content-before">
-                <div class="fourthpage-content-header">향후 개선 기술</div>
-                <div style="text-align:start;">
-                  <p>○ NFT 도입</p>
+            <div class="fourthpage-content-before" style="margin:auto; width:100%">
+                <div class="fourthpage-content-header" style="font-size:35px;">향후 개선 기술</div>
+                <div style="text-align:start; display:flex;  justify-content: space-evenly; margin-top:40px; font-size:20px; font-weight:bold; " >
+                    <div class="fourthpage-content-first" >
+                  <p >○ NFT 도입</p>
                   <p>- 온라인으로 저작(소유)권을 판매 함으로써 신진 작가에게는 수입원을 제공하고</p>
                   <p>소비자에게는 다소 적은 금액으로도 작품을 소유·투자할 기회 제공</p>
                   <p>- 블록체인 관련 기술을 도입하여 전문성을 확보한 후 창출되는 수입으로 R&D에</p>
                   <p>재투자함으로써 새로운 트렌드(ex) dutch auction 등)를 이끌 수 있는 전문인력 확보</p>
+                  </div>
+                  <div class="fourthpage-content-second">
                   <p>○ 메타버스</p>
                   <p>- 비대면 시대에 발맞추어 온라인 전시회를 제공함으로써,</p>
                   <p>관람문화에 대한 장벽을 좀 더 허물 수 있음.</p>
                   <p>- 문화·예술을 이끄는 플랫폼으로써 자리매김하여 신진 작가에게는 더 많은 기회를,</p>
                   <p>선두에서 이끄는 작가에게는 수요층과의 거리를 좁혀주는 장을 제공.</p>
                   </div>
+                  </div>
             </div>
-            <div class="fourthpage-content-icon">아이콘이나 방향</div>
+            <div class="fourthpage-content-icon"></div>
             <div class="fourthpage-content-after">
-                <div class="fourthpage-content-header">기대효과</div>
-                <div>
-                  <p>K-art 선두주자</p>
-                </div>
+                <div class="fourthpage-content-header"></div>
+               
             </div>
         </div>
         <div class="fourthpage-ourprofile">
@@ -211,7 +208,7 @@ export default {
       data(){
 
     return{
-     
+     iwContent: ''
     }
   },
     mounted(){
@@ -246,18 +243,18 @@ export default {
           var options = {
             center: new kakao.maps.LatLng(33.450701, 126.570667),  
          
-          level: 9
+          level: 13
           }; 
            var map = new kakao.maps.Map(container, options); 
       
-          const imageSrc = '@/assets/3.png', // 마커이미지의 주소입니다    
-                 imageSize = new kakao.maps.Size(30, 39), // 마커이미지의 크기입니다
+          const imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
+                 imageSize = new kakao.maps.Size(45, 45), // 마커이미지의 크기입니다
                  imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
       
                 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
                         const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
     
-           for(let i= 0; i < list.records.length -1510 ; i++){
+           for(let i= 0; i < list.records.length -1500 ; i++){
              
             
            let marker= new kakao.maps.Marker({
@@ -270,10 +267,12 @@ export default {
                marker.setMap(map)
                      
                   let iwContent;
-                    /*    iwContent += '<div>'+list.records[i].시설명+'</div>';
+                        iwContent = '<div style="width:300px; height:100%;">'
+                       iwContent += '<div style="font-weight:bold; border-bottom:solid 1px black; margin-bottom:10px; background-color:rgb(226, 190, 143);">'+list.records[i].시설명+'</div>';
                        iwContent += '<div>'+list.records[i].소재지도로명주소+'</div>';
-                      iwContent += '<div>'+list.records[i].관리기관전화번호+'</div>'; */
-                 iwContent = '<div class="kakao-wrap" style="position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Malgun Gothic", dotum, "돋움", sans-serif;line-height: 1.5;" >' + 
+                      iwContent += '<div>'+list.records[i].관리기관전화번호+'</div>'; 
+                           iwContent += '</div>'
+              /*    iwContent = '<div class="kakao-wrap" style="position: absolute;left: 0;width: 288px;height: 132px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Malgun Gothic", dotum, "돋움", sans-serif;line-height: 1.5;" >' + 
             '    <div class="kakao-info" style="width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;">' + 
             '        <div class="kakao-title" style="padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;">' + 
             '            전시회정보' + 
@@ -287,11 +286,12 @@ export default {
             '            </div>' + 
             '        </div>' + 
             '    </div>' +    
-            '</div>';
+            '</div>'; */
             console.log(iwContent)
-       /*          
-                    let iwRemoveable = true; 
+               
+                let iwRemoveable = true; 
                 let infowindow = new kakao.maps.InfoWindow({
+                      
                         content : iwContent,
                        removable : iwRemoveable 
                     });
@@ -301,11 +301,11 @@ export default {
               // 마커 위에 인포윈도우를 표시합니다
                 infowindow.open(map, marker);  
                 console.log("맵 & 마커"+ map, marker)
-                  }); 
-         */
+                  });  
+         
         
           // 커스텀 오버레이시에는 이벤트가 따로 먹지않아서 나중에 구현예정    
-               var customOverlay = new kakao.maps.CustomOverlay({
+           /*     var customOverlay = new kakao.maps.CustomOverlay({
                           map: map,
                           position: marker.getPosition(),
                           content: iwContent                 
@@ -319,7 +319,7 @@ export default {
 
                    function closeOverlay(){
               customOverlay.setMap(null)  
-        }
+        }  */
            }
          
         },
@@ -365,14 +365,14 @@ export default {
     margin-left:300px;
     margin-top:-50px;
     font-size: 30px;
-    color:rgb(226, 190, 143);
+ 
     font-weight:bold;
 }
 .firstpage-context{
     margin-top:40px;
     margin-left:300px;
     font-size: 40px;
-    border:1px solid black;
+
     display:inline-block;
 
 }
@@ -460,20 +460,20 @@ export default {
 .fourthpage-content-wrap{
     margin-top:50px;
     display: flex;
-    border: 1px solid black;
+   
     text-align: center;
     justify-content: space-evenly;
     height:30%;
     
 }
 .fourthpage-content-before {
-    border: 1px solid black;
+
 }
 .fourthpage-content-icon{
-    border: 1px solid black;
+
 }
 .fourthpage-content-after{
-    border: 1px solid black;
+    
 }
 .fourthpage-content-header{
     font-size:20px;
