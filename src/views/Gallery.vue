@@ -166,7 +166,7 @@
                       <div style="font-size:13px;">{{data.subTitle}}</div>
                      
                        <div style="margin-top:10px; font-weight:bold;">{{data.author}}</div>
-                       {{data.exhibitionIdx}}
+                     <!--   {{data.exhibitionIdx}} -->
                       
                  
                     </div>
