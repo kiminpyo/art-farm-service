@@ -21,50 +21,119 @@
             <div class="secondpage-content-wrap">
                 <div class="secondpage-content-img">
                     <div><img src="@/assets/갤러리.gif" alt="" srcset="" style="width:400px; height:300px; border-radius:80px;"></div>
-                    <div>갤러리</div>
+                    <div style="font-size:40px; margin-top:20px; font-weight:bold;">Gallery</div>
                 </div>
 
                 <div class="secondpage-content-arrow">
                     <i class="fas fa-arrow-circle-right" style="width:100px;"></i>
                 </div>
             
-                <div class="secondpage-content-img">
-                    <div>
-                        <img src="@/assets/갤러리상세보기.gif" alt="" srcset="" style="width:400px; height:300px; border-radius:80px;">
+
+           
+            <div class="secondpage-content-arrow">
+               <i class="fas fa-arrow-circle-right fa-10x" style="width:100px;"></i>
+             
+            </div>
+            
+            <div class="secondpage-content-img">
+                <div>
+                   <img src="@/assets/갤러리상세보기.gif" alt="" srcset="" style="width:400px; height:300px; border-radius:80px;">
                     </div>
-                    <div>갤러리 상세보기</div>
-                </div>
+                <div style="font-size:40px; margin-top:20px; font-weight:bold;">Gallery Detail</div>
+
             </div>
         </div>
     
-        <div class="thirdpage">
-            <div class="thirdpage-header">전시회 위치보기</div> 
-            <div id="map" style="width:40%; height:50%; margin-left:10%; margin-top:100px; display:inline-block;"></div>
-            <v-tab type="button" style="border:1px solid black; display:inline-block; margin-left:30px; width:100px;" to="/artcreate">등록하기</v-tab>
-            <div style="display:inline-block;"></div>
+
+    <div class="thirdpage">
+        <div class="thirdpage-header">전시회 위치보기</div> 
+
+        <div id="map" style="width:40%; height:50%; margin-left:10%; margin-top:100px; display:inline-block;"></div>
+        <div style="display:inline-block; width:50%; height:300px;">
+       
+        <v-tab type="button" style="border:4px solid  black; display:inline-block; margin-left:50px; width:100%; font-size:45px; font-weight:bold;" to="/artcreate">
+          등록하기
+          
+        </v-tab>
+   
+        <div style="display:inline-block;"><i class="fas fa-arrow-circle-left fa-3x" style="margin-left:30px;"></i></div>
         </div>
-        <div class="fourthpage">
-            <div class="fourthpage-header">Later</div>
-            <div class="fourthpage-content-wrap">
-                <div class="fourthpage-content-before" style="margin:auto; width:100%">
-                    <div class="fourthpage-content-header" style="font-size:35px;">향후 개선 기술</div>
-                    <div style="text-align:start; display:flex;  justify-content: space-evenly; margin-top:40px; font-size:20px; font-weight:bold; " >
-                        <div class="fourthpage-content-first" >
-                            <p >○ NFT 도입</p>
-                            <p>- 온라인으로 저작(소유)권을 판매 함으로써 신진 작가에게는 수입원을 제공하고</p>
-                            <p>소비자에게는 다소 적은 금액으로도 작품을 소유·투자할 기회 제공</p>
-                            <p>- 블록체인 관련 기술을 도입하여 전문성을 확보한 후 창출되는 수입으로 R&D에</p>
-                            <p>재투자함으로써 새로운 트렌드(ex) dutch auction 등)를 이끌 수 있는 전문인력 확보</p>
-                        </div>
-                    
-                        <div class="fourthpage-content-second">
-                            <p>○ 메타버스</p>
-                            <p>- 비대면 시대에 발맞추어 온라인 전시회를 제공함으로써,</p>
-                            <p>관람문화에 대한 장벽을 좀 더 허물 수 있음.</p>
-                            <p>- 문화·예술을 이끄는 플랫폼으로써 자리매김하여 신진 작가에게는 더 많은 기회를,</p>
-                            <p>선두에서 이끄는 작가에게는 수요층과의 거리를 좁혀주는 장을 제공.</p>
-                        </div>
-                    </div>
+      
+       
+    </div>
+    <div class="fourthpage">
+        <div class="fourthpage-header">Later</div>
+        <div class="fourthpage-content-wrap">
+            <div class="fourthpage-content-before" style="margin:auto; width:100%">
+         
+                <div style="text-align:start; display:flex;  justify-content: space-evenly; margin-top:200px; font-size:30px; font-weight:bold; " >
+                    <div class="fourthpage-content-first" >
+                  <p >○ NFT 도입</p>
+                  <p>- 온라인으로 저작(소유)권을 판매 함으로써 신진 작가에게는 수입원을 제공하고</p>
+                  <p>소비자에게는 다소 적은 금액으로도 작품을 소유·투자할 기회 제공</p>
+                  <p>- 블록체인 관련 기술을 도입하여 전문성을 확보한 후 창출되는 수입으로 R&D에</p>
+                  <p>재투자함으로써 새로운 트렌드(ex) dutch auction 등)를 이끌 수 있는 전문인력 확보</p>
+                  </div>
+                  <div class="fourthpage-content-second">
+                  <p>○ 메타버스</p>
+                  <p>- 비대면 시대에 발맞추어 온라인 전시회를 제공함으로써,</p>
+                  <p>관람문화에 대한 장벽을 좀 더 허물 수 있음.</p>
+                  <p>- 문화·예술을 이끄는 플랫폼으로써 자리매김하여 신진 작가에게는 더 많은 기회를,</p>
+                  <p>선두에서 이끄는 작가에게는 수요층과의 거리를 좁혀주는 장을 제공.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="fourthpage-content-icon"></div>
+            <div class="fourthpage-content-after">
+                <div class="fourthpage-content-header"></div>
+               
+            </div>
+        </div>
+        <div class="fourthpage-ourprofile">
+            <div class="fourthpage-subheader">about me</div>
+            <div class="fourthpage-container" >
+                <img src="@/assets/종빈프로필.jpg" alt="">
+                <img src="@/assets/인환프로필.jpg" alt="">
+                <img src="@/assets/인표프로필.jpg" alt="">
+            </div>
+        </div>
+        
+    </div>
+    <div class="fifthpage">
+        <div class="fifthpage-header">Gallery</div>
+        <div class="container1" >
+            <div class="hometitle">
+              
+            </div>
+          
+          <div id="carousel">        
+            <figure><img src="@/assets/crow1.jpg" alt="" @:click="detail"></figure>
+            <figure><img src="@/assets/crow2.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/crow3.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/crow4.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/crow5.jpg" alt=""  @:click="detail"></figure>
+            <figure><img src="@/assets/crow6.jpg" alt=""  @:click="detail"></figure>
+      
+      
+           
+          </div>
+        </div>
+          
+       <!--  <div class="second">
+        
+        <div>
+      
+          <ul class="gallery col-md-12">
+        <li >
+
+          <div class="flip">
+            <div class="front-side">
+            </div>
+            <div class="back-side">
+              <a href="#">
+              <div class="content">
+                <div class="loader">
+
                 </div>
                 <div class="fourthpage-content-icon"></div>
                 <div class="fourthpage-content-after">
@@ -173,7 +242,13 @@
                     </ul>
                 </div>
             </div>
-        </div>
+
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+
     </div>
 
 </template>
@@ -215,12 +290,14 @@
         
                 var container = document.getElementById('map'); 
           
-                var options = {
-                    center: new kakao.maps.LatLng(33.450701, 126.570667),
-                    level: 13
-                }; 
-                
-                var map = new kakao.maps.Map(container, options); 
+
+          var options = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667),  
+         
+          level: 11
+          }; 
+           var map = new kakao.maps.Map(container, options); 
+
       
                 const imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
                 imageSize = new kakao.maps.Size(45, 45), // 마커이미지의 크기입니다
@@ -319,7 +396,9 @@
 
 .fullpage{  
     color:black;
-    height:7000px;
+
+        height:6500px;
+
 }
 
 .firstpage-header{
@@ -344,7 +423,10 @@
 }
 .secondpage{
     background-image: linear-gradient(to left, #7581ac, #3c7e9c, #1c777a, #346a51, #4d5a2f);
-    height:1400px;
+
+     height:1000px;
+     
+
 }
 
 .secondpage-header{
@@ -442,10 +524,11 @@
     
 }
 .fourthpage-content-header{
-    font-size:20px;
+    font-size:26px;
     font-weight:bold;
 }
 .fourthpage-ourprofile{
+    margin-top:300px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -453,14 +536,15 @@
     align-items: center;
 }
 .fourthpage-subheader{
-    font-size:80px;
+    font-size:50px;
     font-weight:bold;
     margin-top:20px;
 }
 img {
   width: 30%;
-  height: 100%;
-  object-fit:cover;
+  height: 200px;
+ 
+  overflow: hidden;
   
   -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
   
@@ -488,7 +572,7 @@ img {
   opacity:1;
   }
   .fifthpage{
-      height:1400px;
+      height:1000px;
      background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
   }
   /*  여기부턴 기존의 메인에 있던 css를 다 긁어온 곳 */
@@ -498,11 +582,11 @@ img {
     font-weight:bold;
 }
 .container1{
-  margin:auto;
-	width: 400px;
+    margin:auto;
+	width: 600px;
 	height: 140px;
 	position: relative;
-	perspective: 1500px;
+	perspective: 2000px;
     
 }
 #carousel{
@@ -511,7 +595,7 @@ img {
 	height: 100%;
 	position: absolute;
 	transform-style: preserve-3d;
-	animation: rotation 15s infinite linear;
+	animation: rotation 300s infinite linear;
 }
 #carousel:hover{
 	animation-play-state: paused;
@@ -519,9 +603,9 @@ img {
 #carousel figure{
 	display: block;
 	position: absolute;
-	width: 150px;
-	height: 180px;
-	left: 10px;
+	width: 250px;
+	height: 300px;
+	left: 100px;
 	top: 10px;
 	overflow: hidden;
 
@@ -532,14 +616,13 @@ img {
   width:100%;
 }
 #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
-#carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
-#carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
-#carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
-#carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
-#carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
-#carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
-#carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
-#carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+#carousel figure:nth-child(2) { transform: rotateY(60deg) translateZ(288px);}
+#carousel figure:nth-child(3) { transform: rotateY(120deg) translateZ(288px);}
+#carousel figure:nth-child(4) { transform: rotateY(180deg) translateZ(288px);}
+#carousel figure:nth-child(5) { transform: rotateY(240deg) translateZ(288px);}
+#carousel figure:nth-child(6) { transform: rotateY(300deg) translateZ(288px);}
+
 
 @keyframes rotation{
 	from{

@@ -4,10 +4,10 @@
     <div type:button style="border:1px solid black; display:inline-block; font-size:40px; font-weight:bold; margin:end;" >나가기</div>
   <swiper class="swiper" :options="swiperOption" >
   
-        <swiper-slide><img :src="data.exhFile[0].filePath" alt="" style="100%; height:100%;" ></swiper-slide>
-        <swiper-slide><img :src="data.exhFile[1].filePath" alt=""></swiper-slide>
-        <swiper-slide><img :src="data.exhFile[2].filePath" alt=""></swiper-slide>
-        <swiper-slide><img :src="data.exhFile[3].filePath" alt=""></swiper-slide>
+        <swiper-slide v-for="(path , index) in data.exhFile" :key="path.fileIdx">
+         <img :src="path.filePath" alt="">{{index}}
+        </swiper-slide>
+
           <div v-for="data in data.exhFile" :key="data.exhibitionIdx">
     </div>
     
@@ -48,7 +48,9 @@ export default {
         },
         data: [],
         file: [],
-        exhibitionIdx: exhibitionIdx
+        exhibitionIdx: exhibitionIdx,
+        fileUrl: [],
+        filePath:[]
       }
     },
     created(){
@@ -66,12 +68,17 @@ export default {
           this.file = this.data.exhFile;
            for(let i = 0 ; i <= this.file.length; i++){
             /* this.fileUrl = this.file[i].filePath; */
-         /*    console.log("fileurl==>"+ this.fileUrl) */
-        
+             console.log("fileurl==>"+ this.file) 
+             
+             let fileUrl = this.file[i].filePath;
+              console.log(fileUrl)
+           
+            
           } 
-         
-      })
       
+       
+      })
+     
     }
   }
   }
@@ -89,7 +96,8 @@ export default {
   overflow:hidden;
   
  } 
- .swiper-slide { display: flex; 
+ .swiper-slide { 
+   display: flex; 
   justify-content: center;
   align-items: center; 
   text-align: center;

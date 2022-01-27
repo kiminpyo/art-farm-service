@@ -159,7 +159,7 @@ h1{
   display:flex;
   justify-content:center;
 #tab{
-  color:white;
+  color:rgb(226, 190, 143);
   font-size:25px;
 }
 }
