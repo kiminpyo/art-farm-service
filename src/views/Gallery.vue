@@ -157,7 +157,7 @@
              
                   <div class="card shadow-sm" >
             
-                    <v-img :src="data.thumbnail" class="bd-placeholder-img card-img-top" style="width:100%; height:135px">
+                    <v-img :src="data.thumbnail" class="bd-placeholder-img card-img-top" style="width:100%; height:135px; overflow:hidden;">
                     </v-img>
                     <div class="card-body" style="height:200px; width:100%;">
                       <div style="font-weight:bold;">
